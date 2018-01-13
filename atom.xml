@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hi</title>
+  
+  <subtitle>My best salutations are to them who knew me imperfect and loved me</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://wenbo.fun/"/>
+  <updated>2018-01-13T08:52:19.403Z</updated>
+  <id>http://wenbo.fun/</id>
+  
+  <author>
+    <name>Wen bo</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python just for me</title>
+    <link href="http://wenbo.fun/2018/01/10/myPython/"/>
+    <id>http://wenbo.fun/2018/01/10/myPython/</id>
+    <published>2018-01-10T07:49:18.000Z</published>
+    <updated>2018-01-13T08:52:19.403Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Python&quot;&gt;&lt;a href=&quot;#Python&quot; class=&quot;headerlink&quot; title=&quot;Python&quot;&gt;&lt;/a&gt;Python&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Python 3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Python基础&quot;&gt;&lt;a href=&quot;#Python基础&quot; class=&quot;headerlink&quot; title=&quot;Python基础&quot;&gt;&lt;/a&gt;Python基础&lt;/h2&gt;&lt;p&gt;Python使用缩进来组织代码块，请务必遵守约定俗成的习惯，坚持使用4个空格的缩进。&lt;br&gt;在文本编辑器中，需要设置把Tab自动转换为4个空格，确保不混用Tab和空格。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程语言" scheme="http://wenbo.fun/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="Python" scheme="http://wenbo.fun/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分支限界---批处理作业调度</title>
+    <link href="http://wenbo.fun/2017/12/31/sf012/"/>
+    <id>http://wenbo.fun/2017/12/31/sf012/</id>
+    <published>2017-12-31T07:56:44.000Z</published>
+    <updated>2018-01-13T08:16:42.845Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;批处理作业调度&quot;&gt;&lt;a href=&quot;#批处理作业调度&quot; class=&quot;headerlink&quot; title=&quot;批处理作业调度&quot;&gt;&lt;/a&gt;批处理作业调度&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;n 个作业的集合: $$J={J1,J2,…,Jn}$$&lt;/li&gt;
+&lt;li&gt;第 i 个作业需要机器 j 的处理时间: $$ t_{ij}$$&lt;/li&gt;
+&lt;li&gt;已安排作业集合: $$M⊆{1,2…,n}$$&lt;/li&gt;
+&lt;li&gt;所有作业在机器2完成时间和（包括等待时间）: $$f=\sum_{i=1}^n{F_{2i}}$$&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分支限界---布线问题</title>
+    <link href="http://wenbo.fun/2017/12/30/sf011/"/>
+    <id>http://wenbo.fun/2017/12/30/sf011/</id>
+    <published>2017-12-30T11:07:34.000Z</published>
+    <updated>2018-01-13T08:16:17.809Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;分支限界与回溯&quot;&gt;&lt;a href=&quot;#分支限界与回溯&quot; class=&quot;headerlink&quot; title=&quot;分支限界与回溯&quot;&gt;&lt;/a&gt;分支限界与回溯&lt;/h1&gt;&lt;h2 id=&quot;回溯法&quot;&gt;&lt;a href=&quot;#回溯法&quot; class=&quot;headerlink&quot; title=&quot;回溯法&quot;&gt;&lt;/a&gt;回溯法&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;盲目搜索&lt;/strong&gt;&lt;br&gt;从根节点出发，按照状态空间树的结构，向下搜索它的所有儿子结点，对不满足约束条件的儿子结点，把它丢弃；对满足约束条件的结点，继续相似搜索它的所有儿子结点。&lt;br&gt;该搜索过程一直进行，当搜索到一个满足约束条件的叶结点时，就得到了一个可行解；或者所有的儿子结点都不满足约束条件时，该结点就被丢弃，向上回溯到它的父亲结点。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>回溯法---0-1背包问题</title>
+    <link href="http://wenbo.fun/2017/12/30/sf010/"/>
+    <id>http://wenbo.fun/2017/12/30/sf010/</id>
+    <published>2017-12-30T09:04:17.000Z</published>
+    <updated>2018-01-13T08:27:58.057Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;0-1背包问题&quot;&gt;&lt;a href=&quot;#0-1背包问题&quot; class=&quot;headerlink&quot; title=&quot;0-1背包问题&quot;&gt;&lt;/a&gt;0-1背包问题&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;时间复杂度&quot;&gt;&lt;a href=&quot;#时间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度&quot;&gt;&lt;/a&gt;时间复杂度&lt;/h2&gt;&lt;p&gt;计算上界时间:$$O(n)$$&lt;/p&gt;
+&lt;p&gt;最坏情况有:$$O(2^n)$$个右儿子节点需计算上界。所以回溯算法&lt;code&gt;Backtrack&lt;/code&gt;所需时间:$$O(n2^n)$$&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>回溯法---符号三角形</title>
+    <link href="http://wenbo.fun/2017/12/30/sf009/"/>
+    <id>http://wenbo.fun/2017/12/30/sf009/</id>
+    <published>2017-12-30T05:07:21.000Z</published>
+    <updated>2018-01-13T08:18:24.338Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;回溯法&quot;&gt;&lt;a href=&quot;#回溯法&quot; class=&quot;headerlink&quot; title=&quot;回溯法&quot;&gt;&lt;/a&gt;回溯法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;问题解空间&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;深度优先遍历&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;深度搜索至任意一个节点，若包括问题解，继续按深度优先策略搜索;如果不包含问题解，则跳过对该结点为根的子树的搜索，逐层向其祖先结点回溯。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;减枝函数&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;符号三角形&quot;&gt;&lt;a href=&quot;#符号三角形&quot; class=&quot;headerlink&quot; title=&quot;符号三角形&quot;&gt;&lt;/a&gt;符号三角形&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;时间复杂度&quot;&gt;&lt;a href=&quot;#时间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度&quot;&gt;&lt;/a&gt;时间复杂度&lt;/h2&gt;&lt;p&gt;计算可行性约束(符号个数)需要时间:$$O(n)$$&lt;br&gt;最坏情况(n个符号排列)有:$$O(2^n)$$个节点需要计算可行性约束，故回溯算法 &lt;code&gt;Backtrack&lt;/code&gt; 所需计算时间: $$O(n2^n)$$&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>贪心算法---最小生成树</title>
+    <link href="http://wenbo.fun/2017/12/30/sf008/"/>
+    <id>http://wenbo.fun/2017/12/30/sf008/</id>
+    <published>2017-12-30T03:17:39.000Z</published>
+    <updated>2018-01-13T08:18:36.043Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;最小生成树&quot;&gt;&lt;a href=&quot;#最小生成树&quot; class=&quot;headerlink&quot; title=&quot;最小生成树&quot;&gt;&lt;/a&gt;最小生成树&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;最小生成树性质&quot;&gt;&lt;a href=&quot;#最小生成树性质&quot; class=&quot;headerlink&quot; title=&quot;最小生成树性质&quot;&gt;&lt;/a&gt;最小生成树性质&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;假设 N = (V,{ E })是一个连通网，U 是顶点集 V 的一个非空子集。若(u , v)是一条具有最小权值(代价)的边，其中u∈U， v∈V - U，则必存在一棵包含边(u，v)的最小生成树。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;反证:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;假设网N的任何一棵最小生成树都不包含(u，v)。设T是连通网上的一棵最小生成树，当将边(u，v)加入到T中时，由生成树的定义，T中必存在一条包含(u，v)的回路。另一方面，由于T是生成树，则在T上必存在另一条边(u’，v’)，其中u’∈U，v’∈V - U，且u和u’之间，v和v’之间均有路径相通。删去边(u’，v’)，便可消除上述回路，同时得到另一棵生成树T’。因为(u，v)的代价不高于(u’，v’)，则T’的代价亦不高于T，T’是包含(u，v)的一棵最小生成树，和假设矛盾。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;时间复杂度&quot;&gt;&lt;a href=&quot;#时间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度&quot;&gt;&lt;/a&gt;时间复杂度&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>贪心算法---单源最短路径</title>
+    <link href="http://wenbo.fun/2017/12/30/sf007/"/>
+    <id>http://wenbo.fun/2017/12/30/sf007/</id>
+    <published>2017-12-30T02:34:34.000Z</published>
+    <updated>2018-01-13T08:18:44.663Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;单源最短路径&quot;&gt;&lt;a href=&quot;#单源最短路径&quot; class=&quot;headerlink&quot; title=&quot;单源最短路径&quot;&gt;&lt;/a&gt;单源最短路径&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;给定一个带权有向图 G=（V,E），其中每条边的权是一个非负实数。另外，还给定V中的一个顶点，称为源。现在要计算从源到其他所有各顶点的最短路径长度。这里的长度就是指路上各边权之和。&lt;/p&gt;
+&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/dijkstra/tx02.jpg&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/dijkstra/tx01.jpg&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;  
+&lt;p&gt;其基本思想是，设置顶点集合&lt;code&gt;S&lt;/code&gt;并不断地作贪心选择来扩充这个集合。每一次加入&lt;code&gt;S&lt;/code&gt; 的点都是距离&lt;code&gt;S&lt;/code&gt;之外最短的点。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>贪心算法---活动安排问题</title>
+    <link href="http://wenbo.fun/2017/12/28/sf006/"/>
+    <id>http://wenbo.fun/2017/12/28/sf006/</id>
+    <published>2017-12-28T11:46:02.000Z</published>
+    <updated>2018-01-13T08:18:52.893Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;活动安排问题&quot;&gt;&lt;a href=&quot;#活动安排问题&quot; class=&quot;headerlink&quot; title=&quot;活动安排问题&quot;&gt;&lt;/a&gt;活动安排问题&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;贪心选择性质&quot;&gt;&lt;a href=&quot;#贪心选择性质&quot; class=&quot;headerlink&quot; title=&quot;贪心选择性质&quot;&gt;&lt;/a&gt;贪心选择性质&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;所谓贪心选择性质是指所求问题的整体最优解可以通过一系列局部最优的选择.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;动态规划: 每步所做的选择往往依赖于相关子问题的解。只有解除子问题的解才能做出选择。_自底向上_&lt;/li&gt;
+&lt;li&gt;贪心算法: 仅在当前状态下做出最好选择，即局部最优选择。_自顶向下_&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于一个具体问题，要确定它是否具有 &lt;strong&gt;贪心选择性质&lt;/strong&gt;,&lt;font color=&quot;red&quot;&gt;必须证明每一步所作的贪心选择最终导致问题的整体最优解。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt; 活动安排问题贪的是 &lt;strong&gt;活动最早完成时间&lt;/strong&gt; ，直观上为未安排活动留下更多时间。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动态规划---最长公共子序列</title>
+    <link href="http://wenbo.fun/2017/12/26/sf005/"/>
+    <id>http://wenbo.fun/2017/12/26/sf005/</id>
+    <published>2017-12-26T11:33:31.000Z</published>
+    <updated>2018-01-13T08:19:45.988Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;最长公共子序列&quot;&gt;&lt;a href=&quot;#最长公共子序列&quot; class=&quot;headerlink&quot; title=&quot;最长公共子序列&quot;&gt;&lt;/a&gt;最长公共子序列&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;最优子结构性质&quot;&gt;&lt;a href=&quot;#最优子结构性质&quot; class=&quot;headerlink&quot; title=&quot;最优子结构性质&quot;&gt;&lt;/a&gt;最优子结构性质&lt;/h2&gt;&lt;p&gt;设序列 X={x1,x2,…,xm} 和 Y={y1,y2,…,yn} 的最长公共子序列为 Z={z1,z2,…,zk} ，则&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;若xm=yn，则zk=xm=yn，且Z k-1是xm-1和yn-1的最长公共子序列。&lt;/li&gt;
+&lt;li&gt;若xm≠yn且zk≠xm，则Z是xm-1和Y的最长公共子序列。&lt;/li&gt;
+&lt;li&gt;若xm≠yn且zk≠yn，则Z是X和yn-1的最长公共子序列。  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;两个序列的最长公共子序列包含了这两个序列的前缀的最长公共子序列。因此，最长公共子序列问题具有 &lt;strong&gt;最优子结构性质&lt;/strong&gt;。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动态规划---矩阵连乘</title>
+    <link href="http://wenbo.fun/2017/12/23/sf004/"/>
+    <id>http://wenbo.fun/2017/12/23/sf004/</id>
+    <published>2017-12-23T14:08:08.000Z</published>
+    <updated>2018-01-13T08:20:08.908Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;矩阵连乘&quot;&gt;&lt;a href=&quot;#矩阵连乘&quot; class=&quot;headerlink&quot; title=&quot;矩阵连乘&quot;&gt;&lt;/a&gt;矩阵连乘&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;动态规划基本要素&quot;&gt;&lt;a href=&quot;#动态规划基本要素&quot; class=&quot;headerlink&quot; title=&quot;动态规划基本要素&quot;&gt;&lt;/a&gt;动态规划基本要素&lt;/h2&gt;&lt;h3 id=&quot;最优子结构&quot;&gt;&lt;a href=&quot;#最优子结构&quot; class=&quot;headerlink&quot; title=&quot;最优子结构&quot;&gt;&lt;/a&gt;最优子结构&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;当一个问题的最优解包括其子问题的最优解时，称此问题具有最优子结构性质。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;计算 A[1:n] 的最优次序，其所包含的矩阵子链 A[1:k] 和 A[k+1:n] 的次序也是最优的。即该问题具有 &lt;strong&gt;最优子结构性质&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;反证法证明：如果有一个计算 A[1:k] 的次序需要的计算量更少，则用此次序替换原来计算 A[1:k] 次序，得到的计算 A[1:n] 的计算量将比按最优次序计算量更少，这与前提矛盾。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>递归与分治---快速排序</title>
+    <link href="http://wenbo.fun/2017/12/22/sf003/"/>
+    <id>http://wenbo.fun/2017/12/22/sf003/</id>
+    <published>2017-12-22T11:33:07.000Z</published>
+    <updated>2018-01-13T08:20:21.990Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;时间复杂度分析&quot;&gt;&lt;a href=&quot;#时间复杂度分析&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度分析&quot;&gt;&lt;/a&gt;时间复杂度分析&lt;/h2&gt;&lt;p&gt;最坏情况:每次划分的基准刚好为中值。&lt;br&gt;        $$T(n)=2*T(n/2)+n$$&lt;/p&gt;
+&lt;p&gt;其平均算法复杂度为:&lt;br&gt;          $$O(nlogn)$$&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>递归与分治---合并排序</title>
+    <link href="http://wenbo.fun/2017/12/22/sf002/"/>
+    <id>http://wenbo.fun/2017/12/22/sf002/</id>
+    <published>2017-12-22T01:55:32.000Z</published>
+    <updated>2018-01-13T08:20:37.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;合并排序-归并排序&quot;&gt;&lt;a href=&quot;#合并排序-归并排序&quot; class=&quot;headerlink&quot; title=&quot;合并排序 (归并排序)&quot;&gt;&lt;/a&gt;合并排序 (归并排序)&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;时间复杂度分析&quot;&gt;&lt;a href=&quot;#时间复杂度分析&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度分析&quot;&gt;&lt;/a&gt;时间复杂度分析&lt;/h2&gt;&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/%E7%AE%97%E6%B3%95q8.jpg&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>递归与分治---棋盘覆盖</title>
+    <link href="http://wenbo.fun/2017/12/20/sf001/"/>
+    <id>http://wenbo.fun/2017/12/20/sf001/</id>
+    <published>2017-12-20T01:38:17.000Z</published>
+    <updated>2018-01-13T08:20:53.763Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;棋盘覆盖&quot;&gt;&lt;a href=&quot;#棋盘覆盖&quot; class=&quot;headerlink&quot; title=&quot;棋盘覆盖&quot;&gt;&lt;/a&gt;棋盘覆盖&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;  在一个2^k * 2^k个方格组成的棋盘中,若有一个方格与其他方格不同,则称该方格为一特殊方格,且称该棋盘为一个特殊棋盘。显然特殊方格在棋盘上出现的位置有4^k种情形.&lt;/p&gt;
+&lt;p&gt;  因而对任何k ≥ 0,有 4^k 种不同的特殊棋盘。下图所示的特殊棋盘为 k=2 时 16 个特殊棋盘中的一个。&lt;/p&gt;
+&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/%E7%AE%97%E6%B3%95q1gif.gif&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+&lt;p&gt;  在棋盘覆盖问题中，要用下图中 4 中不同形态的 L 型骨牌覆盖一个给定的特殊棋牌上除特殊方格以外的所有方格，且任何 2 个 L 型骨牌不得重叠覆盖。易知，在任何一个 2^k * 2^k 的棋盘中，用到的 L 型骨牌个数恰为 (4^k-1)/3 。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sklearn中Kmeans与可视化</title>
+    <link href="http://wenbo.fun/2017/12/13/kmeans-sklearn/"/>
+    <id>http://wenbo.fun/2017/12/13/kmeans-sklearn/</id>
+    <published>2017-12-13T14:02:42.000Z</published>
+    <updated>2018-01-13T08:52:35.429Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Kmeans&quot;&gt;&lt;a href=&quot;#Kmeans&quot; class=&quot;headerlink&quot; title=&quot;Kmeans&quot;&gt;&lt;/a&gt;Kmeans&lt;/h1&gt;&lt;p&gt;K-means算法:&lt;br&gt;&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/%E7%AE%97%E6%B3%95km03.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;两个缺点:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Inertia makes the assumption that clusters are convex and isotropic, which is not always the case. It responds poorly to elongated clusters, or manifolds with irregular shapes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Inertia is not a normalized metric: we just know that lower values are better and zero is optimal. But in very high-dimensional spaces, Euclidean distances tend to become inflated (this is an instance of the so-called “curse of dimensionality”). Running a dimensionality reduction algorithm such as PCA prior to k-means clustering can alleviate this problem and speed up the computations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;聚类算法：from-sklearn-cluster-import-KMeans&quot;&gt;&lt;a href=&quot;#聚类算法：from-sklearn-cluster-import-KMeans&quot; class=&quot;headerlink&quot; title=&quot;聚类算法：from sklearn.cluster import KMeans&quot;&gt;&lt;/a&gt;聚类算法：from sklearn.cluster import KMeans&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://wenbo.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="http://wenbo.fun/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="聚类" scheme="http://wenbo.fun/tags/%E8%81%9A%E7%B1%BB/"/>
+    
+      <category term="Kmeans" scheme="http://wenbo.fun/tags/Kmeans/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>keras</title>
+    <link href="http://wenbo.fun/2017/12/13/keras/"/>
+    <id>http://wenbo.fun/2017/12/13/keras/</id>
+    <published>2017-12-13T03:54:48.000Z</published>
+    <updated>2018-01-13T08:52:38.948Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://keras-cn.readthedocs.io/en/latest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Keras 中文文档&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://wenbo.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="http://wenbo.fun/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Deep Learning" scheme="http://wenbo.fun/tags/Deep-Learning/"/>
+    
+      <category term="Keras" scheme="http://wenbo.fun/tags/Keras/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人脸识别04：识别是不是我</title>
+    <link href="http://wenbo.fun/2017/12/10/is-my-face/"/>
+    <id>http://wenbo.fun/2017/12/10/is-my-face/</id>
+    <published>2017-12-10T13:12:46.000Z</published>
+    <updated>2018-01-13T08:52:51.322Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="人脸识别" scheme="http://wenbo.fun/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    
+    
+      <category term="人脸识别" scheme="http://wenbo.fun/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    
+      <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
+    
+      <category term="TensorFlow" scheme="http://wenbo.fun/tags/TensorFlow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人脸识别03：Tensorflow+CNN训练</title>
+    <link href="http://wenbo.fun/2017/12/08/cnn-train-faces/"/>
+    <id>http://wenbo.fun/2017/12/08/cnn-train-faces/</id>
+    <published>2017-12-08T14:05:35.000Z</published>
+    <updated>2018-01-13T08:53:39.605Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;使用Tensorflow-CNN训练神经网络&quot;&gt;&lt;a href=&quot;#使用Tensorflow-CNN训练神经网络&quot; class=&quot;headerlink&quot; title=&quot;使用Tensorflow+CNN训练神经网络&quot;&gt;&lt;/a&gt;使用Tensorflow+CNN训练神经网络&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="人脸识别" scheme="http://wenbo.fun/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    
+    
+      <category term="人脸识别" scheme="http://wenbo.fun/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    
+      <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
+    
+      <category term="TensorFlow" scheme="http://wenbo.fun/tags/TensorFlow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人脸识别02：dlib批量识别其他图片集</title>
+    <link href="http://wenbo.fun/2017/12/08/set-other-people/"/>
+    <id>http://wenbo.fun/2017/12/08/set-other-people/</id>
+    <published>2017-12-08T13:52:15.000Z</published>
+    <updated>2018-01-13T08:52:06.991Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;dlib批量识别其他图片集&quot;&gt;&lt;a href=&quot;#dlib批量识别其他图片集&quot; class=&quot;headerlink&quot; title=&quot;dlib批量识别其他图片集&quot;&gt;&lt;/a&gt;dlib批量识别其他图片集&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="人脸识别" scheme="http://wenbo.fun/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    
+    
+      <category term="人脸识别" scheme="http://wenbo.fun/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    
+      <category term="Dlib" scheme="http://wenbo.fun/tags/Dlib/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人脸识别01：dlib获取图片集</title>
+    <link href="http://wenbo.fun/2017/12/08/face-recognition-dlib/"/>
+    <id>http://wenbo.fun/2017/12/08/face-recognition-dlib/</id>
+    <published>2017-12-08T03:09:34.000Z</published>
+    <updated>2018-01-13T08:53:00.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Dlib&quot;&gt;&lt;a href=&quot;#Dlib&quot; class=&quot;headerlink&quot; title=&quot;Dlib&quot;&gt;&lt;/a&gt;Dlib&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://dlib.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Dlib&lt;/a&gt; 是一个跨平台的C++公共库，除了线程支持，网络支持，提供测试以及大量工具等等优点，Dlib还是一个强大的机器学习的C++库，包含了许多机器学习常用的算法，而且它还不依赖其他库。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="人脸识别" scheme="http://wenbo.fun/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    
+    
+      <category term="人脸识别" scheme="http://wenbo.fun/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    
+      <category term="Dlib" scheme="http://wenbo.fun/tags/Dlib/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人脸识别：概述</title>
+    <link href="http://wenbo.fun/2017/12/07/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB1/"/>
+    <id>http://wenbo.fun/2017/12/07/人脸识别1/</id>
+    <published>2017-12-07T13:42:08.000Z</published>
+    <updated>2018-01-13T08:53:52.160Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;主环境&quot;&gt;&lt;a href=&quot;#主环境&quot; class=&quot;headerlink&quot; title=&quot;主环境&quot;&gt;&lt;/a&gt;主环境&lt;/h1&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;opencv&lt;/li&gt;
+&lt;li&gt;TensorFlow&lt;/li&gt;
+&lt;li&gt;python3&lt;/li&gt;
+&lt;li&gt;dlib&lt;/li&gt;
+&lt;li&gt;具体搭建方式— &lt;a href=&quot;/2017/11/24/Win10配置opencv3+python3环境/index.html&quot;&gt;传送门&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;流程&quot;&gt;&lt;a href=&quot;#流程&quot; class=&quot;headerlink&quot; title=&quot;流程&quot;&gt;&lt;/a&gt;流程&lt;/h1&gt;&lt;h2 id=&quot;1-Get-faces-获取图片集&quot;&gt;&lt;a href=&quot;#1-Get-faces-获取图片集&quot; class=&quot;headerlink&quot; title=&quot;1. Get_faces 获取图片集&quot;&gt;&lt;/a&gt;1. Get_faces 获取图片集&lt;/h2&gt;&lt;p&gt;获取所要识别的人脸的图片集最快的方法就是使用程序用摄像头拍照，要获取足够多的照片，得坐在电脑面前不停得给自己的脸摆各种姿势，这样可以提高训练后识别自己的成功率，这里先后采取了opencv和dlib自带人脸检测采集，虽然opencv识别比较快，但实际应用中会识别出一些奇怪的东西当作人脸, 所以程序采用了dlib来识别人脸。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;\2017\12\08\face-recognition-dlib\index.html&quot;&gt;dlib识别人脸获取图片集&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="人脸识别" scheme="http://wenbo.fun/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    
+    
+      <category term="人脸识别" scheme="http://wenbo.fun/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+    
+      <category term="Environment" scheme="http://wenbo.fun/tags/Environment/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>分支限界---布线问题 | Hi | My best salutations are to them who knew me imperfect and loved me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#81D8CF">
+    
+    
+    <meta name="keywords" content="算法">
+    <meta name="description" content="分支限界与回溯回溯法盲目搜索从根节点出发，按照状态空间树的结构，向下搜索它的所有儿子结点，对不满足约束条件的儿子结点，把它丢弃；对满足约束条件的结点，继续相似搜索它的所有儿子结点。该搜索过程一直进行，当搜索到一个满足约束条件的叶结点时，就得到了一个可行解；或者所有的儿子结点都不满足约束条件时，该结点就被丢弃，向上回溯到它的父亲结点。">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分支限界---布线问题">
+<meta property="og:url" content="http://wenbo.fun/2017/12/30/sf011/index.html">
+<meta property="og:site_name" content="Hi">
+<meta property="og:description" content="分支限界与回溯回溯法盲目搜索从根节点出发，按照状态空间树的结构，向下搜索它的所有儿子结点，对不满足约束条件的儿子结点，把它丢弃；对满足约束条件的结点，继续相似搜索它的所有儿子结点。该搜索过程一直进行，当搜索到一个满足约束条件的叶结点时，就得到了一个可行解；或者所有的儿子结点都不满足约束条件时，该结点就被丢弃，向上回溯到它的父亲结点。">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-01-13T08:16:17.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="分支限界---布线问题">
+<meta name="twitter:description" content="分支限界与回溯回溯法盲目搜索从根节点出发，按照状态空间树的结构，向下搜索它的所有儿子结点，对不满足约束条件的儿子结点，把它丢弃；对满足约束条件的结点，继续相似搜索它的所有儿子结点。该搜索过程一直进行，当搜索到一个满足约束条件的叶结点时，就得到了一个可行解；或者所有的儿子结点都不满足约束条件时，该结点就被丢弃，向上回溯到它的父亲结点。">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hi" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgbrand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Wen bo</h5>
+          <a href="mailto:1871756080@qq.com" title="1871756080@qq.com" class="mail">1871756080@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wenbo8585" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">分支限界---布线问题</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">分支限界---布线问题</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-30T11:07:34.000Z" itemprop="datePublished" class="page-time">
+  2017-12-30
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#分支限界与回溯"><span class="post-toc-number">1.</span> <span class="post-toc-text">分支限界与回溯</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#回溯法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">回溯法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分支限界法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">分支限界法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#界"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">界</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#子集树与排列树"><span class="post-toc-number">2.</span> <span class="post-toc-text">子集树与排列树</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#子集树"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">子集树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#排列树"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">排列树</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#回溯与分支限界的比较"><span class="post-toc-number">3.</span> <span class="post-toc-text">回溯与分支限界的比较</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#布线问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">布线问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题描述"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">问题描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#时间复杂度"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">时间复杂度</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#java代码"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">java代码</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-sf011"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">分支限界---布线问题</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-30 19:07:34" datetime="2017-12-30T11:07:34.000Z"  itemprop="datePublished">2017-12-30</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="分支限界与回溯"><a href="#分支限界与回溯" class="headerlink" title="分支限界与回溯"></a>分支限界与回溯</h1><h2 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h2><p><strong>盲目搜索</strong><br>从根节点出发，按照状态空间树的结构，向下搜索它的所有儿子结点，对不满足约束条件的儿子结点，把它丢弃；对满足约束条件的结点，继续相似搜索它的所有儿子结点。<br>该搜索过程一直进行，当搜索到一个满足约束条件的叶结点时，就得到了一个可行解；或者所有的儿子结点都不满足约束条件时，该结点就被丢弃，向上回溯到它的父亲结点。</p>
+<a id="more"></a>
+<h2 id="分支限界法"><a href="#分支限界法" class="headerlink" title="分支限界法"></a>分支限界法</h2><p><strong>启发式搜索</strong></p>
+<ol>
+<li>在结点估算沿着它的各儿子结点搜索时，目标函数可能取得的“界”</li>
+<li>把儿子结点和目标函数可能取得的“界”，保存在优先队列或堆中</li>
+<li>从队列或堆中选取“界”最大或最小的结点向下搜索，直到叶子结点</li>
+<li>若叶子结点的目标函数的值，是结点表中的最大值或最小值，则沿叶子结点到根结点的路径所确定的解，就是问题的最优解，由该叶子结点所确定的目标函数的值，就是解这个问题所得到的最大值或最小值</li>
+</ol>
+<h2 id="界"><a href="#界" class="headerlink" title="界"></a>界</h2><ul>
+<li>对最小值问题，称为下界，意思是向下搜索所可能取得的值最小不会小于这些下界。</li>
+<li>对最大值问题，称为上界，意思是向下搜索所可能取得的值最大不会大于这些上界。</li>
+</ul>
+<h1 id="子集树与排列树"><a href="#子集树与排列树" class="headerlink" title="子集树与排列树"></a>子集树与排列树</h1><h2 id="子集树"><a href="#子集树" class="headerlink" title="子集树"></a>子集树</h2><p>问题可以理解为在一个集合中选取一个满足某种条件的子集。我们对待选集合任意排序，然后顺次对其中的元素给出两种决策：</p>
+<p>左: 将当前元素选入集合<br>右: 放弃当前元素</p>
+<p>整个解空间所呈现出的是一棵二叉树。算法复杂度为$$O(2 ^ n)$$</p>
+<p>E.g. 0-1背包问题</p>
+<h2 id="排列树"><a href="#排列树" class="headerlink" title="排列树"></a>排列树</h2><p>问题可以理解为在一个集合的排列中寻找一个符合要求的排列。我们采用这样的策略：</p>
+<p>每一次的决策都是从当前集合选出一个元素，将其余元素放入下次决策。<br>当集合为空，我们生成了一个排列。</p>
+<p>算法复杂度$$O(n!)$$</p>
+<p>E.g. 旅行商问题</p>
+<h1 id="回溯与分支限界的比较"><a href="#回溯与分支限界的比较" class="headerlink" title="回溯与分支限界的比较"></a>回溯与分支限界的比较</h1><ol>
+<li>搜索模型的不同</li>
+</ol>
+<p>回溯使用递归栈作为辅助，按既定顺序逐条搜索每一条从树根到叶子的路径。</p>
+<p>分支限界法使用优先级队列或队列作为辅助，寻找“最优”路径。</p>
+<ol>
+<li>目标不同</li>
+</ol>
+<p>回溯法更为通用，而分支限界法用于寻找最优解</p>
+<ol>
+<li>时间效率(搜索最优解问题)</li>
+</ol>
+<p>回溯法搜索的时间正比于搜索解空间的大小</p>
+<p>分支限界法的时间敏感于最优解所在位置，当最优解偏树根，则时间相对于搜索整个解空间树非常少。</p>
+<ol>
+<li>空间效率</li>
+</ol>
+<p>回溯法的空间消耗与解空间（最大）树高有关</p>
+<p>分支限界法的空间消耗一般表现出广度优先搜索的特点，与解空间的宽度有关。</p>
+<p>一般树高远小于树宽,所以可以认为分支限界法是回溯法的一种空间换时间的技术</p>
+<h1 id="布线问题"><a href="#布线问题" class="headerlink" title="布线问题"></a>布线问题</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
+<p>计算机算法设计与分析(第四版)，王晓东</p>
+</blockquote>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>扩展节点: $$O(1)$$<br>每个方格此为活结点进入队列最多一次，总结点数:$$O(mn)$$<br>构造最短距离(L是最短路径的长度):$$O(L)$$  </p>
+<h2 id="java代码"><a href="#java代码" class="headerlink" title="java代码"></a>java代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.LinkedList;  </span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;  </span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 布线问题</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Lican</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WireRouter</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] grid;<span class="comment">//方格阵列;=0表示该方格运行布线；=1表示被封锁，不允许布线  </span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> size;<span class="comment">//方格阵列大小  </span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> pathLen;<span class="comment">//最短线路长度  </span></span><br><span class="line">    <span class="keyword">public</span> LinkedList&lt;Position&gt; q;<span class="comment">//扩展结点队列，用list存储  </span></span><br><span class="line">    <span class="keyword">public</span> Position start;<span class="comment">//起始位置  </span></span><br><span class="line">    <span class="keyword">public</span> Position finish;<span class="comment">//终点  </span></span><br><span class="line">    <span class="keyword">public</span> Position[] path;<span class="comment">//最短路径  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WireRouter</span><span class="params">(<span class="keyword">int</span>[][] grid,<span class="keyword">int</span> size,Position start,Position finish)</span></span>&#123;  </span><br><span class="line">        <span class="keyword">this</span>.grid=grid;  </span><br><span class="line">        <span class="keyword">this</span>.size=size;  </span><br><span class="line">        <span class="keyword">this</span>.start=start;  </span><br><span class="line">        <span class="keyword">this</span>.finish=finish;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 方格所在位置</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> Lican</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Position</span></span>&#123;  </span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> row;<span class="comment">//行  </span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> col;<span class="comment">//列  </span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Position</span><span class="params">(<span class="keyword">int</span> r ,<span class="keyword">int</span> c)</span></span>&#123;  </span><br><span class="line">            row=r;  </span><br><span class="line">            col=c;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *计算从起始位置start到目标位置finish的最短布线路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 找到最短布线路径则返回true，否则返回false</span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">findPath</span><span class="params">()</span></span>&#123;  </span><br><span class="line">        <span class="keyword">if</span>(start.row==finish.row&amp;&amp;start.col==finish.col)&#123;<span class="comment">//start==finish,最短路径为0  </span></span><br><span class="line">            pathLen=<span class="number">0</span>;  </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line"></span><br><span class="line">        <span class="comment">//初始化相对位移  </span></span><br><span class="line">        Position[] offset=<span class="keyword">new</span> Position[<span class="number">4</span>];  </span><br><span class="line">        offset[<span class="number">0</span>]=<span class="keyword">new</span> Position(<span class="number">0</span>,<span class="number">1</span>);<span class="comment">//右  </span></span><br><span class="line">        offset[<span class="number">1</span>]=<span class="keyword">new</span> Position(<span class="number">1</span>,<span class="number">0</span>);<span class="comment">//下  </span></span><br><span class="line">        offset[<span class="number">2</span>]=<span class="keyword">new</span> Position(<span class="number">0</span>,-<span class="number">1</span>);<span class="comment">//左  </span></span><br><span class="line">        offset[<span class="number">3</span>]=<span class="keyword">new</span> Position(-<span class="number">1</span>,<span class="number">0</span>);<span class="comment">//上  </span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置方格阵列“围墙”，方便处理方格边界的情况  </span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=size+<span class="number">1</span>;i++)&#123;  </span><br><span class="line">            grid[<span class="number">0</span>][i]=grid[size+<span class="number">1</span>][i]=<span class="number">1</span>;<span class="comment">//顶部和底部  </span></span><br><span class="line">            grid[i][<span class="number">0</span>]=grid[i][size+<span class="number">1</span>]=<span class="number">1</span>;<span class="comment">//左边和右边  </span></span><br><span class="line">        &#125;  </span><br><span class="line"></span><br><span class="line">        Position here=<span class="keyword">new</span> Position(start.row,start.col);  </span><br><span class="line">        grid[start.row][start.col]=<span class="number">2</span>;<span class="comment">//数字0,1表示方格的开放或封锁所以，表示距离时，让所有距离都加2；起始位置的距离为0+2=2  </span></span><br><span class="line">        <span class="keyword">int</span> numOfNbrs=<span class="number">4</span>;<span class="comment">//相邻方格数  </span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//以下为标记可达的方格位置  </span></span><br><span class="line">        q=<span class="keyword">new</span> LinkedList&lt;Position&gt;();  </span><br><span class="line">        Position nbr=<span class="keyword">new</span> Position(<span class="number">0</span>,<span class="number">0</span>);  </span><br><span class="line">        <span class="keyword">do</span>&#123;  </span><br><span class="line">            <span class="comment">//标记可达的相邻方格(每个方格有四个相邻方格)  </span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numOfNbrs;i++)&#123;  </span><br><span class="line">                nbr.row=here.row+offset[i].row;  </span><br><span class="line">                nbr.col=here.col+offset[i].col;  </span><br><span class="line">                <span class="keyword">if</span>(grid[nbr.row][nbr.col]==<span class="number">0</span>)&#123;<span class="comment">//该方格未被标记，且该方格允许布线  </span></span><br><span class="line">                    grid[nbr.row][nbr.col]=grid[here.row][here.col]+<span class="number">1</span>;  </span><br><span class="line">                    <span class="keyword">if</span>(nbr.row==finish.row&amp;&amp;nbr.col==finish.col)  </span><br><span class="line">                        <span class="keyword">break</span>;  </span><br><span class="line">                    q.add(<span class="keyword">new</span> Position(nbr.row,nbr.col));  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line"></span><br><span class="line">            <span class="comment">//检测是否到达目标位置finish  </span></span><br><span class="line">            <span class="keyword">if</span>(nbr.row==finish.row&amp;&amp;nbr.col==finish.col)  </span><br><span class="line">                <span class="keyword">break</span>;  </span><br><span class="line">            <span class="keyword">if</span>(q.isEmpty())  </span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;  </span><br><span class="line"></span><br><span class="line">            here=q.poll();  </span><br><span class="line">        &#125;<span class="keyword">while</span>(<span class="keyword">true</span>);  </span><br><span class="line"></span><br><span class="line">        <span class="comment">//构造最短布线路径  </span></span><br><span class="line">        pathLen=grid[finish.row][finish.col]-<span class="number">2</span>;  </span><br><span class="line">        path=<span class="keyword">new</span> Position[pathLen];  </span><br><span class="line"></span><br><span class="line">        <span class="comment">//从目标位置finish开始向起始位置回溯  </span></span><br><span class="line">        here=finish;  </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=pathLen-<span class="number">1</span>;j&gt;=<span class="number">0</span>;j--)&#123;  </span><br><span class="line">            path[j]=here;  </span><br><span class="line">            <span class="comment">//找前驱位置  </span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numOfNbrs;i++)&#123;  </span><br><span class="line">                nbr.row=here.row+offset[i].row;  </span><br><span class="line">                nbr.col=here.col+offset[i].col;  </span><br><span class="line">                <span class="keyword">if</span>(grid[nbr.row][nbr.col]==j+<span class="number">2</span>)  </span><br><span class="line">                    <span class="keyword">break</span>;  </span><br><span class="line">            &#125;  </span><br><span class="line">            here=<span class="keyword">new</span> Position(nbr.row,nbr.col);  </span><br><span class="line">        &#125;  </span><br><span class="line">        System.out.println(<span class="string">"最短路线为："</span>);  </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;pathLen-<span class="number">1</span>;j++)&#123;  </span><br><span class="line">            System.out.println(<span class="string">"点"</span>+(j+<span class="number">1</span>)+<span class="string">"位置:  行-"</span>+path[j].row+<span class="string">" 列-"</span>+path[j].col);  </span><br><span class="line">        &#125;  </span><br><span class="line">        System.out.println(<span class="string">"布线长度为："</span>+pathLen);  </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">        Scanner sc=<span class="keyword">new</span> Scanner(System.in);  </span><br><span class="line">        System.out.println(<span class="string">"请输入方格阵列大小："</span>);  </span><br><span class="line">        String s1=sc.nextLine();  </span><br><span class="line">        Integer size=Integer.parseInt(s1);  </span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"请输入起始点的行和列，用空格隔开："</span>);  </span><br><span class="line">        String s2=sc.nextLine();  </span><br><span class="line">        String[] s3=s2.split(<span class="string">" "</span>);  </span><br><span class="line">        <span class="keyword">int</span> startRow=Integer.parseInt(s3[<span class="number">0</span>]);  </span><br><span class="line">        <span class="keyword">int</span> startCol=Integer.parseInt(s3[<span class="number">1</span>]);  </span><br><span class="line">        Position start=<span class="keyword">new</span> Position(startRow,startCol);  </span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"请输入结束点的行和列，用空格隔开："</span>);  </span><br><span class="line">        String s4=sc.nextLine();  </span><br><span class="line">        String[] s5=s4.split(<span class="string">" "</span>);  </span><br><span class="line">        <span class="keyword">int</span> finishRow=Integer.parseInt(s5[<span class="number">0</span>]);  </span><br><span class="line">        <span class="keyword">int</span> finishCol=Integer.parseInt(s5[<span class="number">1</span>]);  </span><br><span class="line">        Position finish=<span class="keyword">new</span> Position(finishRow,finishCol);  </span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[][] grid=<span class="keyword">new</span> <span class="keyword">int</span>[size+<span class="number">2</span>][size+<span class="number">2</span>];  </span><br><span class="line">        System.out.println(<span class="string">"请输入方格阵列："</span>);  </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=size;i++)&#123;  </span><br><span class="line">            String str=sc.nextLine();  </span><br><span class="line">            String[] strs=str.split(<span class="string">" "</span>);  </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;strs.length;j++)&#123;  </span><br><span class="line">                grid[i][j+<span class="number">1</span>]=Integer.parseInt(strs[j]);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line"></span><br><span class="line">        WireRouter w=<span class="keyword">new</span> WireRouter(grid,size,start,finish);  </span><br><span class="line">        w.findPath();         </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-01-13T08:16:17.809Z" itemprop="dateUpdated">2018-01-13 16:16:17</time>
+</span><br>
+
+
+        
+        BiuBiuBiu~~~~
+        
+    </div>
+    <footer>
+        <a href="http://wenbo.fun">
+            <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" alt="Wen bo">
+            Wen bo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2017/12/30/sf011/&title=《分支限界---布线问题》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2017/12/30/sf011/&title=《分支限界---布线问题》 — Hi&source=分支限界与回溯回溯法盲目搜索从根节点出发，按照状态空间树的结构，向下搜索它的所有儿子结点，对不满足约束条件的儿子结点，把它丢弃；对满足约束条件的结点，继续..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2017/12/30/sf011/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《分支限界---布线问题》 — Hi&url=http://wenbo.fun/2017/12/30/sf011/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2017/12/30/sf011/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/12/31/sf012/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">分支限界---批处理作业调度</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/12/30/sf010/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">回溯法---0-1背包问题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "xVQIAhS8Iaa22qibuCeoAjj2-gzGzoHsz",
+            appKey: "GEc59stbeS88ePxaVibVE1Db",
+            avatar: "monsterid",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Wen bo &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2017/12/30/sf011/&title=《分支限界---布线问题》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2017/12/30/sf011/&title=《分支限界---布线问题》 — Hi&source=分支限界与回溯回溯法盲目搜索从根节点出发，按照状态空间树的结构，向下搜索它的所有儿子结点，对不满足约束条件的儿子结点，把它丢弃；对满足约束条件的结点，继续..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2017/12/30/sf011/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《分支限界---布线问题》 — Hi&url=http://wenbo.fun/2017/12/30/sf011/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2017/12/30/sf011/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://wenbo.fun/2017/12/30/sf011/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+    
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="225" height="450"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:1;
+    right: 50px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -60px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/unitychan.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>
