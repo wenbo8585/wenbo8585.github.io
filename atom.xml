@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-01-16T13:56:09.855Z</updated>
+  <updated>2018-01-18T14:29:28.734Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -21,15 +21,23 @@
     <link href="http://wenbo.fun/2018/01/10/myPython/"/>
     <id>http://wenbo.fun/2018/01/10/myPython/</id>
     <published>2018-01-10T07:49:18.000Z</published>
-    <updated>2018-01-16T13:56:09.855Z</updated>
+    <updated>2018-01-18T14:29:28.734Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;Python&quot;&gt;&lt;a href=&quot;#Python&quot; class=&quot;headerlink&quot; title=&quot;Python&quot;&gt;&lt;/a&gt;Python&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;Python 3&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;From&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Python 3 &lt;a href=&quot;https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;From&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;Python基础&quot;&gt;&lt;a href=&quot;#Python基础&quot; class=&quot;headerlink&quot; title=&quot;Python基础&quot;&gt;&lt;/a&gt;Python基础&lt;/h1&gt;&lt;p&gt;Python使用缩进来组织代码块，请务必遵守约定俗成的习惯，坚持使用4个空格的缩进。&lt;br&gt;在文本编辑器中，需要设置把Tab自动转换为4个空格，确保不混用Tab和空格。&lt;br&gt;
+&lt;h1 id=&quot;Python基础&quot;&gt;&lt;a href=&quot;#Python基础&quot; class=&quot;headerlink&quot; title=&quot;Python基础&quot;&gt;&lt;/a&gt;Python基础&lt;/h1&gt;&lt;p&gt;Python使用缩进来组织代码块，请务必遵守约定俗成的习惯，坚持使用4个空格的缩进。&lt;br&gt;在文本编辑器中，需要设置把Tab自动转换为4个空格，确保不混用Tab和空格。&lt;/p&gt;
+&lt;h2 id=&quot;数据类型和变量&quot;&gt;&lt;a href=&quot;#数据类型和变量&quot; class=&quot;headerlink&quot; title=&quot;数据类型和变量&quot;&gt;&lt;/a&gt;数据类型和变量&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;整数&lt;/strong&gt;&lt;br&gt;十六进制用0x前缀和0-9，a-f表示。&lt;/p&gt;
+&lt;p&gt;注: Python的整数没有大小限制，而某些语言的整数根据其存储长度是有大小限制的，例如Java对&lt;code&gt;32位&lt;/code&gt;整数的范围限制在-2147483648~2147483647。&lt;/p&gt;
+&lt;p&gt;Python的浮点数也没有大小限制，但是超出一定范围就直接表示为inf（无限大）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Floating point numbers are usually implemented using double in C. ——Python官方文档&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;浮点数(小数)&lt;/strong&gt;&lt;br&gt;科学计数法: 0.000012可以写成&lt;code&gt;1.2e-5&lt;/code&gt;&lt;br&gt;&lt;strong&gt;字符串&lt;/strong&gt;&lt;br&gt;字符串是以单引号’或双引号”括起来的任意文本&lt;/p&gt;
+&lt;p&gt;转义字符&lt;code&gt;\&lt;/code&gt;,如果字符串里面有很多字符都需要转义，就需要加很多\，为了简化，Python还允许用&lt;code&gt;r&amp;#39;&amp;#39;&lt;/code&gt;表示’’内部的字符串默认不转义.&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;print(&lt;span class=&quot;string&quot;&gt;&#39;\\\t\\&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;\       \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;print(&lt;span class=&quot;string&quot;&gt;r&#39;\\\t\\&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;\\\t\\&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
