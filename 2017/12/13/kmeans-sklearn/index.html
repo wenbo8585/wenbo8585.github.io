@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Sklearn中Kmeans与可视化 | Hi | My best salutations are to them who knew me imperfect and loved me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#81D8CF">
+    
+    
+    <meta name="keywords" content="机器学习,聚类,Kmeans">
+    <meta name="description" content="KmeansK-means算法:                                                                                                           两个缺点:  Inertia makes the assumption that clusters are convex and isotropic, w">
+<meta name="keywords" content="机器学习,聚类,Kmeans">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sklearn中Kmeans与可视化">
+<meta property="og:url" content="http://wenbo.fun/2017/12/13/kmeans-sklearn/index.html">
+<meta property="og:site_name" content="Hi">
+<meta property="og:description" content="KmeansK-means算法:                                                                                                           两个缺点:  Inertia makes the assumption that clusters are convex and isotropic, w">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/%E7%AE%97%E6%B3%95km03.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/%E7%AE%97%E6%B3%95km04.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/%E7%AE%97%E6%B3%95km02.png">
+<meta property="og:updated_time" content="2018-01-13T08:52:35.430Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sklearn中Kmeans与可视化">
+<meta name="twitter:description" content="KmeansK-means算法:                                                                                                           两个缺点:  Inertia makes the assumption that clusters are convex and isotropic, w">
+<meta name="twitter:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/%E7%AE%97%E6%B3%95km03.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hi" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!--  <link rel="stylesheet" href="/css/style.css?v=1.7.1"> -->
+    <link rel="stylesheet" href="/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgbrand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Wen bo</h5>
+          <a href="mailto:1871756080@qq.com" title="1871756080@qq.com" class="mail">1871756080@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wenbo8585" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Sklearn中Kmeans与可视化</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Sklearn中Kmeans与可视化</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-13T14:02:42.000Z" itemprop="datePublished" class="page-time">
+  2017-12-13
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/机器学习/">机器学习</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Kmeans"><span class="post-toc-number">1.</span> <span class="post-toc-text">Kmeans</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#聚类算法：from-sklearn-cluster-import-KMeans"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">聚类算法：from sklearn.cluster import KMeans</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Kmeans-1"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Kmeans++</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#code"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">code</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#降维"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">降维</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-kmeans-sklearn"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Sklearn中Kmeans与可视化</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-13 22:02:42" datetime="2017-12-13T14:02:42.000Z"  itemprop="datePublished">2017-12-13</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/机器学习/">机器学习</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Kmeans"><a href="#Kmeans" class="headerlink" title="Kmeans"></a>Kmeans</h1><p>K-means算法:<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/%E7%AE%97%E6%B3%95km03.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>两个缺点:</p>
+<ul>
+<li><p>Inertia makes the assumption that clusters are convex and isotropic, which is not always the case. It responds poorly to elongated clusters, or manifolds with irregular shapes.</p>
+</li>
+<li><p>Inertia is not a normalized metric: we just know that lower values are better and zero is optimal. But in very high-dimensional spaces, Euclidean distances tend to become inflated (this is an instance of the so-called “curse of dimensionality”). Running a dimensionality reduction algorithm such as PCA prior to k-means clustering can alleviate this problem and speed up the computations.</p>
+</li>
+</ul>
+<h2 id="聚类算法：from-sklearn-cluster-import-KMeans"><a href="#聚类算法：from-sklearn-cluster-import-KMeans" class="headerlink" title="聚类算法：from sklearn.cluster import KMeans"></a>聚类算法：from sklearn.cluster import KMeans</h2><a id="more"></a>
+<blockquote>
+<p>def <strong>init</strong>(self, n_clusters=8, init=’k-means++’, n_init=10, max_iter=300,tol=1e-4,precompute_distances=’auto’,verbose=0, random_state=None, copy_x=True, n_jobs=1):</p>
+<p>km_cluster = KMeans(n_clusters=num_clusters, max_iter=300, n_init=40,init=’k-means++’,n_jobs=-1)</p>
+</blockquote>
+<ul>
+<li>n_clusters : 分成的簇数也是要生成的质心数</li>
+<li>init: 初始化质心,默认值：采用 k-means++</li>
+<li>n_init: 设置选择质心种子次数，默认为10次。返回质心最好的一次结果（好是指计算时长短）</li>
+<li>max_ite: 每次迭代的最大次数</li>
+<li>tol: 容忍的最小误差，当误差小于tol就会退出迭代（算法中会依赖数据本身）,默认值：le-4(0.0001)</li>
+<li>precompute_distances: 这个参数会在空间和时间之间做权衡，如果是True 会把整个距离矩阵都放到内存中，auto 会默认在数据样本大于featurs*samples 的数量大于12e6 的时候False, 默认值：“auto”</li>
+<li>verbose:是否输出详细信息,默认值：False</li>
+<li>random_state: 随机生成器的种子 ，和初始化中心有关, 默认值：None</li>
+<li>copy_x:bool 在scikit-learn 很多接口中都会有这个参数的，就是是否对输入数据继续copy 操作，以便不修改用户的输入数据。这个要理解Python 的内存机制才会比较清楚。(待研究) 默认值：True</li>
+<li>n_jobs: 使用进程的数量，与电脑的CPU有关.默认值: 1</li>
+</ul>
+<h3 id="Kmeans-1"><a href="#Kmeans-1" class="headerlink" title="Kmeans++"></a>Kmeans++</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/%E7%AE%97%E6%B3%95km04.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>能够解决kmeans对噪声敏感的问题。kmeans寻找种子点的时候计算该类中所有样本的平均值，如果该类中具有较为明显的离群点，会造成种子点与期望偏差过大。例如，A(1,1),B(2,2),C(3,3),D(1000,1000)，显然D点会拉动种子点向其偏移。这样，在下一轮迭代时，将大量不该属于该类的样本点错误的划入该类。为了解决这个问题，kmedoids方法采取新的种子点选取方式:</p>
+<p>1）只从样本点中选；<br>2）选取标准能够提高聚类效果，例如最小化J函数，或者自定义其他的代价函数。但是，kmedoids方法提高了聚类的复杂度。  </p>
+<p>k-means++算法选择初始seeds的基本思想就是：初始的聚类中心之间的相互距离要尽可能的远。</p>
+<p>wiki上对该算法的描述如下:</p>
+<ol>
+<li>从输入的数据点集合中随机选择一个点作为第一个聚类中心</li>
+<li>对于数据集中的每一个点x，计算它与最近聚类中心(指已选择的聚类中心)的距离D(x)</li>
+<li>选择一个新的数据点作为新的聚类中心，选择的原则是：D(x)较大的点，被选取作为聚类中心的概率较大</li>
+<li>重复2和3直到k个聚类中心被选出来</li>
+<li>利用这k个初始的聚类中心来运行标准的k-means算法</li>
+</ol>
+<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><blockquote>
+<p>import</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans</span><br><span class="line"><span class="keyword">from</span> sklearn.externals <span class="keyword">import</span> joblib</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn.manifold <span class="keyword">import</span> TSNE</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// load data</span><br><span class="line">  print(<span class="string">'Load data...'</span>)</span><br><span class="line">  dataSet = []</span><br><span class="line">  fileIn = open(<span class="string">'./result1.txt'</span>)</span><br><span class="line">// result1 是一个<span class="number">10986</span>x34行，一列的数据</span><br><span class="line">  <span class="keyword">for</span> line <span class="keyword">in</span> fileIn.readlines():</span><br><span class="line">      a = line.strip().split(<span class="string">' '</span>)</span><br><span class="line">      dataSet.append(float(a[<span class="number">0</span>]))</span><br><span class="line">  B = np.reshape(dataSet,(<span class="number">10986</span>,<span class="number">34</span>))</span><br><span class="line"></span><br><span class="line">// 聚类数</span><br><span class="line">  num_clusters = <span class="number">26</span></span><br><span class="line">  km_cluster = KMeans(n_clusters=num_clusters, max_iter=<span class="number">300</span>, n_init=<span class="number">40</span>, \</span><br><span class="line">                  init=<span class="string">'k-means++'</span>,n_jobs=<span class="number">-1</span>)</span><br><span class="line">// 聚类label结果</span><br><span class="line">  result = km_cluster.fit_predict(B)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">print</span> (<span class="string">"Predicting result: "</span>, result)</span><br><span class="line">  np.savetxt(<span class="string">"a.txt"</span>,result)</span><br></pre></td></tr></table></figure>
+<h2 id="降维"><a href="#降维" class="headerlink" title="降维"></a>降维</h2><p>(二向箔？)<br>将高维的聚类数据在降到二维上显示，使用 sklearn 的 TSNE.</p>
+<blockquote>
+<p>code1：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// B 是<span class="number">34</span>维 x <span class="number">10986</span></span><br><span class="line">XX = B</span><br><span class="line">// result 是所聚的label</span><br><span class="line">YY = result</span><br><span class="line">// 可视化</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_embedding</span><span class="params">(X, title=None)</span>:</span></span><br><span class="line">    x_min, x_max = np.min(X, <span class="number">0</span>), np.max(X, <span class="number">0</span>)</span><br><span class="line">    X = (X - x_min) / (x_max - x_min)</span><br><span class="line"></span><br><span class="line">    plt.figure()</span><br><span class="line">    ax = plt.subplot(<span class="number">111</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(X.shape[<span class="number">0</span>]):</span><br><span class="line">        plt.text(X[i, <span class="number">0</span>], X[i, <span class="number">1</span>], str(YY[i]),</span><br><span class="line">                 color=plt.cm.Set1(YY[i] / <span class="number">10.</span>),</span><br><span class="line">                 fontdict=&#123;<span class="string">'weight'</span>: <span class="string">'bold'</span>, <span class="string">'size'</span>: <span class="number">9</span>&#125;)</span><br><span class="line">    plt.xticks([]), plt.yticks([])</span><br><span class="line">    <span class="keyword">if</span> title <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        plt.title(title)</span><br><span class="line"></span><br><span class="line">// t-SNE embedding of the digits dataset</span><br><span class="line">print(<span class="string">"Computing t-SNE embedding"</span>)</span><br><span class="line">tsne = TSNE(n_components=<span class="number">2</span>, init=<span class="string">'pca'</span>, random_state=<span class="number">0</span>)</span><br><span class="line">t0 = time()</span><br><span class="line">X_tsne = tsne.fit_transform(B)</span><br><span class="line"></span><br><span class="line">plot_embedding(X_tsne,<span class="string">"t-SNE embedding of the digits (time %.2fs)"</span> % (time() - t0))</span><br><span class="line">// plot_embedding_3d(X_tsne,<span class="string">"t-SNE embedding of the digits (time %.2fs)"</span> % (time() - t0))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>效果图：<br>(分类太多看不清楚233333)<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/%E7%AE%97%E6%B3%95km02.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<blockquote>
+<p>code 2 :( 网路上 )</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">from</span> sklearn.manifold <span class="keyword">import</span> TSNE</span><br><span class="line">tsne = TSNE()</span><br><span class="line">tsne.fit_transform(data_zs) // 进行数据降维</span><br><span class="line">tsne = pd.DataFrame(tsne.embedding_, index = data_zs.index) //转换数据格式</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>] //用来正常显示中文标签</span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="keyword">False</span> //用来正常显示负号</span><br><span class="line">//不同类别用不同颜色和样式绘图</span><br><span class="line">d = tsne[r[<span class="string">u'聚类类别'</span>] == <span class="number">0</span>]</span><br><span class="line">plt.plot(d[<span class="number">0</span>], d[<span class="number">1</span>], <span class="string">'r.'</span>)</span><br><span class="line">d = tsne[r[<span class="string">u'聚类类别'</span>] == <span class="number">1</span>]</span><br><span class="line">plt.plot(d[<span class="number">0</span>], d[<span class="number">1</span>], <span class="string">'go'</span>)</span><br><span class="line">d = tsne[r[<span class="string">u'聚类类别'</span>] == <span class="number">2</span>]</span><br><span class="line">plt.plot(d[<span class="number">0</span>], d[<span class="number">1</span>], <span class="string">'b*'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-01-13T08:52:35.430Z" itemprop="dateUpdated">2018-01-13 16:52:35</time>
+</span><br>
+
+
+        
+        BiuBiuBiu~~~~
+        
+    </div>
+    <footer>
+        <a href="http://wenbo.fun">
+            <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" alt="Wen bo">
+            Wen bo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kmeans/">Kmeans</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/聚类/">聚类</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2017/12/13/kmeans-sklearn/&title=《Sklearn中Kmeans与可视化》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2017/12/13/kmeans-sklearn/&title=《Sklearn中Kmeans与可视化》 — Hi&source=KmeansK-means算法:
+                
+                    
+                    
+ ..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2017/12/13/kmeans-sklearn/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Sklearn中Kmeans与可视化》 — Hi&url=http://wenbo.fun/2017/12/13/kmeans-sklearn/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2017/12/13/kmeans-sklearn/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/12/20/sf001/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">递归与分治---棋盘覆盖</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/12/13/keras/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">keras</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "xVQIAhS8Iaa22qibuCeoAjj2-gzGzoHsz",
+            appKey: "GEc59stbeS88ePxaVibVE1Db",
+            avatar: "monsterid",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Wen bo &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2017/12/13/kmeans-sklearn/&title=《Sklearn中Kmeans与可视化》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2017/12/13/kmeans-sklearn/&title=《Sklearn中Kmeans与可视化》 — Hi&source=KmeansK-means算法:
+                
+                    
+                    
+ ..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2017/12/13/kmeans-sklearn/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Sklearn中Kmeans与可视化》 — Hi&url=http://wenbo.fun/2017/12/13/kmeans-sklearn/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2017/12/13/kmeans-sklearn/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aQY7CMAwFUO5/aWaLhEq/7TKiyesKDYXmsfgTx3484uv5cr3/5eh6vfP9245ev99/2YWBgXFbRr6U/N1k0Z9/oHxtGBgY+zCOEmyylJMHx7H+eW0YGBgY1XvyaK5uHDEwMDB6jOTdpEDNC2AMDIydGfmRWXVrWD1W+3otjoGBcUNGfur+/6+/0t/AwMC4FeNZvCbUebwergoDA2NpxrUlaH5/uUBN1oOBgbEo4/N4RP5uEq+98a/oTgwMjI0Z+QauWmkmsEKzEwMDYwNGNbXyQjQ/GZuUvhgYGGszeu2BaptzEtAXAzAwMG7IyB88CdDJFjD6CTAwMDZgJAHa2ybmgxTV+D6sxTEwMJZj5O2ByWaxGt/NAQ4MDIylGdXhiV4pm4dvvoZHL/sxMDBuzuhFXm8gY9KcwMDA2JPR+3B1w1c9gCsX1RgYGMsx8uP+vLVZ3Urm33n4A2FgYCzNqH5F7/isGrh5CwEDA2MfRh6XedMxefA8ypupj4GBcVvGvG05D+LR1hADA2MbxuSR81ZlNY4LFS0GBsZyjDz+qiVoNVILn8LAwFiUMdnk9UrffBSjMHCGgYGxNGOe1pNDt3w4ozAzgoGBsSgjCdneIEWvm9qcbsPAwNiAcVXw5cvq/Qc42ediYGBgjLeJk7A+iXIMDAyM4nHYtQMWydMxMDB2YOSH9dUxi2qboTqahoGBsQPjqpmr3hBY9Zu/PjqGgYHxW4w/cxcD8eTROs0AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+    
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="225" height="450"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:1;
+    right: 50px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -60px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/unitychan.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>
