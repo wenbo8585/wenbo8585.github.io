@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-01-26T09:43:55.010Z</updated>
+  <updated>2018-01-30T07:28:45.222Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="http://wenbo.fun/2018/01/26/MLforward/"/>
     <id>http://wenbo.fun/2018/01/26/MLforward/</id>
     <published>2018-01-26T05:39:12.000Z</published>
-    <updated>2018-01-26T09:43:55.010Z</updated>
+    <updated>2018-01-30T07:28:45.222Z</updated>
     
     <summary type="html">
     
-      &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=4405800&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
+      &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=417250787&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
 
 &lt;h1 id=&quot;Linear-Algebra&quot;&gt;&lt;a href=&quot;#Linear-Algebra&quot; class=&quot;headerlink&quot; title=&quot;Linear Algebra&quot;&gt;&lt;/a&gt;Linear Algebra&lt;/h1&gt;&lt;h2 id=&quot;Matrix&quot;&gt;&lt;a href=&quot;#Matrix&quot; class=&quot;headerlink&quot; title=&quot;Matrix&quot;&gt;&lt;/a&gt;Matrix&lt;/h2&gt;&lt;ul&gt;
 &lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Scalar、Vector、Tensor&lt;/li&gt;
