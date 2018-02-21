@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-02-02T12:27:32.973Z</updated>
+  <updated>2018-02-15T12:00:26.717Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -17,25 +17,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python教程(2/3)</title>
+    <link href="http://wenbo.fun/2018/02/03/myPython-a/"/>
+    <id>http://wenbo.fun/2018/02/03/myPython-a/</id>
+    <published>2018-02-03T05:24:08.000Z</published>
+    <updated>2018-02-15T12:00:26.717Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;面向对象编程&quot;&gt;&lt;a href=&quot;#面向对象编程&quot; class=&quot;headerlink&quot; title=&quot;面向对象编程&quot;&gt;&lt;/a&gt;面向对象编程&lt;/h1&gt;&lt;p&gt;面向对象编程——&lt;code&gt;Object Oriented Programming&lt;/code&gt;，简称&lt;code&gt;OOP&lt;/code&gt;，是一种程序设计思想。&lt;code&gt;OOP&lt;/code&gt;把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。&lt;br&gt;在Python中，所有数据类型都可以视为对象，当然也可以自定义对象。自定义的对象数据类型就是面向对象中的 &lt;strong&gt;类（Class）&lt;/strong&gt; 的概念。&lt;br&gt;给对象发消息实际上就是调用对象对应的关联函数，我们称之为对象的 &lt;strong&gt;方法（Method）&lt;/strong&gt;。&lt;br&gt;数据封装、继承和多态是面向对象的三大特点，我们后面会详细讲解。&lt;/p&gt;
+&lt;h2 id=&quot;类和实例&quot;&gt;&lt;a href=&quot;#类和实例&quot; class=&quot;headerlink&quot; title=&quot;类和实例&quot;&gt;&lt;/a&gt;类和实例&lt;/h2&gt;&lt;p&gt;面向对象最重要的概念就是类（Class）和实例（Instance），必须牢记类是抽象的模板，比如Student类，而实例是根据类创建出来的一个个具体的“对象”，每个对象都拥有相同的方法，但各自的数据可能不同。&lt;/p&gt;
+&lt;p&gt;仍以Student类为例，在Python中，定义类是通过&lt;code&gt;class&lt;/code&gt;关键字：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(object)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;pass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="编程语言" scheme="http://wenbo.fun/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="Python" scheme="http://wenbo.fun/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ML_Foundation</title>
     <link href="http://wenbo.fun/2018/01/26/MLforward/"/>
     <id>http://wenbo.fun/2018/01/26/MLforward/</id>
     <published>2018-01-26T05:39:12.000Z</published>
-    <updated>2018-02-02T12:27:32.973Z</updated>
+    <updated>2018-02-21T09:10:12.853Z</updated>
     
     <summary type="html">
     
       &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=417250787&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
 
-&lt;h1 id=&quot;Linear-Algebra&quot;&gt;&lt;a href=&quot;#Linear-Algebra&quot; class=&quot;headerlink&quot; title=&quot;Linear Algebra&quot;&gt;&lt;/a&gt;Linear Algebra&lt;/h1&gt;&lt;h2 id=&quot;point&quot;&gt;&lt;a href=&quot;#point&quot; class=&quot;headerlink&quot; title=&quot;point&quot;&gt;&lt;/a&gt;point&lt;/h2&gt;&lt;ul&gt;
+&lt;h1 id=&quot;Linear-Algebra&quot;&gt;&lt;a href=&quot;#Linear-Algebra&quot; class=&quot;headerlink&quot; title=&quot;Linear Algebra&quot;&gt;&lt;/a&gt;Linear Algebra&lt;/h1&gt;&lt;h2 id=&quot;Point&quot;&gt;&lt;a href=&quot;#Point&quot; class=&quot;headerlink&quot; title=&quot;Point&quot;&gt;&lt;/a&gt;Point&lt;/h2&gt;&lt;ul&gt;
 &lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Scalar、Vector、Tensor&lt;/li&gt;
-&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Identity Matrix&lt;/li&gt;
-&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; $A^T$ (transpose of A)&lt;/li&gt;
+&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Identity Matrix、$A^T$ (transpose of A)&lt;/li&gt;
 &lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Matrix-Vector Product&lt;/li&gt;
-&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; span、generate space&lt;/li&gt;
+&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Span、Generate Space、Subspace、Eigenspace&lt;/li&gt;
 &lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Linear Dependent、Rank&lt;/li&gt;
-&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot;&gt; $[A|b]$ (Augmented Matrix)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; $[A|b]$ (Augmented Matrix)&lt;/li&gt;
+&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Matrix Multiplication&lt;/li&gt;
+&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Inverse of a Matrix&lt;/li&gt;
+&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Basis
     
     </summary>
     
@@ -502,9 +526,9 @@
     
       <category term="人脸识别" scheme="http://wenbo.fun/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
     
-      <category term="TensorFlow" scheme="http://wenbo.fun/tags/TensorFlow/"/>
-    
       <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
+    
+      <category term="TensorFlow" scheme="http://wenbo.fun/tags/TensorFlow/"/>
     
   </entry>
   
@@ -526,9 +550,9 @@
     
       <category term="人脸识别" scheme="http://wenbo.fun/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
     
-      <category term="TensorFlow" scheme="http://wenbo.fun/tags/TensorFlow/"/>
-    
       <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
+    
+      <category term="TensorFlow" scheme="http://wenbo.fun/tags/TensorFlow/"/>
     
   </entry>
   
@@ -542,30 +566,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;dlib批量识别其他图片集&quot;&gt;&lt;a href=&quot;#dlib批量识别其他图片集&quot; class=&quot;headerlink&quot; title=&quot;dlib批量识别其他图片集&quot;&gt;&lt;/a&gt;dlib批量识别其他图片集&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="人脸识别" scheme="http://wenbo.fun/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
-    
-    
-      <category term="人脸识别" scheme="http://wenbo.fun/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
-    
-      <category term="Dlib" scheme="http://wenbo.fun/tags/Dlib/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>人脸识别01：dlib获取图片集</title>
-    <link href="http://wenbo.fun/2017/12/08/face-recognition-dlib/"/>
-    <id>http://wenbo.fun/2017/12/08/face-recognition-dlib/</id>
-    <published>2017-12-08T03:09:34.000Z</published>
-    <updated>2018-01-13T08:53:00.741Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Dlib&quot;&gt;&lt;a href=&quot;#Dlib&quot; class=&quot;headerlink&quot; title=&quot;Dlib&quot;&gt;&lt;/a&gt;Dlib&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://dlib.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Dlib&lt;/a&gt; 是一个跨平台的C++公共库，除了线程支持，网络支持，提供测试以及大量工具等等优点，Dlib还是一个强大的机器学习的C++库，包含了许多机器学习常用的算法，而且它还不依赖其他库。&lt;/p&gt;
-&lt;/blockquote&gt;
     
     </summary>
     
