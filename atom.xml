@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-02-15T12:00:26.717Z</updated>
+  <updated>2018-02-28T16:14:34.191Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://wenbo.fun/2018/02/03/myPython-a/"/>
     <id>http://wenbo.fun/2018/02/03/myPython-a/</id>
     <published>2018-02-03T05:24:08.000Z</published>
-    <updated>2018-02-15T12:00:26.717Z</updated>
+    <updated>2018-02-28T16:14:34.191Z</updated>
     
     <summary type="html">
     
@@ -44,7 +44,7 @@
     <link href="http://wenbo.fun/2018/01/26/MLforward/"/>
     <id>http://wenbo.fun/2018/01/26/MLforward/</id>
     <published>2018-01-26T05:39:12.000Z</published>
-    <updated>2018-02-21T09:10:12.853Z</updated>
+    <updated>2018-02-24T06:00:32.670Z</updated>
     
     <summary type="html">
     
@@ -59,7 +59,8 @@
 &lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; $[A|b]$ (Augmented Matrix)&lt;/li&gt;
 &lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Matrix Multiplication&lt;/li&gt;
 &lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Inverse of a Matrix&lt;/li&gt;
-&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Basis
+&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot; checked&gt; Basis&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
