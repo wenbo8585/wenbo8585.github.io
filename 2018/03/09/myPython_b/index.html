@@ -20,19 +20,19 @@
     
     
     <meta name="keywords" content="Python">
-    <meta name="description" content="IO编程本章的IO编程都是同步模式 文件读写Python内置了读写文件的函数，用法和C是兼容的。 读文件 要以读文件的模式打开一个文件对象，使用Python内置的open()函数，传入文件名和标示符： 1&amp;gt;&amp;gt;&amp;gt; f = open(&apos;/Users/michael/test.txt&apos;, &apos;r&apos;) 标示符’r’表示读，这样，我们就成功地打开了一个文件。 如果文件不存在，open()函数">
+    <meta name="description" content="IO编程本章的IO编程都是同步模式 文件读写Python内置了读写文件的函数，用法和C是兼容的。 读文件 要以读文件的模式打开一个文件对象，使用Python内置的open()函数，传入文件名和标示符： 1&amp;gt;&amp;gt;&amp;gt; f = open(&apos;/Users/michael/test.txt&apos;, &apos;r&apos;) 标示符’r’表示读，这样，我们就成功地打开了一个文件。">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python教程笔记(3&#x2F;4)">
 <meta property="og:url" content="http://wenbo.fun/2018/03/09/myPython_b/index.html">
 <meta property="og:site_name" content="Hi">
-<meta property="og:description" content="IO编程本章的IO编程都是同步模式 文件读写Python内置了读写文件的函数，用法和C是兼容的。 读文件 要以读文件的模式打开一个文件对象，使用Python内置的open()函数，传入文件名和标示符： 1&amp;gt;&amp;gt;&amp;gt; f = open(&apos;/Users/michael/test.txt&apos;, &apos;r&apos;) 标示符’r’表示读，这样，我们就成功地打开了一个文件。 如果文件不存在，open()函数">
+<meta property="og:description" content="IO编程本章的IO编程都是同步模式 文件读写Python内置了读写文件的函数，用法和C是兼容的。 读文件 要以读文件的模式打开一个文件对象，使用Python内置的open()函数，传入文件名和标示符： 1&amp;gt;&amp;gt;&amp;gt; f = open(&apos;/Users/michael/test.txt&apos;, &apos;r&apos;) 标示符’r’表示读，这样，我们就成功地打开了一个文件。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img1833.png">
-<meta property="og:updated_time" content="2018-03-10T00:53:13.106Z">
+<meta property="og:updated_time" content="2018-03-10T01:17:32.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python教程笔记(3&#x2F;4)">
-<meta name="twitter:description" content="IO编程本章的IO编程都是同步模式 文件读写Python内置了读写文件的函数，用法和C是兼容的。 读文件 要以读文件的模式打开一个文件对象，使用Python内置的open()函数，传入文件名和标示符： 1&amp;gt;&amp;gt;&amp;gt; f = open(&apos;/Users/michael/test.txt&apos;, &apos;r&apos;) 标示符’r’表示读，这样，我们就成功地打开了一个文件。 如果文件不存在，open()函数">
+<meta name="twitter:description" content="IO编程本章的IO编程都是同步模式 文件读写Python内置了读写文件的函数，用法和C是兼容的。 读文件 要以读文件的模式打开一个文件对象，使用Python内置的open()函数，传入文件名和标示符： 1&amp;gt;&amp;gt;&amp;gt; f = open(&apos;/Users/michael/test.txt&apos;, &apos;r&apos;) 标示符’r’表示读，这样，我们就成功地打开了一个文件。">
 <meta name="twitter:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img1833.png">
     
         <link rel="alternate" type="application/atom+xml" title="Hi" href="/atom.xml">
@@ -201,6 +201,7 @@
 <p>要以读文件的模式打开一个文件对象，使用Python内置的<code>open()</code>函数，传入文件名和标示符：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = open(<span class="string">'/Users/michael/test.txt'</span>, <span class="string">'r'</span>)</span><br></pre></td></tr></table></figure>
 <p>标示符’r’表示读，这样，我们就成功地打开了一个文件。</p>
+<a id="more"></a>
 <p>如果文件不存在，<code>open()</code>函数就会抛出一个<code>IOError</code>的错误，并且给出错误码和详细的信息告诉你文件不存在：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f=open(<span class="string">'/Users/michael/notfound.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">FileNotFoundError: [Errno <span class="number">2</span>] No such file <span class="keyword">or</span> directory: <span class="string">'/Users/michael/notfound.txt'</span></span><br></pre></td></tr></table></figure>
 <p>如果文件打开成功，接下来，调用<code>read()</code>方法可以一次读取文件的全部内容，Python把内容读到内存，用一个<code>str</code>对象表示：</p>
@@ -719,7 +720,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-10T00:53:13.106Z" itemprop="dateUpdated">2018-03-10 08:53:13</time>
+    Last updated: <time datetime="2018-03-10T01:17:32.604Z" itemprop="dateUpdated">2018-03-10 09:17:32</time>
 </span><br>
 
 
@@ -760,7 +761,10 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/09/myPython_b/&title=《Python教程笔记(3/4)》 — Hi&source=A little home" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/09/myPython_b/&title=《Python教程笔记(3/4)》 — Hi&source=IO编程本章的IO编程都是同步模式
+文件读写Python内置了读写文件的函数，用法和C是兼容的。
+读文件
+要以读文件的模式打开一个文件对象，使用Pytho..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -904,7 +908,10 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/09/myPython_b/&title=《Python教程笔记(3/4)》 — Hi&source=A little home" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/09/myPython_b/&title=《Python教程笔记(3/4)》 — Hi&source=IO编程本章的IO编程都是同步模式
+文件读写Python内置了读写文件的函数，用法和C是兼容的。
+读文件
+要以读文件的模式打开一个文件对象，使用Pytho..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

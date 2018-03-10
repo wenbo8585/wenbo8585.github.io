@@ -6,11 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-<<<<<<< HEAD
-  <updated>2018-03-10T00:53:13.106Z</updated>
-=======
-  <updated>2018-03-03T15:13:19.878Z</updated>
->>>>>>> 511d0bf052760e9441bb03693e8ec9e5887e32a2
+  <updated>2018-03-10T01:17:32.604Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -22,22 +18,19 @@
   
   <entry>
     <title>Python教程笔记(3/4)</title>
-<<<<<<< HEAD
     <link href="http://wenbo.fun/2018/03/09/myPython_b/"/>
     <id>http://wenbo.fun/2018/03/09/myPython_b/</id>
     <published>2018-03-09T15:24:08.000Z</published>
-    <updated>2018-03-10T00:53:13.106Z</updated>
+    <updated>2018-03-10T01:17:32.604Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;IO编程&quot;&gt;&lt;a href=&quot;#IO编程&quot; class=&quot;headerlink&quot; title=&quot;IO编程&quot;&gt;&lt;/a&gt;IO编程&lt;/h1&gt;&lt;p&gt;本章的IO编程都是同步模式&lt;/p&gt;
-&lt;h2 id=&quot;文件读写&quot;&gt;&lt;a href=&quot;#文件读写&quot;
-        
-      
+      &lt;h1 id=&quot;IO编程&quot;&gt;&lt;a href=&quot;#IO编程&quot; class=&quot;headerlink&quot; title=&quot;IO编程&quot;&gt;&lt;/a&gt;IO编程&lt;/h1&gt;&lt;p&gt;本章的IO编程都是同步模式&lt;/p&gt;
+&lt;h2 id=&quot;文件读写&quot;&gt;&lt;a href=&quot;#文件读写&quot; class=&quot;headerlink&quot; title=&quot;文件读写&quot;&gt;&lt;/a&gt;文件读写&lt;/h2&gt;&lt;p&gt;Python内置了读写文件的函数，用法和C是兼容的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;读文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;要以读文件的模式打开一个文件对象，使用Python内置的&lt;code&gt;open()&lt;/code&gt;函数，传入文件名和标示符：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;f = open(&lt;span class=&quot;string&quot;&gt;&#39;/Users/michael/test.txt&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;r&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;标示符’r’表示读，这样，我们就成功地打开了一个文件。&lt;/p&gt;
     
     </summary>
     
@@ -54,23 +47,41 @@
     <id>http://wenbo.fun/2018/03/09/cs231n_m1_1/</id>
     <published>2018-03-09T09:15:17.000Z</published>
     <updated>2018-03-08T13:08:02.256Z</updated>
-=======
-    <link href="http://wenbo.fun/2018/03/01/myPython_b/"/>
-    <id>http://wenbo.fun/2018/03/01/myPython_b/</id>
-    <published>2018-03-01T07:49:18.000Z</published>
-    <updated>2018-03-03T15:13:19.878Z</updated>
->>>>>>> 511d0bf052760e9441bb03693e8ec9e5887e32a2
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;IO编程&quot;&gt;&lt;a href=&quot;#IO编程&quot; class=&quot;headerlink&quot; title=&quot;IO编程&quot;&gt;&lt;/a&gt;IO编程&lt;/h1&gt;&lt;p&gt;本章的IO编程都是同步模式&lt;/p&gt;
-&lt;h2 id=&quot;文件读写&quot;&gt;&lt;a href=&quot;#文件读写&quot;
-        
-      
+      &lt;h1 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Assignment Git:&lt;br&gt;&lt;a href=&quot;https://github.com/CS231n-zju/CS231n&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/CS231n-zju/CS231n&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;视频地址：&lt;br&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;课程作业：&lt;br&gt;&lt;a href=&quot;http://cs231n.github.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cs231n.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Syllabus:&lt;br&gt;&lt;a href=&quot;http://cs231n.stanford.edu/syllabus.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cs231n.stanford.edu/syllabus.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note翻译:&lt;br&gt;&lt;a href=&quot;http://www.52ml.net/17723.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.52ml.net/17723.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;Module-1-1&quot;&gt;&lt;a href=&quot;#Module-1-1&quot; class=&quot;headerlink&quot; title=&quot;Module 1.1&quot;&gt;&lt;/a&gt;Module 1.1&lt;/h1&gt;&lt;h2 id=&quot;Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition&quot;&gt;&lt;a href=&quot;#Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition&quot; class=&quot;headerlink&quot; title=&quot;Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition&quot;&gt;&lt;/a&gt;Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2012 CNN ImageNet&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python教程笔记 (2/4)</title>
+    <link href="http://wenbo.fun/2018/02/03/myPython-a/"/>
+    <id>http://wenbo.fun/2018/02/03/myPython-a/</id>
+    <published>2018-02-03T05:24:08.000Z</published>
+    <updated>2018-03-03T18:13:14.490Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;面向对象编程&quot;&gt;&lt;a href=&quot;#面向对象编程&quot; class=&quot;headerlink&quot; title=&quot;面向对象编程&quot;&gt;&lt;/a&gt;面向对象编程&lt;/h1&gt;&lt;p&gt;面向对象编程——&lt;code&gt;Object Oriented Programming&lt;/code&gt;，简称&lt;code&gt;OOP&lt;/code&gt;，是一种程序设计思想。&lt;code&gt;OOP&lt;/code&gt;把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。&lt;br&gt;在Python中，所有数据类型都可以视为对象，当然也可以自定义对象。自定义的对象数据类型就是面向对象中的 &lt;strong&gt;类（Class）&lt;/strong&gt; 的概念。&lt;br&gt;给对象发消息实际上就是调用对象对应的关联函数，我们称之为对象的 &lt;strong&gt;方法（Method）&lt;/strong&gt;。&lt;br&gt;数据封装、继承和多态是面向对象的三大特点，我们后面会详细讲解。&lt;/p&gt;
+&lt;h2 id=&quot;类和实例&quot;&gt;&lt;a href=&quot;#类和实例&quot; class=&quot;headerlink&quot; title=&quot;类和实例&quot;&gt;&lt;/a&gt;类和实例&lt;/h2&gt;&lt;p&gt;面向对象最重要的概念就是类（Class）和实例（Instance），必须牢记类是抽象的模板，比如Student类，而实例是根据类创建出来的一个个具体的“对象”，每个对象都拥有相同的方法，但各自的数据可能不同。&lt;/p&gt;
+&lt;p&gt;仍以Student类为例，在Python中，定义类是通过&lt;code&gt;class&lt;/code&gt;关键字：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(object)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;pass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -81,7 +92,6 @@
     
   </entry>
   
-<<<<<<< HEAD
   <entry>
     <title>ML_Foundation</title>
     <link href="http://wenbo.fun/2018/01/26/MLforward/"/>
@@ -576,6 +586,4 @@
     
   </entry>
   
-=======
->>>>>>> 511d0bf052760e9441bb03693e8ec9e5887e32a2
 </feed>
