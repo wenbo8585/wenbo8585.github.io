@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>CS231n学习笔记 Module 1.1 | Hi | My best salutations are to them who knew me imperfect and loved me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#81D8CF">
+    
+    
+    <meta name="keywords" content="笔记">
+    <meta name="description" content="Abstract Assignment Git:https://github.com/CS231n-zju/CS231n 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231n.github.io/ Syll">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS231n学习笔记 Module 1.1">
+<meta property="og:url" content="http://wenbo.fun/2018/03/09/cs231n_m1_1/index.html">
+<meta property="og:site_name" content="Hi">
+<meta property="og:description" content="Abstract Assignment Git:https://github.com/CS231n-zju/CS231n 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231n.github.io/ Syll">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-03-08T13:08:02.256Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CS231n学习笔记 Module 1.1">
+<meta name="twitter:description" content="Abstract Assignment Git:https://github.com/CS231n-zju/CS231n 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231n.github.io/ Syll">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hi" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!--  <link rel="stylesheet" href="/css/style.css?v=1.7.1"> -->
+    <link rel="stylesheet" href="/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgbrand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Wen bo</h5>
+          <a href="mailto:1871756080@qq.com" title="1871756080@qq.com" class="mail">1871756080@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wenbo8585" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CS231n学习笔记 Module 1.1</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CS231n学习笔记 Module 1.1</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-09T09:15:17.000Z" itemprop="datePublished" class="page-time">
+  2018-03-09
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Module-1-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">Module 1.1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Image-Classification"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Image Classification</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#The-image-classification-pipeline"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">The image classification pipeline</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Nearest-Neighbor-Classifier"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Nearest Neighbor Classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#k-Nearest-Neighbor-Classifier"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">k - Nearest Neighbor Classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Validation-sets-for-Hyperparameter-tuning-用于超参数调优的验证集"><span class="post-toc-number">2.1.5.</span> <span class="post-toc-text">Validation sets for Hyperparameter tuning (用于超参数调优的验证集)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#N-fold-cross-validation"><span class="post-toc-number">2.1.6.</span> <span class="post-toc-text">N-fold cross-validation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Pros-and-Cons-of-Nearest-Neighbor-classifier"><span class="post-toc-number">2.1.7.</span> <span class="post-toc-text">Pros and Cons of Nearest Neighbor classifier</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unknown-words"><span class="post-toc-number">3.</span> <span class="post-toc-text">Unknown words</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-cs231n_m1_1"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CS231n学习笔记 Module 1.1</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-09 17:15:17" datetime="2018-03-09T09:15:17.000Z"  itemprop="datePublished">2018-03-09</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><blockquote>
+<p>Assignment Git:<br><a href="https://github.com/CS231n-zju/CS231n" target="_blank" rel="noopener">https://github.com/CS231n-zju/CS231n</a></p>
+<p>视频地址：<br><a href="https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;index=2&amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo" target="_blank" rel="noopener">https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;index=2&amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo</a></p>
+<p>课程作业：<br><a href="http://cs231n.github.io/" target="_blank" rel="noopener">http://cs231n.github.io/</a></p>
+<p>Syllabus:<br><a href="http://cs231n.stanford.edu/syllabus.html" target="_blank" rel="noopener">http://cs231n.stanford.edu/syllabus.html</a></p>
+<p>Note翻译:<br><a href="http://www.52ml.net/17723.html" target="_blank" rel="noopener">http://www.52ml.net/17723.html</a></p>
+</blockquote>
+<h1 id="Module-1-1"><a href="#Module-1-1" class="headerlink" title="Module 1.1"></a>Module 1.1</h1><h2 id="Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition"><a href="#Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition" class="headerlink" title="Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition"></a>Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition</h2><p><strong>NOTE</strong></p>
+<ul>
+<li>2012 CNN ImageNet</li>
+</ul>
+<a id="more"></a>
+<h3 id="Image-Classification"><a href="#Image-Classification" class="headerlink" title="Image Classification"></a>Image Classification</h3><p><strong>Challenges</strong></p>
+<ul>
+<li>Viewpoint variation</li>
+<li>Scale variation</li>
+<li>Deformation</li>
+<li>Occlusion</li>
+<li>Illumination conditions</li>
+<li>Background clutter</li>
+<li>Intra-class variation： The classes of interest can often be relatively broad, such as chair. There are many different types of these objects, each with their own appearance.(一类物体的个体之间的外形差异很大，比如椅子。这一类物体有许多不同的对象，每个都有自己的外形。)</li>
+</ul>
+<h3 id="The-image-classification-pipeline"><a href="#The-image-classification-pipeline" class="headerlink" title="The image classification pipeline"></a>The image classification pipeline</h3><ul>
+<li>Input: training set.</li>
+<li>Learning: training a classifier, or learning a model.</li>
+<li>Evaluation: In the end, we evaluate the quality of the classifier by asking it to predict labels for a new set of images that it has never seen before.</li>
+</ul>
+<h3 id="Nearest-Neighbor-Classifier"><a href="#Nearest-Neighbor-Classifier" class="headerlink" title="Nearest Neighbor Classifier"></a>Nearest Neighbor Classifier</h3><p>How we compare two images?</p>
+<p> <strong>L1 distance</strong>: $$d(I_1,I_2)=\sum|I_1^p - I_2^p|$$</p>
+<p>As an evaluation criterion, it is common to use the <strong>accuracy</strong>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NearestNeighbor</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">(self, X, y)</span>:</span></span><br><span class="line">    <span class="string">""" X is N x D where each row is an example. Y is 1-dimension of size N """</span></span><br><span class="line">    <span class="comment"># the nearest neighbor classifier simply remembers all the training data</span></span><br><span class="line">    self.Xtr = X</span><br><span class="line">    self.ytr = y</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, X)</span>:</span></span><br><span class="line">    <span class="string">""" X is N x D where each row is an example we wish to predict label for """</span></span><br><span class="line">    num_test = X.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># lets make sure that the output type matches the input type</span></span><br><span class="line">    Ypred = np.zeros(num_test, dtype = self.ytr.dtype)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># loop over all test rows</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(num_test):</span><br><span class="line">      <span class="comment"># find the nearest training image to the i'th test image</span></span><br><span class="line">      <span class="comment"># using the L1 distance (sum of absolute value differences)</span></span><br><span class="line">      distances = np.sum(np.abs(self.Xtr - X[i,:]), axis = <span class="number">1</span>)</span><br><span class="line">      min_index = np.argmin(distances) <span class="comment"># get the index with smallest distance</span></span><br><span class="line">      Ypred[i] = self.ytr[min_index] <span class="comment"># predict the label of the nearest example</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Ypred</span><br></pre></td></tr></table></figure>
+<p><strong>L2 distance(欧氏距离)</strong>: $$d(I_1,I_2)=\sqrt{\sum_p{|I_1^p - I_2^p|}^2}$$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distances = np.sqrt(np.sum(np.square(self.Xtr - X[i,:]), axis = <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p>the L2 distance is much more unforgiving than the L1 distance.</p>
+<h3 id="k-Nearest-Neighbor-Classifier"><a href="#k-Nearest-Neighbor-Classifier" class="headerlink" title="k - Nearest Neighbor Classifier"></a>k - Nearest Neighbor Classifier</h3><p>找最相似的k个图片的标签，然后让他们针对测试图片进行投票，最后把票数最高的标签作为对测试图片的预测。k的值？</p>
+<h3 id="Validation-sets-for-Hyperparameter-tuning-用于超参数调优的验证集"><a href="#Validation-sets-for-Hyperparameter-tuning-用于超参数调优的验证集" class="headerlink" title="Validation sets for Hyperparameter tuning (用于超参数调优的验证集)"></a>Validation sets for Hyperparameter tuning (用于超参数调优的验证集)</h3><ul>
+<li><p>we cannot use the test set for the purpose of tweaking hyperparameters,   <strong>overfit</strong>.</p>
+</li>
+<li><p>Evaluate on the test set only a single time, at the very end.</p>
+</li>
+<li><p>to split our training set in two: a slightly smaller training set, and what we call a <strong>validation set</strong>.</p>
+</li>
+</ul>
+<p>这里将5万张train中1千张作为验证集，来寻找最优的k。</p>
+<pre><code class="python"><span class="comment"># assume we have Xtr_rows, Ytr, Xte_rows, Yte as before</span>
+<span class="comment"># recall Xtr_rows is 50,000 x 3072 matrix</span>
+Xval_rows = Xtr_rows[:<span class="number">1000</span>, :] <span class="comment"># take first 1000 for validation</span>
+Yval = Ytr[:<span class="number">1000</span>]
+Xtr_rows = Xtr_rows[<span class="number">1000</span>:, :] <span class="comment"># keep last 49,000 for train</span>
+Ytr = Ytr[<span class="number">1000</span>:]
+
+<span class="comment"># find hyperparameters that work best on the validation set</span>
+validation_accuracies = []
+<span class="keyword">for</span> k <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">50</span>, <span class="number">100</span>]:
+
+  <span class="comment"># use a particular value of k and evaluation on validation data</span>
+  nn = NearestNeighbor()
+  nn.train(Xtr_rows, Ytr)
+  <span class="comment"># here we assume a modified NearestNeighbor class that can take a k as input</span>
+  Yval_predict = nn.predict(Xval_rows, k = k)
+  acc = np.mean(Yval_predict == Yval)
+  <span class="keyword">print</span> <span class="string">'accuracy: %f'</span> % (acc,)
+
+  <span class="comment"># keep track of what works on the validation set</span>
+  validation_accuracies.append((k, acc))
+</code></pre>
+<h3 id="N-fold-cross-validation"><a href="#N-fold-cross-validation" class="headerlink" title="N-fold cross-validation"></a>N-fold cross-validation</h3><p>5份交叉验证对k值调优的例子。将训练集平均分成5份，循环着取其中4份来训练，份来验证针,对每个k值，得到5个准确率结果，取其平均值。</p>
+<h3 id="Pros-and-Cons-of-Nearest-Neighbor-classifier"><a href="#Pros-and-Cons-of-Nearest-Neighbor-classifier" class="headerlink" title="Pros and Cons of Nearest Neighbor classifier"></a>Pros and Cons of Nearest Neighbor classifier</h3><ul>
+<li>Approximate Nearest Neighbor (ANN) algorithms and libraries exist that can accelerate the nearest neighbor lookup in a dataset (e.g. FLANN)</li>
+<li>低维适用(图片一般高维，高维度向量之间的距离通常是反直觉的)</li>
+</ul>
+<p>实际应用K-NN:</p>
+<ul>
+<li>Preprocess your data：对你数据中的特征进行归一化(normalize)</li>
+<li>Dimensionality reduction technique, such as PCA</li>
+<li>…</li>
+</ul>
+<h1 id="Unknown-words"><a href="#Unknown-words" class="headerlink" title="Unknown words"></a>Unknown words</h1><hr>
+<p>simplicity  简单  n<br>seemingly   貌似  adv<br>distinct    清楚的 adj<br>quarter     四分之一<br>trivial    简单，不重要的 adj.<br>instance    实例<br>be oriented in<br>exhibit variation  表现出差异<br>extreme     极端的<br>rigid       刚性，僵硬的<br>occlude     挡住<br>a portion of        一部分<br>clutter     杂乱<br>blend into  融入</p>
+<hr>
+<ul>
+<li>annotate    注释    vt.</li>
+<li>catalog        登记成册    vt<br>interdisciplinary    跨学科    adj.<br>constellation        一群    n.<br>neuroscience        神经科学<br>overlap            重叠部分</li>
+<li>concurrently        同时    adv.<br>encompassing        包含<br>seminar            研讨会<br>syllabus            教学大纲<br>tag    team        两人一组<br>take over       接管</li>
+<li>agenda            议程<br>chill                寒冷</li>
+<li>onset            开始<br>proactive            积极主动</li>
+<li>go after            追逐<br>predators went after prey    捕食者 / 被捕食者<br>intelligent animal    智慧动物</li>
+<li>manipulate        操纵<br>Renaissance period of time    文艺复兴期间<br>obscuration        昏暗<br>pinhole            小孔<br>in the mean time    同时<br>inspired             受到启发<br>electrode            电极<br>primary visual cortex    初级视觉皮层</li>
+<li>by and large        大体上说</li>
+<li>thesis            论文<br>geometric        几何<br>linear algebra            线性代数<br>pay tribute to    sb.    赞扬sb.</li>
+<li>holistic            全面的    adj.</li>
+<li>idealized            理想化的      adj.    </li>
+<li>intuitive            直观的            adj.<br>intuition            直觉<br>deconstruct        解构</li>
+<li>seminal            意义深远的   adj.</li>
+<li>cylinder            圆柱</li>
+<li>generalized         广义的     adj.</li>
+<li>elastic            可伸缩的    adj.<br>razor            剃须刀</li>
+<li>frankly            坦白地 adv.<br>audacious        大胆地</li>
+<li>ambitious        雄心勃勃的</li>
+<li>made some headway    有一些进展<br>gain momentum        见效<br>boosting            助推</li>
+<li>There is a lot to admire this work. ?<br>near-real-time        近实时的</li>
+<li>roll out            推出<br>occlusion            遮挡</li>
+<li>intrinsic            本质的   adj.<br>diagnostic        诊断的</li>
+<li>pyramid            金字塔</li>
+<li>clue                线索    vt/n<br>highway            公路</li>
+<li>compose            组成<br>histogram of gradient    梯度直方图</li>
+<li>deformable         可变形的 adj.</li>
+<li>all along            自始至终</li>
+<li>bottleneck        瓶颈</li>
+<li>benchmarking        基准学习</li>
+<li>gigantic            巨大的<br>stringent            严格的</li>
+<li>on par with        达到相当的水平</li>
+<li>hover            （数值）徘徊在，原义为翱翔<br>deep dive            深入学习<br>have a deep dive into convolutional neural network<br>tremendous capacity    巨大的能力</li>
+<li>academia            学术界</li>
+<li>calory            卡路里<br>image captioning    给图像加解说</li>
+<li>tweaking            调整</li>
+<li>collaborator        合作者<br>deploy            部署</li>
+<li>coarse            粗糙的<br>transistor            晶体管<br>orders magnitude     数量级<br>crunching         运算</li>
+<li>capacity            容量</li>
+<li>fancy            设想<br>pop up            突然出现,弹出</li>
+<li>tackle            解决,处理</li>
+<li>semantic            语义的<br>perceptional        知觉的<br>augmented reality    增强现实<br>intricacy            错综复杂的事物</li>
+<li>exposure            暴露 n.</li>
+<li>holy grail            圣杯</li>
+<li>exemplify            举例说明  vt.</li>
+<li>conscious            有意识的<br>respectable        可敬的<br>compatriot        同胞</li>
+<li>by no means        决不<br>hallucinate        使产生幻觉<br>psychedelic        迷幻的</li>
+<li>render            渲染,给予<br>extenuating        情有可原的</li>
+<li>circumstance        环境</li>
+<li>prerequisite        先决条件</li>
+<li>calculus            微积分</li>
+<li>derivative        导数<br>reintroduce        恢复</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-03-08T13:08:02.256Z" itemprop="dateUpdated">2018-03-08 21:08:02</time>
+</span><br>
+
+
+        
+        <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgxd.jpeg">
+        
+    </div>
+    <footer>
+        <a href="http://wenbo.fun">
+            <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" alt="Wen bo">
+            Wen bo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&source=Abstract
+Assignment Git:https://github.com/CS231n-zju/CS231n
+视频地址：https://www..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/09/cs231n_m1_1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.1》 — Hi&url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/02/03/myPython-a/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Python教程笔记 (2/4)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "xVQIAhS8Iaa22qibuCeoAjj2-gzGzoHsz",
+            appKey: "GEc59stbeS88ePxaVibVE1Db",
+            avatar: "monsterid",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢亲~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" data-alipay="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Wen bo &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&source=Abstract
+Assignment Git:https://github.com/CS231n-zju/CS231n
+视频地址：https://www..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/09/cs231n_m1_1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.1》 — Hi&url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByUlEQVR42u3aQY6DMBAEQP7/6UTaU6QA6fEYw0rlEwoEFxxGQ9vbFo/X3/g8Phrn13yf3a4YuLi4bW4+/ffx0fTn1+SPt/NIuLi4C7l58TqaYO4rOPwdFxf3YdyxhznvUnBxcf87t1OSqq8DFxf3CdxOkJFcX22YJnyr4eLiNridojPr+PJ8FxcXd9KqRBJ8JBHJ2JLMzj1xcXGXcJPIoxOFzDr743sIFxd3Kvc1NJIilTdMhbKIi4t7E7ccXxaXYPOGaecsLi7uEm5SXJKtFUmOUb3Dj/vj4uIu4ebNSiciyRduC2hcXNwLuFdvs+iEp62/4eLitrmdxiXfTlGNaHFxcddz800SY6FJJxbZmREXF3cJN7l01iatalHDxcW9i5sHmtWGptoeRWUOFxd3CTePOweT17ioTQtMcXFx29z8D/lWiWrYUShtuLi4C7n9RqT8vVVcbsHFxV3PzUd1u1X+IVRYSsHFxb2Y298qMbY9K2mVWkUQFxe3zc2L11j7kjRShUfFxcVdyK0Wr2qEOq2VwcXFfRi3ushaPY5suLi4D+ZWF007v+Di4t7FHZssL22dT6bBWAQXF7fB7QSmYw82dk9cXNwl3DdwLWzDdxWPcwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+    
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="225" height="450"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:1;
+    right: 50px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -60px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/unitychan.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>
