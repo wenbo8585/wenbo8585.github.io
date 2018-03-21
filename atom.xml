@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-03-10T01:17:32.604Z</updated>
+  <updated>2018-03-21T14:27:06.505Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -17,36 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Python教程笔记(3/4)</title>
-    <link href="http://wenbo.fun/2018/03/09/myPython_b/"/>
-    <id>http://wenbo.fun/2018/03/09/myPython_b/</id>
-    <published>2018-03-09T15:24:08.000Z</published>
-    <updated>2018-03-10T01:17:32.604Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;IO编程&quot;&gt;&lt;a href=&quot;#IO编程&quot; class=&quot;headerlink&quot; title=&quot;IO编程&quot;&gt;&lt;/a&gt;IO编程&lt;/h1&gt;&lt;p&gt;本章的IO编程都是同步模式&lt;/p&gt;
-&lt;h2 id=&quot;文件读写&quot;&gt;&lt;a href=&quot;#文件读写&quot; class=&quot;headerlink&quot; title=&quot;文件读写&quot;&gt;&lt;/a&gt;文件读写&lt;/h2&gt;&lt;p&gt;Python内置了读写文件的函数，用法和C是兼容的。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;读文件&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;要以读文件的模式打开一个文件对象，使用Python内置的&lt;code&gt;open()&lt;/code&gt;函数，传入文件名和标示符：&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;f = open(&lt;span class=&quot;string&quot;&gt;&#39;/Users/michael/test.txt&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;r&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;标示符’r’表示读，这样，我们就成功地打开了一个文件。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程语言" scheme="http://wenbo.fun/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Python" scheme="http://wenbo.fun/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CS231n学习笔记 Module 1.1</title>
-    <link href="http://wenbo.fun/2018/03/09/cs231n_m1_1/"/>
-    <id>http://wenbo.fun/2018/03/09/cs231n_m1_1/</id>
-    <published>2018-03-09T09:15:17.000Z</published>
-    <updated>2018-03-08T13:08:02.256Z</updated>
+    <link href="http://wenbo.fun/2018/03/21/cs231n_m1_1/"/>
+    <id>http://wenbo.fun/2018/03/21/cs231n_m1_1/</id>
+    <published>2018-03-21T09:15:17.000Z</published>
+    <updated>2018-03-21T14:27:06.505Z</updated>
     
     <summary type="html">
     
@@ -66,6 +41,31 @@
     
     
       <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python教程笔记(3/4)</title>
+    <link href="http://wenbo.fun/2018/03/09/myPython_b/"/>
+    <id>http://wenbo.fun/2018/03/09/myPython_b/</id>
+    <published>2018-03-09T15:24:08.000Z</published>
+    <updated>2018-03-11T11:58:57.584Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;IO编程&quot;&gt;&lt;a href=&quot;#IO编程&quot; class=&quot;headerlink&quot; title=&quot;IO编程&quot;&gt;&lt;/a&gt;IO编程&lt;/h1&gt;&lt;p&gt;本章的IO编程都是同步模式&lt;/p&gt;
+&lt;h2 id=&quot;文件读写&quot;&gt;&lt;a href=&quot;#文件读写&quot; class=&quot;headerlink&quot; title=&quot;文件读写&quot;&gt;&lt;/a&gt;文件读写&lt;/h2&gt;&lt;p&gt;Python内置了读写文件的函数，用法和C是兼容的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;读文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;要以读文件的模式打开一个文件对象，使用Python内置的&lt;code&gt;open()&lt;/code&gt;函数，传入文件名和标示符：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;f = open(&lt;span class=&quot;string&quot;&gt;&#39;/Users/michael/test.txt&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;r&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;标示符’r’表示读，这样，我们就成功地打开了一个文件。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程语言" scheme="http://wenbo.fun/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="Python" scheme="http://wenbo.fun/tags/Python/"/>
     
   </entry>
   

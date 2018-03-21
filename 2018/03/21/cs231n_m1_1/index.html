@@ -24,14 +24,18 @@
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CS231n学习笔记 Module 1.1">
-<meta property="og:url" content="http://wenbo.fun/2018/03/09/cs231n_m1_1/index.html">
+<meta property="og:url" content="http://wenbo.fun/2018/03/21/cs231n_m1_1/index.html">
 <meta property="og:site_name" content="Hi">
 <meta property="og:description" content="Abstract Assignment Git:https://github.com/CS231n-zju/CS231n 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231n.github.io/ Syll">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-03-08T13:08:02.256Z">
+<meta property="og:image" content="http://cs231n.github.io/assets/pixelspace.jpeg">
+<meta property="og:image" content="http://cs231n.github.io/assets/wb.jpeg">
+<meta property="og:image" content="http://cs231n.github.io/assets/svmvssoftmax.png">
+<meta property="og:updated_time" content="2018-03-21T14:27:06.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CS231n学习笔记 Module 1.1">
 <meta name="twitter:description" content="Abstract Assignment Git:https://github.com/CS231n-zju/CS231n 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231n.github.io/ Syll">
+<meta name="twitter:image" content="http://cs231n.github.io/assets/pixelspace.jpeg">
     
         <link rel="alternate" type="application/atom+xml" title="Hi" href="/atom.xml">
     
@@ -146,8 +150,8 @@
         <h1 class="title">CS231n学习笔记 Module 1.1</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-03-09T09:15:17.000Z" itemprop="datePublished" class="page-time">
-  2018-03-09
+                <time datetime="2018-03-21T09:15:17.000Z" itemprop="datePublished" class="page-time">
+  2018-03-21
 </time>
 
 
@@ -166,7 +170,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Module-1-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">Module 1.1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Image-Classification"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Image Classification</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#The-image-classification-pipeline"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">The image classification pipeline</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Nearest-Neighbor-Classifier"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Nearest Neighbor Classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#k-Nearest-Neighbor-Classifier"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">k - Nearest Neighbor Classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Validation-sets-for-Hyperparameter-tuning-用于超参数调优的验证集"><span class="post-toc-number">2.1.5.</span> <span class="post-toc-text">Validation sets for Hyperparameter tuning (用于超参数调优的验证集)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#N-fold-cross-validation"><span class="post-toc-number">2.1.6.</span> <span class="post-toc-text">N-fold cross-validation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Pros-and-Cons-of-Nearest-Neighbor-classifier"><span class="post-toc-number">2.1.7.</span> <span class="post-toc-text">Pros and Cons of Nearest Neighbor classifier</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unknown-words"><span class="post-toc-number">3.</span> <span class="post-toc-text">Unknown words</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Module-1-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">Module 1.1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Image-Classification"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Image Classification</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#The-image-classification-pipeline"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">The image classification pipeline</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Nearest-Neighbor-Classifier"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Nearest Neighbor Classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#k-Nearest-Neighbor-Classifier"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">k - Nearest Neighbor Classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Validation-sets-for-Hyperparameter-tuning-用于超参数调优的验证集"><span class="post-toc-number">2.1.5.</span> <span class="post-toc-text">Validation sets for Hyperparameter tuning (用于超参数调优的验证集)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#N-fold-cross-validation"><span class="post-toc-number">2.1.6.</span> <span class="post-toc-text">N-fold cross-validation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Pros-and-Cons-of-Nearest-Neighbor-classifier"><span class="post-toc-number">2.1.7.</span> <span class="post-toc-text">Pros and Cons of Nearest Neighbor classifier</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Linear-Classification"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Linear Classification</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Parameterized-mapping-from-images-to-label-scores"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Parameterized mapping from images to label scores</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Interpreting-a-linear-classifier"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Interpreting a linear classifier</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Loss-function"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Loss function</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Multiclass-Support-Vector-Machine-loss"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">Multiclass Support Vector Machine loss</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Practical-Considerations"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">Practical Considerations</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Softmax-classifier"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">Softmax classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SVM-vs-Softmax"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text">SVM vs. Softmax</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unknown-words"><span class="post-toc-number">3.</span> <span class="post-toc-text">Unknown words</span></a></li></ol>
         </nav>
     </aside>
     
@@ -176,7 +180,7 @@
     <div class="post-card">
         <h1 class="post-card-title">CS231n学习笔记 Module 1.1</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-03-09 17:15:17" datetime="2018-03-09T09:15:17.000Z"  itemprop="datePublished">2018-03-09</time>
+            <time class="post-time" title="2018-03-21 17:15:17" datetime="2018-03-21T09:15:17.000Z"  itemprop="datePublished">2018-03-21</time>
 
             
 
@@ -266,6 +270,88 @@ validation_accuracies = []
 <li>Dimensionality reduction technique, such as PCA</li>
 <li>…</li>
 </ul>
+<hr>
+<h2 id="Linear-Classification"><a href="#Linear-Classification" class="headerlink" title="Linear Classification"></a>Linear Classification</h2><p>kNN , disadvantages:</p>
+<ul>
+<li><p>The classifier must remember all of the training data and store it for future comparisons with test data.  space inefficient</p>
+</li>
+<li><p>Classifying a test image is expensive</p>
+</li>
+</ul>
+<h3 id="Parameterized-mapping-from-images-to-label-scores"><a href="#Parameterized-mapping-from-images-to-label-scores" class="headerlink" title="Parameterized mapping from images to label scores"></a>Parameterized mapping from images to label scores</h3><p>CIFAR-10: <strong>N</strong> = 50,000 images, <strong>D</strong> = 32 x 32 x 3 pixels, <strong>K</strong> = 10 classess.  </p>
+<p>score function: $f:R^D\mapsto R^K$</p>
+<p><strong>Linear classifier</strong></p>
+<p>A linear mapping: $f(x_i,W,b) = Wx_i + b$</p>
+<p>$x_i$: 输入图像,flattened out to a single column vector of shape [D x 1].<br>Matrix $W$(weight) of size [K x D], the vector $b$(bias vector) of size [K x 1].</p>
+<p>NOTE:</p>
+<ul>
+<li>each Classifier is a row of $W$</li>
+</ul>
+<h3 id="Interpreting-a-linear-classifier"><a href="#Interpreting-a-linear-classifier" class="headerlink" title="Interpreting a linear classifier"></a>Interpreting a linear classifier</h3><p><strong>Analogy of images as high-dimensional points</strong> 将图像看作高维空间的点</p>
+<p>Since the images are stretched into high-dimensional column vectors, we can interpret each image as a single point in this space</p>
+<p>we defined the score of each class as a weighted sum of all image pixels, each class score is a linear function over this space.</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://cs231n.github.io/assets/pixelspace.jpeg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>$W$ 的每一行都是一个分类类别的分类器。</p>
+<p>Change one of the rows of $W$, the corresponding line in the pixel space will rotate in different directions.<br>如果改变其中一行的数字，会看见分类器在空间中对应的直线开始向着不同方向旋转。</p>
+<p>而偏差$b$，则允许分类器对应的translate the lines直线平移。如果没有偏差，所有分类器的线都不得不穿过原点。</p>
+<p><strong>Interpretation of linear classifiers as template matching</strong></p>
+<p>Another interpretation for the weights $W$:</p>
+<p>each row of $W$ corresponds to a template (or sometimes also called a prototype) for one of the classes.</p>
+<ul>
+<li>using an inner product (or dot product) one by one to find the one that <code>fits</code> best.</li>
+</ul>
+<p>可以认为还是在高效地使用 k-NN，不同的是我们没有使用所有的训练集的图像来比较，而是每个类别只用了一张图片（这张图片是我们学习到的，而不是训练集中的某一张），而且我们会使用（负）内积来计算向量间的距离，而不是使用L1或者L2距离。</p>
+<p><strong>Bias trick</strong></p>
+<p>合并 W 和 b，在 $x_i$ 末尾加 1</p>
+<p>$$f(x_i,W,b) = Wx_i + b  \longrightarrow f(x_i,W) = Wx_i$$  </p>
+<p><img src="http://cs231n.github.io/assets/wb.jpeg" alt=""></p>
+<p><strong>image data preprocessing</strong></p>
+<p>normalization</p>
+<p>range from [-1,1],zero mean centering</p>
+<h2 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function"></a>Loss function</h2><p>sometimes also referred to as <strong>cos function</strong> or the <strong>objective</strong>(目标函数)</p>
+<h3 id="Multiclass-Support-Vector-Machine-loss"><a href="#Multiclass-Support-Vector-Machine-loss" class="headerlink" title="Multiclass Support Vector Machine loss"></a>Multiclass Support Vector Machine loss</h3><p>The Multiclass SVM loss for the i-th example is then formalized as follows:<br>$$L_i = \sum_{j\neq y_i} max(0, s_j - s_{y_i} + \Delta)$$</p>
+<p><strong>Example</strong>:</p>
+<p>a scores $s=[13,-7,11]$ and that the first class is the true, assume that $\Delta$ is 10. The expression above sums over all incorrect classes ($ j\neq y_j$), so we get two terms:<br>$$L_i = max(0,-7-13+10) + max(0,11-13+10)$$</p>
+<p><strong>hinge loss</strong>: $max(0,-)$ ,sometimes use $max(0,-)^2$将更强烈（平方地而不是线性地）地惩罚过界的边界值。</p>
+<p><strong>Regularization</strong>: bug -&gt; loss 为0 ，M就可有无数个。<br>为了避免这种情况，在loss中增加 regularization penalty,常用 L2 norm 来 discourages large weights.<br>$$R(W) = \sum_k\sum_lW^2_{k,l}$$</p>
+<p> the full Multiclass SVM loss becomes:<br>$$L =  \underbrace{ \frac{1}{N} \sum_i L_i }_\text{data loss} + \underbrace{ \lambda R(W) }_\text{regularization loss} $$<br> Where $N$ is the number of training examples.</p>
+<ul>
+<li><p>this effect can improve the generalization performance of the classifiers on test images and lead to less <em>overfitting</em></p>
+<p>L2惩罚倾向于更小更分散的W权重向量。</p>
+</li>
+</ul>
+<h3 id="Practical-Considerations"><a href="#Practical-Considerations" class="headerlink" title="Practical Considerations"></a>Practical Considerations</h3><p><strong>Setting Delta</strong></p>
+<p>can safely be set to $Δ=1.0$ in all cases. 它影响的是 w 的大小而不是 loss.the only real tradeoff is how large we allow the weights to grow (through the regularization strength $λ$).</p>
+<h3 id="Softmax-classifier"><a href="#Softmax-classifier" class="headerlink" title="Softmax classifier"></a>Softmax classifier</h3><p>$f(x_i,W) = Wx_i$ unchanged,interpret these scores as the unnormalized log probabilities(未归一化的对数概率) for each class and replace the <em>hinge loss</em> with a <em>cross-entropy loss</em>(交叉熵损失) that has the form:<br>$$L_i = -\log( {e^{f_{y_i}} \over \sum_je^{f_j} }) \ \ \ \ or \ \ \ L_i = -f_{y_i} + \log\sum_je^{f_j}$$</p>
+<p> $f_j$ to mean the j-th element of the vector of class scores $f$.<br> $f_{y_i}$ to mean 把 i 分类为 $y_i$ 的 score. (j can = $y_j$ ? )</p>
+<p> $L_i$ 控制在[0,1]</p>
+<p> <strong>Information theory view</strong>: The <em>cross-entropy</em> between a “true” distribution $p$ and an estimated distribution(预测分布) $q$ is defined as:<br> $$H(p,q) = -\sum{p(x) \log q(x)}$$</p>
+<p>希望真实分布于预测分布的交叉熵最小，即差异最小。</p>
+<p><strong>Probabilistic interpretation</strong>:<br>To see $$P(y_i | x_i; W) = { e^{f_{y_i}} \over \sum_j e^{f_j} }$$<br>给定图像数据$x_i$，以$W$为参数，分配给正确分类标签$y_i$的 normalized probability (归一化概率)。</p>
+<p><strong>Practical issues: Numeric stability</strong>:</p>
+<p>存在指数函数，所以数值可能非常大。除以大数值可能导致数值计算的不稳定。Notice that if we multiply the top and bottom of the fraction by a constant $C$ (常数C) ，通常取: $ \log C = max_jf_j$</p>
+<p>$$\frac{e^{f_{y_i}}}{\sum_j e^{f_j}}<br>= \frac{Ce^{f_{y_i}}}{C\sum_j e^{f_j}}<br>= \frac{e^{f_{y_i} + \log C}}{\sum_j e^{f_j + \log C}}$$</p>
+<p>这样指数就 &lt;= 0,分子分母都小于1。</p>
+<p><strong>名词误解</strong>: SVM分类器使用的是折叶损失（hinge loss），有时候又被称为最大边界损失（max-margin loss）。Softmax分类器使用的是交叉熵损失（corss-entropy loss）。Softmax分类器的命名是从softmax函数那里得来的，softmax函数将原始分类评分变成正的归一化数值，所有数值和为1，这样处理后交叉熵损失才能应用。注意从技术上说“softmax损失（softmax loss）”是没有意义的，因为softmax只是一个压缩数值的函数。但是在这个说法常常被用来做简称。</p>
+<h3 id="SVM-vs-Softmax"><a href="#SVM-vs-Softmax" class="headerlink" title="SVM vs. Softmax"></a>SVM vs. Softmax</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://cs231n.github.io/assets/svmvssoftmax.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>softmax分类器对于分数是永远不会满意的：正确分类总能得到更高的可能性，错误分类总能得到更低的可能性，损失值总是能够更小。<br>但是，SVM只要边界值被满足了就满意了。</p>
+<p>eg.</p>
+<p>SVM对于数字个体的细节是不关心的：如果分数是[10, -100, -100]或者[10, 9, 9]，对于SVM来说没设么不同，只要满足超过边界值等于1，那么损失值就等于0。</p>
+<p>对于softmax分类器，情况则不同。对于[10, 9, 9]来说，计算出的损失值就远远高于[10, -100, -100]的。</p>
+<p><a href="http://vision.stanford.edu/teaching/cs231n-demos/linear-classify/" target="_blank" rel="noopener">Interactive web demo</a></p>
+<hr>
 <h1 id="Unknown-words"><a href="#Unknown-words" class="headerlink" title="Unknown words"></a>Unknown words</h1><hr>
 <p>simplicity  简单  n<br>seemingly   貌似  adv<br>distinct    清楚的 adj<br>quarter     四分之一<br>trivial    简单，不重要的 adj.<br>instance    实例<br>be oriented in<br>exhibit variation  表现出差异<br>extreme     极端的<br>rigid       刚性，僵硬的<br>occlude     挡住<br>a portion of        一部分<br>clutter     杂乱<br>blend into  融入</p>
 <hr>
@@ -321,7 +407,10 @@ validation_accuracies = []
 <li>prerequisite        先决条件</li>
 <li>calculus            微积分</li>
 <li>derivative        导数<br>reintroduce        恢复</li>
+<li>discard       丢弃</li>
+<li>penalty       惩罚</li>
 </ul>
+<hr>
 
         </div>
 
@@ -329,7 +418,7 @@ validation_accuracies = []
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-08T13:08:02.256Z" itemprop="dateUpdated">2018-03-08 21:08:02</time>
+    Last updated: <time datetime="2018-03-21T14:27:06.505Z" itemprop="dateUpdated">2018-03-21 22:27:06</time>
 </span><br>
 
 
@@ -364,7 +453,7 @@ validation_accuracies = []
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -374,24 +463,24 @@ validation_accuracies = []
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&source=Abstract
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&source=Abstract
 Assignment Git:https://github.com/CS231n-zju/CS231n
 视频地址：https://www..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/09/cs231n_m1_1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/21/cs231n_m1_1/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.1》 — Hi&url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&via=http://wenbo.fun" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.1》 — Hi&url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&via=http://wenbo.fun" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -411,21 +500,14 @@ Assignment Git:https://github.com/CS231n-zju/CS231n
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/03/09/myPython_b/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Python教程笔记(3/4)</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/02/03/myPython-a/" id="post-next" class="post-nav-link">
+      <a href="/2018/03/09/myPython_b/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Python教程笔记 (2/4)</h4>
+        <h4 class="title">Python教程笔记(3/4)</h4>
       </a>
     </div>
   
@@ -543,7 +625,7 @@ Assignment Git:https://github.com/CS231n-zju/CS231n
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -553,24 +635,24 @@ Assignment Git:https://github.com/CS231n-zju/CS231n
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&source=Abstract
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&source=Abstract
 Assignment Git:https://github.com/CS231n-zju/CS231n
 视频地址：https://www..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/09/cs231n_m1_1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/21/cs231n_m1_1/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.1》 — Hi&url=http://wenbo.fun/2018/03/09/cs231n_m1_1/&via=http://wenbo.fun" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.1》 — Hi&url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&via=http://wenbo.fun" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/09/cs231n_m1_1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -581,7 +663,7 @@ Assignment Git:https://github.com/CS231n-zju/CS231n
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByUlEQVR42u3aQY6DMBAEQP7/6UTaU6QA6fEYw0rlEwoEFxxGQ9vbFo/X3/g8Phrn13yf3a4YuLi4bW4+/ffx0fTn1+SPt/NIuLi4C7l58TqaYO4rOPwdFxf3YdyxhznvUnBxcf87t1OSqq8DFxf3CdxOkJFcX22YJnyr4eLiNridojPr+PJ8FxcXd9KqRBJ8JBHJ2JLMzj1xcXGXcJPIoxOFzDr743sIFxd3Kvc1NJIilTdMhbKIi4t7E7ccXxaXYPOGaecsLi7uEm5SXJKtFUmOUb3Dj/vj4uIu4ebNSiciyRduC2hcXNwLuFdvs+iEp62/4eLitrmdxiXfTlGNaHFxcddz800SY6FJJxbZmREXF3cJN7l01iatalHDxcW9i5sHmtWGptoeRWUOFxd3CTePOweT17ioTQtMcXFx29z8D/lWiWrYUShtuLi4C7n9RqT8vVVcbsHFxV3PzUd1u1X+IVRYSsHFxb2Y298qMbY9K2mVWkUQFxe3zc2L11j7kjRShUfFxcVdyK0Wr2qEOq2VwcXFfRi3ushaPY5suLi4D+ZWF007v+Di4t7FHZssL22dT6bBWAQXF7fB7QSmYw82dk9cXNwl3DdwLWzDdxWPcwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABvElEQVR42u3aS5KDMAwFwNz/0sw2G5MnfwQ11V5RDrEbFipJ5vOJx/U1RvPfv16Dcb/atoGLi7vMvW5HlTu6J7lOVsPFxe3kjiLG6J5kZmX94TwuLu4ruXnAul8ZFxf3/3GTCuUeh4uL+35uUvzM0VfaKLi4uE9x823OXR/p7+Li4k5xr+KoFj9zuwx3x8XFbeFWi5kk+chTk+q+uLi4PdzqZxN5m6MKvTdEG+Pi4h7g5mlN9V95k3RDRoaLi7uJW8iGgm3y4qfaTsXFxe3h/kgp4oPYKEGZeowo0cHFxd3KXWlx5uEv/9jix3ELLi5uC7faxFw/Lt11bIOLi3uau5KI7GqtFgIfLi7uYW41MM2hqy9iSMfFxW3h5mlNEnqWEHl1g4uL+xA3b55Wt6w2XArFDy4ubgs3KUvWA1k+j4uL+yw3L3s2pCzVe3BxcQ9zr+KohqG8rIoOY3BxcVu4+chxeRO22qLFxcXt5FY3XjmarR7QDosfXFzcFu5cYzRPa7alMri4uK/kzrVNq4/6ozmCi4v7Mu5cINsWu3BxcRu5K59SrTdNCi8LFxe3hXu6QKoenOSvCRcX9wD3D59/cbC6U0CjAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
