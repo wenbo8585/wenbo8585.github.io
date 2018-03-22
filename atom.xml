@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-03-21T14:27:06.505Z</updated>
+  <updated>2018-03-23T10:24:42.000Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CS231n学习笔记 Module 1.2</title>
+    <link href="http://wenbo.fun/2018/03/22/cs231n_m1_2/"/>
+    <id>http://wenbo.fun/2018/03/22/cs231n_m1_2/</id>
+    <published>2018-03-22T09:15:17.000Z</published>
+    <updated>2018-03-23T10:24:42.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Assignment Git:&lt;br&gt;&lt;a href=&quot;https://github.com/CS231n-zju/CS231n&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/CS231n-zju/CS231n&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;视频地址：&lt;br&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;课程作业：&lt;br&gt;&lt;a href=&quot;http://cs231n.github.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cs231n.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Syllabus:&lt;br&gt;&lt;a href=&quot;http://cs231n.stanford.edu/syllabus.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cs231n.stanford.edu/syllabus.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note翻译:&lt;br&gt;&lt;a href=&quot;http://www.52ml.net/17723.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.52ml.net/17723.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;Module-1-2&quot;&gt;&lt;a href=&quot;#Module-1-2&quot; class=&quot;headerlink&quot; title=&quot;Module 1.2&quot;&gt;&lt;/a&gt;Module 1.2&lt;/h1&gt;&lt;h1 id=&quot;Lecture-2-Optimization&quot;&gt;&lt;a href=&quot;#Lecture-2-Optimization&quot; class=&quot;headerlink&quot; title=&quot;Lecture 2 | Optimization&quot;&gt;&lt;/a&gt;Lecture 2 | Optimization&lt;/h1&gt;&lt;p&gt;Optimization is the process of finding the set of parameters WW that minimize the loss function.&lt;/p&gt;
+&lt;h2 id=&quot;Visualizing-the-loss-function&quot;&gt;&lt;a href=&quot;#Visualizing-the-loss-function&quot; class=&quot;headerlink&quot; title=&quot;Visualizing the loss function&quot;&gt;&lt;/a&gt;Visualizing the loss function&lt;/h2&gt;&lt;p&gt;注意到loss function是不可微分的,由于max函数,导致函数中存在一定的不可导点(kinks).&lt;br&gt;However, the subgradient still exists and is commonly used instead.&lt;/p&gt;
+&lt;h2 id=&quot;Optimization&quot;&gt;&lt;a href=&quot;#Optimization&quot; class=&quot;headerlink&quot; title=&quot;Optimization&quot;&gt;&lt;/a&gt;Optimization&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Strategy #1: A first very bad idea solution: Random search&lt;/strong&gt;&lt;br&gt;&lt;del&gt;随机选择weights,然后看哪个loss低.&lt;/del&gt;&lt;br&gt;&lt;strong&gt;Strategy #2: Random Local Search&lt;/strong&gt;&lt;br&gt;&lt;del&gt;随机选择一个方向,loss下降,才继续往下走.&lt;/del&gt;&lt;br&gt;&lt;strong&gt;Strategy #3: Following the Gradient&lt;/strong&gt;&lt;br&gt;梯度&lt;/p&gt;
+&lt;p&gt;1-D function $$\frac{df(x)}{dx} = \lim_{h\ \to 0} \frac{f(x + h) - f(x)}{h}$$&lt;/p&gt;
+&lt;p&gt;多维偏导数 partial derivatives&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>CS231n学习笔记 Module 1.1</title>
@@ -559,30 +588,6 @@
       <category term="Deep Learning" scheme="http://wenbo.fun/tags/Deep-Learning/"/>
     
       <category term="Keras" scheme="http://wenbo.fun/tags/Keras/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>人脸识别04：识别是不是我</title>
-    <link href="http://wenbo.fun/2017/12/10/is-my-face/"/>
-    <id>http://wenbo.fun/2017/12/10/is-my-face/</id>
-    <published>2017-12-10T13:12:46.000Z</published>
-    <updated>2018-01-13T08:52:51.323Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="人脸识别" scheme="http://wenbo.fun/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
-    
-    
-      <category term="人脸识别" scheme="http://wenbo.fun/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
-    
-      <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
-    
-      <category term="TensorFlow" scheme="http://wenbo.fun/tags/TensorFlow/"/>
     
   </entry>
   

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>CS231n学习笔记 Module 1.2 | Hi | My best salutations are to them who knew me imperfect and loved me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#81D8CF">
+    
+    
+    <meta name="keywords" content="笔记">
+    <meta name="description" content="Abstract Assignment Git:https://github.com/CS231n-zju/CS231n 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231n.github.io/ Syll">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS231n学习笔记 Module 1.2">
+<meta property="og:url" content="http://wenbo.fun/2018/03/22/cs231n_m1_2/index.html">
+<meta property="og:site_name" content="Hi">
+<meta property="og:description" content="Abstract Assignment Git:https://github.com/CS231n-zju/CS231n 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231n.github.io/ Syll">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-03-23T10:24:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CS231n学习笔记 Module 1.2">
+<meta name="twitter:description" content="Abstract Assignment Git:https://github.com/CS231n-zju/CS231n 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231n.github.io/ Syll">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hi" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!--  <link rel="stylesheet" href="/css/style.css?v=1.7.1"> -->
+    <link rel="stylesheet" href="/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgbrand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Wen bo</h5>
+          <a href="mailto:1871756080@qq.com" title="1871756080@qq.com" class="mail">1871756080@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wenbo8585" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CS231n学习笔记 Module 1.2</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CS231n学习笔记 Module 1.2</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-22T09:15:17.000Z" itemprop="datePublished" class="page-time">
+  2018-03-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Module-1-2"><span class="post-toc-number">2.</span> <span class="post-toc-text">Module 1.2</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Lecture-2-Optimization"><span class="post-toc-number">3.</span> <span class="post-toc-text">Lecture 2 | Optimization</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Visualizing-the-loss-function"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Visualizing the loss function</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Optimization"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Optimization</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Computing-the-gradient"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Computing the gradient</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Computing-the-gradient-numerically-with-finite-differences-有限差值"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">Computing the gradient numerically with finite differences(有限差值)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Computing-the-gradient-analytically-with-Calculus"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">Computing the gradient analytically with Calculus</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Gradient-Descent"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">Gradient Descent</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unknown-words"><span class="post-toc-number">4.</span> <span class="post-toc-text">Unknown words</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-cs231n_m1_2"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CS231n学习笔记 Module 1.2</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-22 17:15:17" datetime="2018-03-22T09:15:17.000Z"  itemprop="datePublished">2018-03-22</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><blockquote>
+<p>Assignment Git:<br><a href="https://github.com/CS231n-zju/CS231n" target="_blank" rel="noopener">https://github.com/CS231n-zju/CS231n</a></p>
+<p>视频地址：<br><a href="https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;index=2&amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo" target="_blank" rel="noopener">https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;index=2&amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo</a></p>
+<p>课程作业：<br><a href="http://cs231n.github.io/" target="_blank" rel="noopener">http://cs231n.github.io/</a></p>
+<p>Syllabus:<br><a href="http://cs231n.stanford.edu/syllabus.html" target="_blank" rel="noopener">http://cs231n.stanford.edu/syllabus.html</a></p>
+<p>Note翻译:<br><a href="http://www.52ml.net/17723.html" target="_blank" rel="noopener">http://www.52ml.net/17723.html</a></p>
+</blockquote>
+<h1 id="Module-1-2"><a href="#Module-1-2" class="headerlink" title="Module 1.2"></a>Module 1.2</h1><h1 id="Lecture-2-Optimization"><a href="#Lecture-2-Optimization" class="headerlink" title="Lecture 2 | Optimization"></a>Lecture 2 | Optimization</h1><p>Optimization is the process of finding the set of parameters WW that minimize the loss function.</p>
+<h2 id="Visualizing-the-loss-function"><a href="#Visualizing-the-loss-function" class="headerlink" title="Visualizing the loss function"></a>Visualizing the loss function</h2><p>注意到loss function是不可微分的,由于max函数,导致函数中存在一定的不可导点(kinks).<br>However, the subgradient still exists and is commonly used instead.</p>
+<h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h2><p><strong>Strategy #1: A first very bad idea solution: Random search</strong><br><del>随机选择weights,然后看哪个loss低.</del><br><strong>Strategy #2: Random Local Search</strong><br><del>随机选择一个方向,loss下降,才继续往下走.</del><br><strong>Strategy #3: Following the Gradient</strong><br>梯度</p>
+<p>1-D function $$\frac{df(x)}{dx} = \lim_{h\ \to 0} \frac{f(x + h) - f(x)}{h}$$</p>
+<p>多维偏导数 partial derivatives</p>
+<a id="more"></a>
+<h2 id="Computing-the-gradient"><a href="#Computing-the-gradient" class="headerlink" title="Computing the gradient"></a>Computing the gradient</h2><ul>
+<li><p>numerical gradient: slow, approximate but easy</p>
+</li>
+<li><p>analytic gradient: fast, exact but more error-prone(容易出错) way that requires calculus</p>
+</li>
+</ul>
+<h3 id="Computing-the-gradient-numerically-with-finite-differences-有限差值"><a href="#Computing-the-gradient-numerically-with-finite-differences-有限差值" class="headerlink" title="Computing the gradient numerically with finite differences(有限差值)"></a>Computing the gradient numerically with finite differences(有限差值)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">eval_numerical_gradient</span><span class="params">(f, x)</span>:</span></span><br><span class="line">  <span class="string">"""</span></span><br><span class="line"><span class="string"> 一个f在x的数值梯度简单实现</span></span><br><span class="line"><span class="string">  - f should be a function that takes a single argument</span></span><br><span class="line"><span class="string">  - x is the point (numpy array) to evaluate the gradient at</span></span><br><span class="line"><span class="string">  """</span></span><br><span class="line">  fx = f(x) <span class="comment"># evaluate function value at original point</span></span><br><span class="line">  grad = np.zeros(x.shape)</span><br><span class="line">  h = <span class="number">0.00001</span></span><br><span class="line">  <span class="comment"># np.nditer原来是numpy array自带的迭代器</span></span><br><span class="line">  <span class="comment">#flags=['multi_index']表示对a进行多重索引.</span></span><br><span class="line">  <span class="comment">#op_flags=['readwrite']表示不仅可以对a进行read（读取）,还可以write（写入）.</span></span><br><span class="line">即相当于在创建这个迭代器的时候，我们就规定好了有哪些权限。</span><br><span class="line">  it = np.nditer(x, flags=[<span class="string">'multi_index'</span>], op_flags=[<span class="string">'readwrite'</span>])</span><br><span class="line">  <span class="keyword">while</span> <span class="keyword">not</span> it.finished:</span><br><span class="line"><span class="comment"># evaluate function at x+h</span></span><br><span class="line"><span class="comment">#it.multi_index表示元素的索引</span></span><br><span class="line">    ix = it.multi_index</span><br><span class="line">    old_value = x[ix]</span><br><span class="line">    x[ix] = old_value + h <span class="comment"># increment by h</span></span><br><span class="line">    fxh = f(x) <span class="comment"># evalute f(x + h)</span></span><br><span class="line">    x[ix] = old_value <span class="comment"># restore to previous value (very important!)</span></span><br><span class="line">    <span class="comment"># compute the partial derivative</span></span><br><span class="line">    grad[ix] = (fxh - fx) / h <span class="comment"># the slope</span></span><br><span class="line">    <span class="comment">#表示进入下一次迭代</span></span><br><span class="line">    it.iternext() <span class="comment"># step to next dimension</span></span><br><span class="line">  <span class="keyword">return</span> grad</span><br></pre></td></tr></table></figure>
+<p>h在数学意义上趋向于0,但是这里用一个极小值1e-5代替就可以了.<br>better to compute the numeric gradient using the <strong>centered difference formula</strong>:$[f(x+h) - f(x-h)] / 2 h$</p>
+<p>Update in negative gradient direction since we wish our loss function to decrease, not increase.</p>
+<p><strong>Effect of step size</strong></p>
+<p>The step size (or as we will later call it - the <strong>learning rate</strong>)</p>
+<p>效率低</p>
+<h3 id="Computing-the-gradient-analytically-with-Calculus"><a href="#Computing-the-gradient-analytically-with-Calculus" class="headerlink" title="Computing the gradient analytically with Calculus"></a>Computing the gradient analytically with Calculus</h3><p><strong>gradient check</strong>：it is very common to compute the analytic gradient and compare it to the numerical gradient to check the correctness of your implementation.</p>
+<p> SVM loss function: $$L_i = \sum_{j\neq y_i} \left[ \max(0, w_j^Tx_i - w_{y_i}^Tx_i + \Delta) \right]$$</p>
+<p>对$w_{y_j}$微分,正确分类那一行:$$\nabla_{w_{y_i}} L_i = - \left( \sum_{j\neq y_i} \mathbb{1}(w_j^Tx_i - w_{y_i}^Tx_i + \Delta &gt; 0) \right) x_i$$</p>
+<p> ps： where $1$ is the indicator function: 括号内为真，值为1，假，0.</p>
+<p> other rows where $j \neq y_i$ the gradient is:<br> $$\nabla_{w_j} L_i = \mathbb{1}(w_j^Tx_i - w_{y_i}^Tx_i + \Delta &gt; 0) x_i$$</p>
+<h2 id="Gradient-Descent"><a href="#Gradient-Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><p>core idea</p>
+<p><strong>Mini-batch gradient descent</strong></p>
+<p>小批量容易收敛</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Vanilla Minibatch Gradient Descent</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">  data_batch = sample_training_data(data, <span class="number">256</span>) <span class="comment"># sample 256 examples</span></span><br><span class="line">  weights_grad = evaluate_gradient(loss_fun, data_batch, weights)</span><br><span class="line">  weights += - step_size * weights_grad <span class="comment"># perform parameter update</span></span><br></pre></td></tr></table></figure>
+<p>The extreme case batch_size=1 , 称为随机梯度下降(on-line gradient descent)or(Stochastic Gradient Descent (SGD)).  </p>
+<h1 id="Unknown-words"><a href="#Unknown-words" class="headerlink" title="Unknown words"></a>Unknown words</h1><ul>
+<li>extreme         极端的</li>
+<li>duplicate       复制<br>identical       相同的<br>Throughout          在…期间，自始至终<br>straight-forward    顺利的，直接的<br>scary       可怕的<br>differentiate       微分<br>downside    负面，下降趋势<br>shuffle     拖着脚步走<br>increment   增加</li>
+<li>calculus    微积分<br>exact       精确的<br>partial derivatives     偏导数<br>instantaneous   瞬间</li>
+<li>slope           斜率<br>perturbation        扰乱<br>iterative refinement    迭代优化<br>eventually      最后<br>quantify the quality of</li>
+<li>reiterate     重申<br>interchangeably     可交替地<br>terrain         地形</li>
+<li>literature      文献<br>convex function     凸函数<br>clamp at<br>for instance    例如<br>explicit        清楚的<br>Concretely      具体地<br>consistent with     符合，与…一致<br>relatively      相对地<br>intuition       直觉  </li>
+<li>plane         平面<br>procedure       步骤<br>piecewise-linear       分段线性的</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-03-23T10:24:42.000Z" itemprop="dateUpdated">2018-03-23 18:24:42</time>
+</span><br>
+
+
+        
+        <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgxd.jpeg">
+        
+    </div>
+    <footer>
+        <a href="http://wenbo.fun">
+            <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" alt="Wen bo">
+            Wen bo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/22/cs231n_m1_2/&title=《CS231n学习笔记 Module 1.2》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/22/cs231n_m1_2/&title=《CS231n学习笔记 Module 1.2》 — Hi&source=Abstract
+Assignment Git:https://github.com/CS231n-zju/CS231n
+视频地址：https://www..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/22/cs231n_m1_2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.2》 — Hi&url=http://wenbo.fun/2018/03/22/cs231n_m1_2/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/22/cs231n_m1_2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/21/cs231n_m1_1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CS231n学习笔记 Module 1.1</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "xVQIAhS8Iaa22qibuCeoAjj2-gzGzoHsz",
+            appKey: "GEc59stbeS88ePxaVibVE1Db",
+            avatar: "monsterid",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢亲~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" data-alipay="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Wen bo &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/22/cs231n_m1_2/&title=《CS231n学习笔记 Module 1.2》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/22/cs231n_m1_2/&title=《CS231n学习笔记 Module 1.2》 — Hi&source=Abstract
+Assignment Git:https://github.com/CS231n-zju/CS231n
+视频地址：https://www..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/22/cs231n_m1_2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.2》 — Hi&url=http://wenbo.fun/2018/03/22/cs231n_m1_2/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/22/cs231n_m1_2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABw0lEQVR42u3aQYrDMAwF0N7/0hmY1cA05ity1BSeVyVtkucuhCTr9YrX8bvOrhx/1v8r629fdyxcXNw291iuKm69vWQDZ7/BxcWd566D19nN63urf0ESQHFxcZ/G7W8vD3y4uLjfwk0CWV7S4OLiPp/bb2Tk5dBQrYaLi9vgdoLOrs839ndxcXGL3KO48qdVg130dlxc3BFutYDJD0J2JT3l815cXNyt3F0Fz95hjqhWw8XF3crtj0x1Ql6+7TcZGS4u7iA36UJ00poosp7di4uLO8LtBKCEWE1l1hvDxcWd4Vbbl/2Riw4dFxd3hpu/LA9J1cBX3jAuLu7N3GqTolPkVN/45l24uLgf4l5rWOTNkTxhwsXF/Sw370ZW05r+EAYuLu48t9q47DRBqs2X6PwHFxf3Bm5nGGLX2FYhtOHi4g5yc0re6EyKnGrgw8XFneTma9tBaTEgFvIjXFzcNnfvqMS1xmt+iIuLizvJ7QxjVUug5AnRNBkuLu4Itxq88rmp5NuLMRUXF/cB3LzFee1zZMPFxX0kN096quMaUZsVFxd3kHutzZEEu7yg2twWwcXFbXD7DdNqelQ9hsHFxR3k/gCxHQYcB8In6QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+    
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="225" height="450"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:1;
+    right: 50px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -60px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/unitychan.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>

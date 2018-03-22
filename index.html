@@ -125,7 +125,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -157,6 +157,62 @@
 <div class="container body-wrap">
 
     <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-cs231n_m1_2"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-03-22 17:15:17" datetime="2018-03-22T09:15:17.000Z"  itemprop="datePublished">2018-03-22</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/03/22/cs231n_m1_2/">CS231n学习笔记 Module 1.2</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><blockquote>
+<p>Assignment Git:<br><a href="https://github.com/CS231n-zju/CS231n" target="_blank" rel="noopener">https://github.com/CS231n-zju/CS231n</a></p>
+<p>视频地址：<br><a href="https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;index=2&amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo" target="_blank" rel="noopener">https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;index=2&amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo</a></p>
+<p>课程作业：<br><a href="http://cs231n.github.io/" target="_blank" rel="noopener">http://cs231n.github.io/</a></p>
+<p>Syllabus:<br><a href="http://cs231n.stanford.edu/syllabus.html" target="_blank" rel="noopener">http://cs231n.stanford.edu/syllabus.html</a></p>
+<p>Note翻译:<br><a href="http://www.52ml.net/17723.html" target="_blank" rel="noopener">http://www.52ml.net/17723.html</a></p>
+</blockquote>
+<h1 id="Module-1-2"><a href="#Module-1-2" class="headerlink" title="Module 1.2"></a>Module 1.2</h1><h1 id="Lecture-2-Optimization"><a href="#Lecture-2-Optimization" class="headerlink" title="Lecture 2 | Optimization"></a>Lecture 2 | Optimization</h1><p>Optimization is the process of finding the set of parameters WW that minimize the loss function.</p>
+<h2 id="Visualizing-the-loss-function"><a href="#Visualizing-the-loss-function" class="headerlink" title="Visualizing the loss function"></a>Visualizing the loss function</h2><p>注意到loss function是不可微分的,由于max函数,导致函数中存在一定的不可导点(kinks).<br>However, the subgradient still exists and is commonly used instead.</p>
+<h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h2><p><strong>Strategy #1: A first very bad idea solution: Random search</strong><br><del>随机选择weights,然后看哪个loss低.</del><br><strong>Strategy #2: Random Local Search</strong><br><del>随机选择一个方向,loss下降,才继续往下走.</del><br><strong>Strategy #3: Following the Gradient</strong><br>梯度</p>
+<p>1-D function $$\frac{df(x)}{dx} = \lim_{h\ \to 0} \frac{f(x + h) - f(x)}{h}$$</p>
+<p>多维偏导数 partial derivatives</p>
+    
+
+        <a href="/2018/03/22/cs231n_m1_2/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
     
         <li class="post-list-item fade">
             <article id="post-cs231n_m1_1"
@@ -199,7 +255,7 @@
     
 
         <a href="/2018/03/21/cs231n_m1_1/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -251,7 +307,7 @@
     
 
         <a href="/2018/03/09/myPython_b/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -301,7 +357,7 @@
     
 
         <a href="/2018/02/03/myPython-a/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -358,7 +414,7 @@
     
 
         <a href="/2018/01/26/MLforward/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -417,7 +473,7 @@
     
 
         <a href="/2018/01/10/myPython/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -472,7 +528,7 @@
     
 
         <a href="/2017/12/31/sf012/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -519,7 +575,7 @@
     
 
         <a href="/2017/12/30/sf011/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -570,7 +626,7 @@
     
 
         <a href="/2017/12/30/sf010/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -630,64 +686,7 @@
     
 
         <a href="/2017/12/30/sf009/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-sf008"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-12-30 11:17:39" datetime="2017-12-30T03:17:39.000Z"  itemprop="datePublished">2017-12-30</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/12/30/sf008/">贪心算法---最小生成树</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
-<p>计算机算法设计与分析(第四版)，王晓东</p>
-</blockquote>
-<h2 id="最小生成树性质"><a href="#最小生成树性质" class="headerlink" title="最小生成树性质"></a>最小生成树性质</h2><blockquote>
-<p>假设 N = (V,{ E })是一个连通网，U 是顶点集 V 的一个非空子集。若(u , v)是一条具有最小权值(代价)的边，其中u∈U， v∈V - U，则必存在一棵包含边(u，v)的最小生成树。</p>
-</blockquote>
-<p>反证:</p>
-<blockquote>
-<p>假设网N的任何一棵最小生成树都不包含(u，v)。设T是连通网上的一棵最小生成树，当将边(u，v)加入到T中时，由生成树的定义，T中必存在一条包含(u，v)的回路。另一方面，由于T是生成树，则在T上必存在另一条边(u’，v’)，其中u’∈U，v’∈V - U，且u和u’之间，v和v’之间均有路径相通。删去边(u’，v’)，便可消除上述回路，同时得到另一棵生成树T’。因为(u，v)的代价不高于(u’，v’)，则T’的代价亦不高于T，T’是包含(u，v)的一棵最小生成树，和假设矛盾。</p>
-</blockquote>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2>
-    
-
-        <a href="/2017/12/30/sf008/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -730,7 +729,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
