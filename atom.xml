@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-03-23T10:24:42.000Z</updated>
+  <updated>2018-03-26T15:29:16.139Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="http://wenbo.fun/2018/03/22/cs231n_m1_2/"/>
     <id>http://wenbo.fun/2018/03/22/cs231n_m1_2/</id>
     <published>2018-03-22T09:15:17.000Z</published>
-    <updated>2018-03-23T10:24:42.000Z</updated>
+    <updated>2018-03-26T15:29:16.139Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;Assignment Git:&lt;br&gt;&lt;a href=&quot;https://github.com/CS231n-zju/CS231n&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/CS231n-zju/CS231n&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Assignment1 Q2 SVM:&lt;br&gt;&lt;a href=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/CS/svm.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://7xsg2l.com1.z0.glb.clouddn.com/CS/svm.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;视频地址：&lt;br&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;课程作业：&lt;br&gt;&lt;a href=&quot;http://cs231n.github.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cs231n.github.io/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Syllabus:&lt;br&gt;&lt;a href=&quot;http://cs231n.stanford.edu/syllabus.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cs231n.stanford.edu/syllabus.html&lt;/a&gt;&lt;/p&gt;
