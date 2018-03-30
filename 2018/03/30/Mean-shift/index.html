@@ -13,23 +13,36 @@
     
     
     
-    <title>Hi | My best salutations are to them who knew me imperfect and loved me</title>
+    <title>Mean-shift clustering algorithm | Hi | My best salutations are to them who knew me imperfect and loved me</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#81D8CF">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="A little home">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hi">
-<meta property="og:url" content="http://wenbo.fun/index.html">
+    <meta name="keywords" content="聚类,算法">
+    <meta name="description" content="Mean-shift clustering algorithmMean-Shift算法Mean Shift向量的基本形式定义为: $$M_h = \frac{1}{K} \sum_{x_i \in S_k}(x_i - x)  $$$S_k$是一个半径为h的高维球区域,K表示在这n个样本点$x_i$中,有k个点落入$S_k$区域中. Meanshift向量是选取一个点为圆心，以 h 为半径做一个高">
+<meta name="keywords" content="聚类,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mean-shift clustering algorithm">
+<meta property="og:url" content="http://wenbo.fun/2018/03/30/Mean-shift/index.html">
 <meta property="og:site_name" content="Hi">
-<meta property="og:description" content="A little home">
+<meta property="og:description" content="Mean-shift clustering algorithmMean-Shift算法Mean Shift向量的基本形式定义为: $$M_h = \frac{1}{K} \sum_{x_i \in S_k}(x_i - x)  $$$S_k$是一个半径为h的高维球区域,K表示在这n个样本点$x_i$中,有k个点落入$S_k$区域中. Meanshift向量是选取一个点为圆心，以 h 为半径做一个高">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms00.jpg">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms01.jpg">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms02.jpg">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms03.jpg">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms04.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms05.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms06.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms07.jpg">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/output_3_0.png.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/output_14_0.png">
+<meta property="og:updated_time" content="2018-03-30T09:10:15.609Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hi">
-<meta name="twitter:description" content="A little home">
+<meta name="twitter:title" content="Mean-shift clustering algorithm">
+<meta name="twitter:description" content="Mean-shift clustering algorithmMean-Shift算法Mean Shift向量的基本形式定义为: $$M_h = \frac{1}{K} \sum_{x_i \in S_k}(x_i - x)  $$$S_k$是一个半径为h的高维球区域,K表示在这n个样本点$x_i$中,有k个点落入$S_k$区域中. Meanshift向量是选取一个点为圆心，以 h 为半径做一个高">
+<meta name="twitter:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms00.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Hi" href="/atom.xml">
     
@@ -47,7 +60,7 @@
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu"  >
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -66,7 +79,7 @@
     <div class="scroll-wrap flex-col">
       <ul class="nav">
         
-            <li class="waves-block waves-effect active">
+            <li class="waves-block waves-effect">
               <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 Home
@@ -119,7 +132,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Hi</div>
+        <div class="flex-col header-title ellipsis">Mean-shift clustering algorithm</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -138,13 +151,19 @@
         
     </div>
 </header>
-<header class="content-header index-header">
+<header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Hi</h1>
+        <h1 class="title">Mean-shift clustering algorithm</h1>
         <h5 class="subtitle">
             
-                My best salutations are to them who knew me imperfect and loved me
+                <time datetime="2018-03-30T08:49:18.000Z" itemprop="datePublished" class="page-time">
+  2018-03-30
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+
             
         </h5>
     </div>
@@ -154,40 +173,38 @@
 
 </header>
 
+
 <div class="container body-wrap">
-
-    <ul class="post-list">
     
-        <li class="post-list-item fade">
-            <article id="post-Mean-shift"
-  class="article-card article-type-post" itemprop="blogPost">
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Mean-shift-clustering-algorithm"><span class="post-toc-number">1.</span> <span class="post-toc-text">Mean-shift clustering algorithm</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Mean-Shift算法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Mean-Shift算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Mean-Shift-聚类"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Mean-Shift 聚类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Mean-shift-流程"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Mean-shift 流程</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Mean-shift"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
-    <div class="post-meta">
-        <time class="post-time" title="2018-03-30 16:49:18" datetime="2018-03-30T08:49:18.000Z"  itemprop="datePublished">2018-03-30</time>
+    <div class="post-card">
+        <h1 class="post-card-title">Mean-shift clustering algorithm</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-30 16:49:18" datetime="2018-03-30T08:49:18.000Z"  itemprop="datePublished">2018-03-30</time>
 
-        
+            
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
 
 
 
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/03/30/Mean-shift/">Mean-shift clustering algorithm</a>
-    </h3>
-  
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
 
 
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="Mean-shift-clustering-algorithm"><a href="#Mean-shift-clustering-algorithm" class="headerlink" title="Mean-shift clustering algorithm"></a>Mean-shift clustering algorithm</h1><h2 id="Mean-Shift算法"><a href="#Mean-Shift算法" class="headerlink" title="Mean-Shift算法"></a>Mean-Shift算法</h2><p>Mean Shift向量的基本形式定义为: $$M_h = \frac{1}{K} \sum_{x_i \in S_k}(x_i - x)  $$<br>$S_k$是一个半径为h的高维球区域,K表示在这n个样本点$x_i$中,有k个点落入$S_k$区域中.</p>
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Mean-shift-clustering-algorithm"><a href="#Mean-shift-clustering-algorithm" class="headerlink" title="Mean-shift clustering algorithm"></a>Mean-shift clustering algorithm</h1><h2 id="Mean-Shift算法"><a href="#Mean-Shift算法" class="headerlink" title="Mean-Shift算法"></a>Mean-Shift算法</h2><p>Mean Shift向量的基本形式定义为: $$M_h = \frac{1}{K} \sum_{x_i \in S_k}(x_i - x)  $$<br>$S_k$是一个半径为h的高维球区域,K表示在这n个样本点$x_i$中,有k个点落入$S_k$区域中.</p>
 <p>Meanshift向量是选取一个点为圆心，以 h 为半径做一个高维球，里面所有点与圆心为起点形成的向量相加的结果就是Meanshift向量</p>
 <p>如图所以。其中黄色箭头就是 $M_h$（meanshift向量）。</p>
 <figure class="image-bubble">
@@ -299,513 +316,174 @@
             </figure>
 <p>该算法在执行算法期间需要执行多个最近邻搜索。<br>该算法保证收敛，但是当质心的变化较小时，算法将停止迭代。</p>
 
-    
+        </div>
 
-        <a href="/2018/03/30/Mean-shift/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
+        <blockquote class="post-copyright">
+    <div class="content">
         
+<span class="post-time">
+    Last updated: <time datetime="2018-03-30T09:10:15.609Z" itemprop="dateUpdated">2018-03-30 17:10:15</time>
+</span><br>
+
+
+        
+        <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgxd.jpeg">
+        
+    </div>
+    <footer>
+        <a href="http://wenbo.fun">
+            <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" alt="Wen bo">
+            Wen bo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/聚类/">聚类</a></li></ul>
 
-    </div>
-    
-</article>
 
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-cs231n_m1_2"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-03-22 17:15:17" datetime="2018-03-22T09:15:17.000Z"  itemprop="datePublished">2018-03-22</time>
-
-        
-
-
-    </div>
-
+            
+<div class="page-share-wrap">
     
 
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/03/22/cs231n_m1_2/">CS231n学习笔记 Module 1.2</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><blockquote>
-<p>Assignment1 Q2 SVM:<br><a href="http://7xsg2l.com1.z0.glb.clouddn.com/CS/svm.html" target="_blank" rel="noopener">http://7xsg2l.com1.z0.glb.clouddn.com/CS/svm.html</a></p>
-<p>视频地址：<br><a href="https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;index=2&amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo" target="_blank" rel="noopener">https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;index=2&amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo</a></p>
-<p>课程作业：<br><a href="http://cs231n.github.io/" target="_blank" rel="noopener">http://cs231n.github.io/</a></p>
-<p>Syllabus:<br><a href="http://cs231n.stanford.edu/syllabus.html" target="_blank" rel="noopener">http://cs231n.stanford.edu/syllabus.html</a></p>
-<p>Note翻译:<br><a href="http://www.52ml.net/17723.html" target="_blank" rel="noopener">http://www.52ml.net/17723.html</a></p>
-</blockquote>
-<h1 id="Module-1-2"><a href="#Module-1-2" class="headerlink" title="Module 1.2"></a>Module 1.2</h1><h1 id="Lecture-2-Optimization"><a href="#Lecture-2-Optimization" class="headerlink" title="Lecture 2 | Optimization"></a>Lecture 2 | Optimization</h1><p>Optimization is the process of finding the set of parameters WW that minimize the loss function.</p>
-<h2 id="Visualizing-the-loss-function"><a href="#Visualizing-the-loss-function" class="headerlink" title="Visualizing the loss function"></a>Visualizing the loss function</h2><p>注意到loss function是不可微分的,由于max函数,导致函数中存在一定的不可导点(kinks).<br>However, the subgradient still exists and is commonly used instead.</p>
-<h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h2><p><strong>Strategy #1: A first very bad idea solution: Random search</strong><br><del>随机选择weights,然后看哪个loss低.</del><br><strong>Strategy #2: Random Local Search</strong><br><del>随机选择一个方向,loss下降,才继续往下走.</del><br><strong>Strategy #3: Following the Gradient</strong><br>梯度</p>
-<p>1-D function $$\frac{df(x)}{dx} = \lim_{h\ \to 0} \frac{f(x + h) - f(x)}{h}$$</p>
-<p>多维偏导数 partial derivatives</p>
-    
-
-        <a href="/2018/03/22/cs231n_m1_2/" class="post-more waves-effect waves-button">
-            Continue reading...
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/30/Mean-shift/&title=《Mean-shift clustering algorithm》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
         </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-cs231n_m1_1"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-03-21 17:15:17" datetime="2018-03-21T09:15:17.000Z"  itemprop="datePublished">2018-03-21</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/03/21/cs231n_m1_1/">CS231n学习笔记 Module 1.1</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><blockquote>
-<p>Assignment Git:<br><a href="https://github.com/CS231n-zju/CS231n" target="_blank" rel="noopener">https://github.com/CS231n-zju/CS231n</a></p>
-<p>视频地址：<br><a href="https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;index=2&amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo" target="_blank" rel="noopener">https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;index=2&amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo</a></p>
-<p>课程作业：<br><a href="http://cs231n.github.io/" target="_blank" rel="noopener">http://cs231n.github.io/</a></p>
-<p>Syllabus:<br><a href="http://cs231n.stanford.edu/syllabus.html" target="_blank" rel="noopener">http://cs231n.stanford.edu/syllabus.html</a></p>
-<p>Note翻译:<br><a href="http://www.52ml.net/17723.html" target="_blank" rel="noopener">http://www.52ml.net/17723.html</a></p>
-</blockquote>
-<h1 id="Module-1-1"><a href="#Module-1-1" class="headerlink" title="Module 1.1"></a>Module 1.1</h1><h2 id="Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition"><a href="#Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition" class="headerlink" title="Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition"></a>Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition</h2><p><strong>NOTE</strong></p>
-<ul>
-<li>2012 CNN ImageNet</li>
-</ul>
-    
-
-        <a href="/2018/03/21/cs231n_m1_1/" class="post-more waves-effect waves-button">
-            Continue reading...
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
         </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-myPython_b"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-03-09 23:24:08" datetime="2018-03-09T15:24:08.000Z"  itemprop="datePublished">2018-03-09</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程语言/">编程语言</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/03/09/myPython_b/">Python教程笔记(3/4)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="IO编程"><a href="#IO编程" class="headerlink" title="IO编程"></a>IO编程</h1><p>本章的IO编程都是同步模式</p>
-<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><p>Python内置了读写文件的函数，用法和C是兼容的。</p>
-<p><strong>读文件</strong></p>
-<p>要以读文件的模式打开一个文件对象，使用Python内置的<code>open()</code>函数，传入文件名和标示符：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = open(<span class="string">'/Users/michael/test.txt'</span>, <span class="string">'r'</span>)</span><br></pre></td></tr></table></figure>
-<p>标示符’r’表示读，这样，我们就成功地打开了一个文件。</p>
-    
-
-        <a href="/2018/03/09/myPython_b/" class="post-more waves-effect waves-button">
-            Continue reading...
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/30/Mean-shift/&title=《Mean-shift clustering algorithm》 — Hi&source=A little home" data-title=" QQ">
+          <i class="icon icon-qq"></i>
         </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-myPython-a"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-02-03 13:24:08" datetime="2018-02-03T05:24:08.000Z"  itemprop="datePublished">2018-02-03</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程语言/">编程语言</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/02/03/myPython-a/">Python教程笔记 (2/4)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><p>面向对象编程——<code>Object Oriented Programming</code>，简称<code>OOP</code>，是一种程序设计思想。<code>OOP</code>把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。<br>在Python中，所有数据类型都可以视为对象，当然也可以自定义对象。自定义的对象数据类型就是面向对象中的 <strong>类（Class）</strong> 的概念。<br>给对象发消息实际上就是调用对象对应的关联函数，我们称之为对象的 <strong>方法（Method）</strong>。<br>数据封装、继承和多态是面向对象的三大特点，我们后面会详细讲解。</p>
-<h2 id="类和实例"><a href="#类和实例" class="headerlink" title="类和实例"></a>类和实例</h2><p>面向对象最重要的概念就是类（Class）和实例（Instance），必须牢记类是抽象的模板，比如Student类，而实例是根据类创建出来的一个个具体的“对象”，每个对象都拥有相同的方法，但各自的数据可能不同。</p>
-<p>仍以Student类为例，在Python中，定义类是通过<code>class</code>关键字：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-    
-
-        <a href="/2018/02/03/myPython-a/" class="post-more waves-effect waves-button">
-            Continue reading...
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/30/Mean-shift/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
         </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-MLforward"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-01-26 13:39:12" datetime="2018-01-26T05:39:12.000Z"  itemprop="datePublished">2018-01-26</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/01/26/MLforward/">ML_Foundation</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=417250787&auto=0&height=66"></iframe>
-
-<h1 id="Linear-Algebra"><a href="#Linear-Algebra" class="headerlink" title="Linear Algebra"></a>Linear Algebra</h1><h2 id="Point"><a href="#Point" class="headerlink" title="Point"></a>Point</h2><ul>
-<li style="list-style: none"><input type="checkbox" checked> Scalar、Vector、Tensor</li>
-<li style="list-style: none"><input type="checkbox" checked> Identity Matrix、$A^T$ (transpose of A)</li>
-<li style="list-style: none"><input type="checkbox" checked> Matrix-Vector Product</li>
-<li style="list-style: none"><input type="checkbox" checked> Span、Generate Space、Subspace、Eigenspace</li>
-<li style="list-style: none"><input type="checkbox" checked> Linear Dependent、Rank</li>
-<li style="list-style: none"><input type="checkbox" checked> $[A|b]$ (Augmented Matrix)</li>
-<li style="list-style: none"><input type="checkbox" checked> Matrix Multiplication</li>
-<li style="list-style: none"><input type="checkbox" checked> Inverse of a Matrix</li>
-<li style="list-style: none"><input type="checkbox" checked> Basis</li>
-</ul>
-    
-
-        <a href="/2018/01/26/MLforward/" class="post-more waves-effect waves-button">
-            Continue reading...
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Mean-shift clustering algorithm》 — Hi&url=http://wenbo.fun/2018/03/30/Mean-shift/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
         </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Other/">Other</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-myPython"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-01-10 15:49:18" datetime="2018-01-10T07:49:18.000Z"  itemprop="datePublished">2018-01-10</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程语言/">编程语言</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/01/10/myPython/">Python教程笔记(1/4)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><blockquote>
-<p>Python 3 <a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="noopener">From</a></p>
-</blockquote>
-<h1 id="Python基础"><a href="#Python基础" class="headerlink" title="Python基础"></a>Python基础</h1><p>Python使用缩进来组织代码块，请务必遵守约定俗成的习惯，坚持使用4个空格的缩进。<br>在文本编辑器中，需要设置把Tab自动转换为4个空格，确保不混用Tab和空格。</p>
-<h2 id="数据类型和变量"><a href="#数据类型和变量" class="headerlink" title="数据类型和变量"></a>数据类型和变量</h2><p><strong>整数</strong><br>十六进制用0x前缀和0-9，a-f表示。</p>
-<p>注: Python的整数没有大小限制，而某些语言的整数根据其存储长度是有大小限制的，例如Java对<code>32位</code>整数的范围限制在-2147483648~2147483647。</p>
-<p>Python的浮点数也没有大小限制，但是超出一定范围就直接表示为inf（无限大）</p>
-<blockquote>
-<p>Floating point numbers are usually implemented using double in C. ——Python官方文档</p>
-</blockquote>
-<p><strong>浮点数(小数)</strong><br>科学计数法: 0.000012可以写成<code>1.2e-5</code><br><strong>字符串</strong><br>字符串是以单引号’或双引号”括起来的任意文本</p>
-<p>转义字符<code>\</code>,如果字符串里面有很多字符都需要转义，就需要加很多\，为了简化，Python还允许用<code>r&#39;&#39;</code>表示’’内部的字符串默认不转义.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'\\\t\\'</span>)</span><br><span class="line">\       \</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">r'\\\t\\'</span>)</span><br><span class="line">\\\t\\</span><br></pre></td></tr></table></figure>
-    
-
-        <a href="/2018/01/10/myPython/" class="post-more waves-effect waves-button">
-            Continue reading...
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/30/Mean-shift/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
         </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-sf012"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-12-31 15:56:44" datetime="2017-12-31T07:56:44.000Z"  itemprop="datePublished">2017-12-31</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/12/31/sf012/">分支限界---批处理作业调度</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="批处理作业调度"><a href="#批处理作业调度" class="headerlink" title="批处理作业调度"></a>批处理作业调度</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
-<p>计算机算法设计与分析(第四版)，王晓东</p>
-</blockquote>
-<ul>
-<li>n 个作业的集合: $$J={J1,J2,…,Jn}$$</li>
-<li>第 i 个作业需要机器 j 的处理时间: $$ t_{ij}$$</li>
-<li>已安排作业集合: $$M⊆{1,2…,n}$$</li>
-<li>所有作业在机器2完成时间和（包括等待时间）: $$f=\sum_{i=1}^n{F_{2i}}$$</li>
-</ul>
-    
-
-        <a href="/2017/12/31/sf012/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-sf011"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-12-30 19:07:34" datetime="2017-12-30T11:07:34.000Z"  itemprop="datePublished">2017-12-30</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/12/30/sf011/">分支限界---布线问题</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="分支限界与回溯"><a href="#分支限界与回溯" class="headerlink" title="分支限界与回溯"></a>分支限界与回溯</h1><h2 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h2><p><strong>盲目搜索</strong><br>从根节点出发，按照状态空间树的结构，向下搜索它的所有儿子结点，对不满足约束条件的儿子结点，把它丢弃；对满足约束条件的结点，继续相似搜索它的所有儿子结点。<br>该搜索过程一直进行，当搜索到一个满足约束条件的叶结点时，就得到了一个可行解；或者所有的儿子结点都不满足约束条件时，该结点就被丢弃，向上回溯到它的父亲结点。</p>
-    
-
-        <a href="/2017/12/30/sf011/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-sf010"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-12-30 17:04:17" datetime="2017-12-30T09:04:17.000Z"  itemprop="datePublished">2017-12-30</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/12/30/sf010/">回溯法---0-1背包问题</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="0-1背包问题"><a href="#0-1背包问题" class="headerlink" title="0-1背包问题"></a>0-1背包问题</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
-<p>计算机算法设计与分析(第四版)，王晓东</p>
-</blockquote>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>计算上界时间:$$O(n)$$</p>
-<p>最坏情况有:$$O(2^n)$$个右儿子节点需计算上界。所以回溯算法<code>Backtrack</code>所需时间:$$O(n2^n)$$</p>
-    
-
-        <a href="/2017/12/30/sf010/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
+      </li>
     </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
 
     
-<nav id="page-nav">
-    <div class="inner">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/22/cs231n_m1_2/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CS231n学习笔记 Module 1.2</h4>
+      </a>
     </div>
+  
 </nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "xVQIAhS8Iaa22qibuCeoAjj2-gzGzoHsz",
+            appKey: "GEc59stbeS88ePxaVibVE1Db",
+            avatar: "monsterid",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢亲~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" data-alipay="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
 
 
 </div>
@@ -849,7 +527,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/&title=Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/30/Mean-shift/&title=《Mean-shift clustering algorithm》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -859,22 +537,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/&title=Hi&source=A little home" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/30/Mean-shift/&title=《Mean-shift clustering algorithm》 — Hi&source=A little home" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/30/Mean-shift/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Hi&url=http://wenbo.fun/&via=http://wenbo.fun" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Mean-shift clustering algorithm》 — Hi&url=http://wenbo.fun/2018/03/30/Mean-shift/&via=http://wenbo.fun" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/30/Mean-shift/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -885,7 +563,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABUklEQVR42u3aQRaDIAxFUfa/aboAC/78wMDkMeqxiJeBJAbGkNtctFXP513jRoMFqxBrblv+AatxXiYJC1ZLljLcfjKrCezHWV6HBQvWdrg9SO8DCxas/AKhB3tYsGDpLH24fXiO9jyQy8OCVYLlfYJ6v6/Ut2DB+jhrBpvy2keLR3+eAgtWM5b+Aq8C6qkwDAsWLC9Ie1yvzAQLVgeWbs9sf4ZTaliw2rCUsKpcUforQR0WrJ6sTNEnyg0/CxasZqzMMYJM4ckM27BgFWUpRR8lOfZS6nAuDwtWaVZ+U/PUv7BgdWZl6r7eIZ4XHCxYbVj5JDi6hSmlArBgNWPpLYoL7/B4DRasQix9UdCPGngTgAULlndE4NSaJH1Vw4IFS0h2M5+vBxYIWLCasXSivulyeN2CBeuzrOihAW8TNHAvLFjNWF5YVT5QL1a2YMGqw/oBzQfuNu1AWmsAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxElEQVR42u3aO47DMAwFQN//0l5g20DOIyUrKkZVEDvyKAXBj68rXvf/er76uT6vjr5ZvHBxcae59+NKuKPdekca3YOLi7uf+xy88gMklNH+UQDFxcU9jJsHteckpnp4XFzck7lrSxpcXNzzudXiJCl1eodfVqvh4uJOcGeCzqrPL/Z3cXFxi9y7uPLgVb0nejouLu4WbpKOzAxT81ZIYXiDi4v7Mje5qToCSYqWaoDDxcXdya22NpKipRqw8r8AFxd3J7f6kkR+sCTY5SkRLi7uHm7SpMhbqPO/+pIw4eLiHsOdL3VW0XFxcfdw3x6sVpspP54D4+LiBqnJTOKSD2AKR8XFxd3Crb4sVR2yrkqbcHFxd3KrTdJqotNLfYY74OLibuGW3+GKA1YvtEVtF1xc3Je5q7ZLmqf5MHW4Jy4u7kZu72F5MTPTwcXFxf0VN1+rXtWqNmSvPMri4uJOc3sD117B0xvANIMgLi7uNLcXvPLA1LsfFxf3BG4SaGbGpb1UZtjfxcXFPYabJD29lmieWuHi4p7JTUJSr6USpUe4uLgbuUn6kic0M0XRsrYILi7uBLfXMK2OZPLgWD0YLi7uUu4f3ZRN1CwS4a4AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
@@ -893,7 +571,7 @@
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 </script>

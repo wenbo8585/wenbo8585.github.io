@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-03-26T15:29:16.139Z</updated>
+  <updated>2018-03-30T09:10:15.609Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mean-shift clustering algorithm</title>
+    <link href="http://wenbo.fun/2018/03/30/Mean-shift/"/>
+    <id>http://wenbo.fun/2018/03/30/Mean-shift/</id>
+    <published>2018-03-30T08:49:18.000Z</published>
+    <updated>2018-03-30T09:10:15.609Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Mean-shift-clustering-algorithm&quot;&gt;&lt;a href=&quot;#Mean-shift-clustering-algorithm&quot; class=&quot;headerlink&quot; title=&quot;Mean-shift clustering
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="聚类" scheme="http://wenbo.fun/tags/%E8%81%9A%E7%B1%BB/"/>
+    
+      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>CS231n学习笔记 Module 1.2</title>
@@ -563,31 +591,6 @@
       <category term="聚类" scheme="http://wenbo.fun/tags/%E8%81%9A%E7%B1%BB/"/>
     
       <category term="Kmeans" scheme="http://wenbo.fun/tags/Kmeans/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>keras</title>
-    <link href="http://wenbo.fun/2017/12/13/keras/"/>
-    <id>http://wenbo.fun/2017/12/13/keras/</id>
-    <published>2017-12-13T03:54:48.000Z</published>
-    <updated>2018-01-13T08:52:38.949Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://keras-cn.readthedocs.io/en/latest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Keras 中文文档&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="机器学习" scheme="http://wenbo.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="机器学习" scheme="http://wenbo.fun/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="Deep Learning" scheme="http://wenbo.fun/tags/Deep-Learning/"/>
-    
-      <category term="Keras" scheme="http://wenbo.fun/tags/Keras/"/>
     
   </entry>
   
