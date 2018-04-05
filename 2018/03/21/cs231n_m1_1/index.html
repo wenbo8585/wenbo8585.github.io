@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://cs231n.github.io/assets/pixelspace.jpeg">
 <meta property="og:image" content="http://cs231n.github.io/assets/wb.jpeg">
 <meta property="og:image" content="http://cs231n.github.io/assets/svmvssoftmax.png">
-<meta property="og:updated_time" content="2018-03-21T14:27:06.505Z">
+<meta property="og:updated_time" content="2018-04-01T02:27:04.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CS231n学习笔记 Module 1.1">
 <meta name="twitter:description" content="Abstract Assignment Git:https://github.com/CS231n-zju/CS231n 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231n.github.io/ Syll">
@@ -131,7 +131,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -324,8 +324,11 @@ validation_accuracies = []
 <ul>
 <li><p>this effect can improve the generalization performance of the classifiers on test images and lead to less <em>overfitting</em></p>
 <p>L2惩罚倾向于更小更分散的W权重向量。</p>
+<p><strong>正则化的意义</strong></p>
 </li>
 </ul>
+<p>不添加正则项, loss 会使 w 更拟合 training data，添加后， 更加拟合未知数据。</p>
+<p>使拟合函数曲线更加趋向于低次表达， 越简单越正确。</p>
 <h3 id="Practical-Considerations"><a href="#Practical-Considerations" class="headerlink" title="Practical Considerations"></a>Practical Considerations</h3><p><strong>Setting Delta</strong></p>
 <p>can safely be set to $Δ=1.0$ in all cases. 它影响的是 w 的大小而不是 loss.the only real tradeoff is how large we allow the weights to grow (through the regularization strength $λ$).</p>
 <h3 id="Softmax-classifier"><a href="#Softmax-classifier" class="headerlink" title="Softmax classifier"></a>Softmax classifier</h3><p>$f(x_i,W) = Wx_i$ unchanged,interpret these scores as the unnormalized log probabilities(未归一化的对数概率) for each class and replace the <em>hinge loss</em> with a <em>cross-entropy loss</em>(交叉熵损失) that has the form:<br>$$L_i = -\log( {e^{f_{y_i}} \over \sum_je^{f_j} }) \ \ \ \ or \ \ \ L_i = -f_{y_i} + \log\sum_je^{f_j}$$</p>
@@ -349,7 +352,7 @@ validation_accuracies = []
 <p>softmax分类器对于分数是永远不会满意的：正确分类总能得到更高的可能性，错误分类总能得到更低的可能性，损失值总是能够更小。<br>但是，SVM只要边界值被满足了就满意了。</p>
 <p>eg.</p>
 <p>SVM对于数字个体的细节是不关心的：如果分数是[10, -100, -100]或者[10, 9, 9]，对于SVM来说没设么不同，只要满足超过边界值等于1，那么损失值就等于0。</p>
-<p>对于softmax分类器，情况则不同。对于[10, 9, 9]来说，计算出的损失值就远远高于[10, -100, -100]的。</p>
+<p>对于softmax分类器，情况则不同。对于[10, 9, 9]来说，计算出的损失值就远远高于[10, -100, -100]的。 </p>
 <p><a href="http://vision.stanford.edu/teaching/cs231n-demos/linear-classify/" target="_blank" rel="noopener">Interactive web demo</a></p>
 <hr>
 <h1 id="Unknown-words"><a href="#Unknown-words" class="headerlink" title="Unknown words"></a>Unknown words</h1><hr>
@@ -418,7 +421,7 @@ validation_accuracies = []
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-21T14:27:06.505Z" itemprop="dateUpdated">2018-03-21 22:27:06</time>
+    最終更新：<time datetime="2018-04-01T02:27:04.467Z" itemprop="dateUpdated">2018-04-01 10:27:04</time>
 </span><br>
 
 
@@ -610,7 +613,7 @@ Assignment Git:https://github.com/CS231n-zju/CS231n
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">

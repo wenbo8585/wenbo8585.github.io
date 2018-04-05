@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="Hi">
 <meta property="og:description" content="Abstract Assignment1 Q2 SVM:http://7xsg2l.com1.z0.glb.clouddn.com/CS/svm.html 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-03-26T15:29:16.139Z">
+<meta property="og:updated_time" content="2018-04-02T14:57:33.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CS231n学习笔记 Module 1.2">
 <meta name="twitter:description" content="Abstract Assignment1 Q2 SVM:http://7xsg2l.com1.z0.glb.clouddn.com/CS/svm.html 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231">
@@ -127,7 +127,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -196,7 +196,7 @@
 <p>Syllabus:<br><a href="http://cs231n.stanford.edu/syllabus.html" target="_blank" rel="noopener">http://cs231n.stanford.edu/syllabus.html</a></p>
 <p>Note翻译:<br><a href="http://www.52ml.net/17723.html" target="_blank" rel="noopener">http://www.52ml.net/17723.html</a></p>
 </blockquote>
-<h1 id="Module-1-2"><a href="#Module-1-2" class="headerlink" title="Module 1.2"></a>Module 1.2</h1><h1 id="Lecture-2-Optimization"><a href="#Lecture-2-Optimization" class="headerlink" title="Lecture 2 | Optimization"></a>Lecture 2 | Optimization</h1><p>Optimization is the process of finding the set of parameters WW that minimize the loss function.</p>
+<h1 id="Module-1-2"><a href="#Module-1-2" class="headerlink" title="Module 1.2"></a>Module 1.2</h1><h1 id="Lecture-2-Optimization"><a href="#Lecture-2-Optimization" class="headerlink" title="Lecture 2 | Optimization"></a>Lecture 2 | Optimization</h1><p>Optimization is the process of finding the set of parameters W that minimize the loss function.</p>
 <h2 id="Visualizing-the-loss-function"><a href="#Visualizing-the-loss-function" class="headerlink" title="Visualizing the loss function"></a>Visualizing the loss function</h2><p>注意到loss function是不可微分的,由于max函数,导致函数中存在一定的不可导点(kinks).<br>However, the subgradient still exists and is commonly used instead.</p>
 <h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h2><p><strong>Strategy #1: A first very bad idea solution: Random search</strong><br><del>随机选择weights,然后看哪个loss低.</del><br><strong>Strategy #2: Random Local Search</strong><br><del>随机选择一个方向,loss下降,才继续往下走.</del><br><strong>Strategy #3: Following the Gradient</strong><br>梯度</p>
 <p>1-D function $$\frac{df(x)}{dx} = \lim_{h\ \to 0} \frac{f(x + h) - f(x)}{h}$$</p>
@@ -224,7 +224,8 @@
 <p>小批量容易收敛</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Vanilla Minibatch Gradient Descent</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">  data_batch = sample_training_data(data, <span class="number">256</span>) <span class="comment"># sample 256 examples</span></span><br><span class="line">  weights_grad = evaluate_gradient(loss_fun, data_batch, weights)</span><br><span class="line">  weights += - step_size * weights_grad <span class="comment"># perform parameter update</span></span><br></pre></td></tr></table></figure>
 <p>The extreme case batch_size=1 , 称为随机梯度下降(on-line gradient descent)or(Stochastic Gradient Descent (SGD)).  </p>
-<h1 id="Unknown-words"><a href="#Unknown-words" class="headerlink" title="Unknown words"></a>Unknown words</h1><ul>
+<h1 id="Unknown-words"><a href="#Unknown-words" class="headerlink" title="Unknown words"></a>Unknown words</h1><p>recursive       递归的</p>
+<ul>
 <li>extreme         极端的</li>
 <li>duplicate       复制<br>identical       相同的<br>Throughout          在…期间，自始至终<br>straight-forward    顺利的，直接的<br>scary       可怕的<br>differentiate       微分<br>downside    负面，下降趋势<br>shuffle     拖着脚步走<br>increment   增加</li>
 <li>calculus    微积分<br>exact       精确的<br>partial derivatives     偏导数<br>instantaneous   瞬间</li>
@@ -233,6 +234,7 @@
 <li>literature      文献<br>convex function     凸函数<br>clamp at<br>for instance    例如<br>explicit        清楚的<br>Concretely      具体地<br>consistent with     符合，与…一致<br>relatively      相对地<br>intuition       直觉  </li>
 <li>plane         平面<br>procedure       步骤<br>piecewise-linear       分段线性的</li>
 </ul>
+<hr>
 
         </div>
 
@@ -240,7 +242,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-26T15:29:16.139Z" itemprop="dateUpdated">2018-03-26 23:29:16</time>
+    最終更新：<time datetime="2018-04-02T14:57:33.593Z" itemprop="dateUpdated">2018-04-02 22:57:33</time>
 </span><br>
 
 
@@ -431,7 +433,7 @@ Assignment1 Q2 SVM:http://7xsg2l.com1.z0.glb.clouddn.com/CS/svm.html..." data-ti
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">

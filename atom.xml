@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-03-30T09:10:15.609Z</updated>
+  <updated>2018-04-02T14:59:36.237Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -21,17 +21,20 @@
     <link href="http://wenbo.fun/2018/03/30/Mean-shift/"/>
     <id>http://wenbo.fun/2018/03/30/Mean-shift/</id>
     <published>2018-03-30T08:49:18.000Z</published>
-    <updated>2018-03-30T09:10:15.609Z</updated>
+    <updated>2018-04-02T14:59:36.237Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;Mean-shift-clustering-algorithm&quot;&gt;&lt;a href=&quot;#Mean-shift-clustering-algorithm&quot; class=&quot;headerlink&quot; title=&quot;Mean-shift clustering
-        
-      
+      &lt;h2 id=&quot;Mean-Shift算法&quot;&gt;&lt;a href=&quot;#Mean-Shift算法&quot; class=&quot;headerlink&quot; title=&quot;Mean-Shift算法&quot;&gt;&lt;/a&gt;Mean-Shift算法&lt;/h2&gt;&lt;p&gt;Mean Shift向量的基本形式定义为: $$M_h = \frac{1}{K} \sum_{x_i \in S_k}(x_i - x)  $$&lt;br&gt;$S_k$是一个半径为h的高维球区域,K表示在这n个样本点$x_i$中,有k个点落入$S_k$区域中.&lt;/p&gt;
+&lt;p&gt;Meanshift向量是选取一个点为圆心，以 h 为半径做一个高维球，里面所有点与圆心为起点形成的向量相加的结果就是Meanshift向量&lt;/p&gt;
+&lt;p&gt;如图所以。其中黄色箭头就是 $M_h$（meanshift向量）。&lt;/p&gt;
+&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms00.jpg&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;
     
     </summary>
     
@@ -49,7 +52,7 @@
     <link href="http://wenbo.fun/2018/03/22/cs231n_m1_2/"/>
     <id>http://wenbo.fun/2018/03/22/cs231n_m1_2/</id>
     <published>2018-03-22T09:15:17.000Z</published>
-    <updated>2018-03-26T15:29:16.139Z</updated>
+    <updated>2018-04-02T14:57:33.593Z</updated>
     
     <summary type="html">
     
@@ -60,7 +63,7 @@
 &lt;p&gt;Syllabus:&lt;br&gt;&lt;a href=&quot;http://cs231n.stanford.edu/syllabus.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cs231n.stanford.edu/syllabus.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Note翻译:&lt;br&gt;&lt;a href=&quot;http://www.52ml.net/17723.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.52ml.net/17723.html&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;Module-1-2&quot;&gt;&lt;a href=&quot;#Module-1-2&quot; class=&quot;headerlink&quot; title=&quot;Module 1.2&quot;&gt;&lt;/a&gt;Module 1.2&lt;/h1&gt;&lt;h1 id=&quot;Lecture-2-Optimization&quot;&gt;&lt;a href=&quot;#Lecture-2-Optimization&quot; class=&quot;headerlink&quot; title=&quot;Lecture 2 | Optimization&quot;&gt;&lt;/a&gt;Lecture 2 | Optimization&lt;/h1&gt;&lt;p&gt;Optimization is the process of finding the set of parameters WW that minimize the loss function.&lt;/p&gt;
+&lt;h1 id=&quot;Module-1-2&quot;&gt;&lt;a href=&quot;#Module-1-2&quot; class=&quot;headerlink&quot; title=&quot;Module 1.2&quot;&gt;&lt;/a&gt;Module 1.2&lt;/h1&gt;&lt;h1 id=&quot;Lecture-2-Optimization&quot;&gt;&lt;a href=&quot;#Lecture-2-Optimization&quot; class=&quot;headerlink&quot; title=&quot;Lecture 2 | Optimization&quot;&gt;&lt;/a&gt;Lecture 2 | Optimization&lt;/h1&gt;&lt;p&gt;Optimization is the process of finding the set of parameters W that minimize the loss function.&lt;/p&gt;
 &lt;h2 id=&quot;Visualizing-the-loss-function&quot;&gt;&lt;a href=&quot;#Visualizing-the-loss-function&quot; class=&quot;headerlink&quot; title=&quot;Visualizing the loss function&quot;&gt;&lt;/a&gt;Visualizing the loss function&lt;/h2&gt;&lt;p&gt;注意到loss function是不可微分的,由于max函数,导致函数中存在一定的不可导点(kinks).&lt;br&gt;However, the subgradient still exists and is commonly used instead.&lt;/p&gt;
 &lt;h2 id=&quot;Optimization&quot;&gt;&lt;a href=&quot;#Optimization&quot; class=&quot;headerlink&quot; title=&quot;Optimization&quot;&gt;&lt;/a&gt;Optimization&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Strategy #1: A first very bad idea solution: Random search&lt;/strong&gt;&lt;br&gt;&lt;del&gt;随机选择weights,然后看哪个loss低.&lt;/del&gt;&lt;br&gt;&lt;strong&gt;Strategy #2: Random Local Search&lt;/strong&gt;&lt;br&gt;&lt;del&gt;随机选择一个方向,loss下降,才继续往下走.&lt;/del&gt;&lt;br&gt;&lt;strong&gt;Strategy #3: Following the Gradient&lt;/strong&gt;&lt;br&gt;梯度&lt;/p&gt;
 &lt;p&gt;1-D function $$\frac{df(x)}{dx} = \lim_{h\ \to 0} \frac{f(x + h) - f(x)}{h}$$&lt;/p&gt;
@@ -78,7 +81,7 @@
     <link href="http://wenbo.fun/2018/03/21/cs231n_m1_1/"/>
     <id>http://wenbo.fun/2018/03/21/cs231n_m1_1/</id>
     <published>2018-03-21T09:15:17.000Z</published>
-    <updated>2018-03-21T14:27:06.505Z</updated>
+    <updated>2018-04-01T02:27:04.467Z</updated>
     
     <summary type="html">
     

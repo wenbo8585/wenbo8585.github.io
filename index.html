@@ -125,7 +125,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -187,7 +187,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="Mean-shift-clustering-algorithm"><a href="#Mean-shift-clustering-algorithm" class="headerlink" title="Mean-shift clustering algorithm"></a>Mean-shift clustering algorithm</h1><h2 id="Mean-Shift算法"><a href="#Mean-Shift算法" class="headerlink" title="Mean-Shift算法"></a>Mean-Shift算法</h2><p>Mean Shift向量的基本形式定义为: $$M_h = \frac{1}{K} \sum_{x_i \in S_k}(x_i - x)  $$<br>$S_k$是一个半径为h的高维球区域,K表示在这n个样本点$x_i$中,有k个点落入$S_k$区域中.</p>
+        <h2 id="Mean-Shift算法"><a href="#Mean-Shift算法" class="headerlink" title="Mean-Shift算法"></a>Mean-Shift算法</h2><p>Mean Shift向量的基本形式定义为: $$M_h = \frac{1}{K} \sum_{x_i \in S_k}(x_i - x)  $$<br>$S_k$是一个半径为h的高维球区域,K表示在这n个样本点$x_i$中,有k个点落入$S_k$区域中.</p>
 <p>Meanshift向量是选取一个点为圆心，以 h 为半径做一个高维球，里面所有点与圆心为起点形成的向量相加的结果就是Meanshift向量</p>
 <p>如图所以。其中黄色箭头就是 $M_h$（meanshift向量）。</p>
 <figure class="image-bubble">
@@ -197,112 +197,10 @@
                 </div>
                 <div class="image-caption"></div>
             </figure>
-<p>再以meanshift向量的终点为圆心，再做一个高维的球。如下图所以，重复以上步骤，就可得到一个meanshift向量。如此重复下去，meanshift算法可以收敛到概率密度最大得地方。也就是最稠密的地方。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms01.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<p>结果：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms02.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<h2 id="Mean-Shift-聚类"><a href="#Mean-Shift-聚类" class="headerlink" title="Mean-Shift 聚类"></a>Mean-Shift 聚类</h2><p>对于集合中的每一个元素，对它执行下面的操作：把该元素移动到它邻域中所有元素的特征值的均值的位置，不断重复直到收敛。准确的说，不是真正移动元素，而是把该元素与它的收敛位置的元素标记为同一类。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms03.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<h2 id="Mean-shift-流程"><a href="#Mean-shift-流程" class="headerlink" title="Mean-shift 流程"></a>Mean-shift 流程</h2><p>Kernel density estimation is the most popular density estimation method.</p>
-<p>在基本的mean shift向量加入核函数，</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms04.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<p>前面部分用核G计算x处的密度估计值为：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms05.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<p>后面就是 mean shift 向量：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms06.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<p>要使等式等于 0 ，那么 $m_{h,G}(x) = 0$，得到更新的圆心点：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms07.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<p>具体流程：</p>
-<ol>
-<li>选择空间中x为圆心，以h为半径为半径，做一个高维球。</li>
-<li>对落在所有球内的所有点$x_i$,计算 $m_{h,G}(x)$，如果  $m_{h,G}(x)&lt;ε$  (人工设定)，退出程序。如果 &gt;ε, 则利用上式计算x，返回1.</li>
-</ol>
-<p>Meanshift的这种思想可以应用于目标跟踪、图像平滑、边缘检测、聚类等，是一种适应性很好的算法，缺点是速度非常慢.</p>
-<p><strong>Generate isotropic Gaussian blobs for clustering</strong></p>
-<p>生成随机数据</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets.samples_generator <span class="keyword">import</span> make_blobs</span><br><span class="line">centers = [[<span class="number">2</span>,<span class="number">1</span>],[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">-1</span>,<span class="number">-1</span>],[<span class="number">0</span>,<span class="number">1</span>]]</span><br><span class="line">X, y = make_blobs(n_samples = <span class="number">3000</span>, n_features = <span class="number">2</span>, centers = centers, cluster_std = <span class="number">0.6</span>, random_state = <span class="number">0</span>)</span><br><span class="line">print(X.shape)</span><br></pre></td></tr></table></figure>
-<pre><code>(3000, 2)
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> cycle</span><br><span class="line"></span><br><span class="line">plt.figure(<span class="number">1</span>)</span><br><span class="line">plt.clf()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(X.shape[<span class="number">0</span>]):</span><br><span class="line">    plt.plot(X[i, <span class="number">0</span>], X[i, <span class="number">1</span>], <span class="string">'bo'</span>)</span><br><span class="line">plt.title(<span class="string">'Generate Data'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/output_3_0.png.png" alt="png" title="">
-                </div>
-                <div class="image-caption">png</div>
-            </figure>
-<p><strong>设置带宽</strong></p>
-<p>算法自动设定聚类的数目，取代依赖参数,聚类数目跟 bandwidth（带宽）有关,带宽是决定搜索区域的size的参数。 这个参数可以手动设置，可以使用评估函数 estimate_bandwidth 计算。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.utils <span class="keyword">import</span> check_random_state, gen_batches</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> NearestNeighbors</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">estimate_bandwidth</span><span class="params">(X, n_samples, quantile = <span class="number">0.5</span>, n_jobs = <span class="number">1</span>, random_state = <span class="number">0</span>)</span>:</span></span><br><span class="line">    random_state = check_random_state(random_state)</span><br><span class="line">    <span class="keyword">if</span> n_samples <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="comment">#permutation将序列打乱 并取n_samples个数的样本</span></span><br><span class="line">        idx = random_state.permutation(X.shape[<span class="number">0</span>])[:n_samples]</span><br><span class="line">        X = X[idx]    </span><br><span class="line">    nbrs = NearestNeighbors(n_neighbors = int(X.shape[<span class="number">0</span>] * quantile), n_jobs = n_jobs)</span><br><span class="line">    nbrs.fit(X)</span><br><span class="line">    bandwidth = <span class="number">0.</span></span><br><span class="line">    <span class="comment">#gen_batches(n,batch_size) 根据batch_size的大小生成0~n的切片</span></span><br><span class="line">    <span class="keyword">for</span> batch <span class="keyword">in</span> gen_batches(len(X), <span class="number">500</span>):</span><br><span class="line">        <span class="comment">#kneighbors返回batch里面每个点的n_sample个邻居的距离（不包括自己）</span></span><br><span class="line">        <span class="comment">#n_sample要是没有定义那就和NearestNeighbors里面的n_neighbors相等</span></span><br><span class="line">        <span class="comment">#还有个返回值是下标，不过用不到就拿_忽略了</span></span><br><span class="line">        d, _ = nbrs.kneighbors(X[batch, :], return_distance=<span class="keyword">True</span>)</span><br><span class="line">        <span class="comment">#将每个点的最近的n_neighbors个邻居中最远的距离加起来</span></span><br><span class="line">        bandwidth += np.max(d, axis=<span class="number">1</span>).sum()</span><br><span class="line">    <span class="keyword">return</span> bandwidth/X.shape[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bandwidth  = estimate_bandwidth(X,quantile = <span class="number">0.1</span>, n_samples=<span class="number">500</span>)</span><br><span class="line">bandwidth</span><br></pre></td></tr></table></figure>
-<pre><code>0.76320309185897317
-</code></pre><p><strong>Mean-shift 迭代算法:</strong></p>
-<p>L2 距离</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_mean_shift_single_seed</span><span class="params">(my_mean, X, nbrs, max_iter)</span>:</span></span><br><span class="line">    <span class="comment"># For each seed, climb gradient until convergence or max_iter</span></span><br><span class="line">    bandwidth = nbrs.get_params()[<span class="string">'radius'</span>]</span><br><span class="line">    stop_thresh = <span class="number">1e-3</span> * bandwidth  <span class="comment"># when mean has converged</span></span><br><span class="line">    completed_iterations = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="comment"># Find mean of points within bandwidth</span></span><br><span class="line">        <span class="comment">#radius_neighbors寻找my_mean周围的邻居</span></span><br><span class="line">        i_nbrs = nbrs.radius_neighbors([my_mean], bandwidth,</span><br><span class="line">                                       return_distance=<span class="keyword">False</span>)[<span class="number">0</span>]</span><br><span class="line">        points_within = X[i_nbrs]</span><br><span class="line">        <span class="keyword">if</span> len(points_within) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span>  <span class="comment"># Depending on seeding strategy this condition may occur</span></span><br><span class="line">        my_old_mean = my_mean  <span class="comment"># save the old mean</span></span><br><span class="line">        my_mean = np.mean(points_within, axis=<span class="number">0</span>)</span><br><span class="line">        <span class="comment"># If converged or at max_iter, adds the cluster</span></span><br><span class="line">        <span class="keyword">if</span> (np.linalg.norm(my_mean - my_old_mean) &lt; stop_thresh <span class="keyword">or</span></span><br><span class="line">                completed_iterations == max_iter):</span><br><span class="line">            <span class="keyword">return</span> tuple(my_mean), len(points_within)</span><br><span class="line">        completed_iterations += <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p><strong>主程序</strong></p>
-<p>没有使用核函数<br>seeds = X</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.externals.joblib <span class="keyword">import</span> Parallel, delayed</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mean_shift</span><span class="params">(X, bandwidth=None, bin_seeding=False,</span></span></span><br><span class="line"><span class="function"><span class="params">               min_bin_freq=<span class="number">1</span>, cluster_all=True, max_iter=<span class="number">300</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">               n_jobs= <span class="number">1</span>)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> bandwidth <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        bandwidth = estimate_bandwidth(X, n_jobs=n_jobs)</span><br><span class="line">    <span class="keyword">elif</span> bandwidth &lt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">"bandwidth needs to be greater than zero or None,\</span></span><br><span class="line"><span class="string">            got %f"</span> % bandwidth)</span><br><span class="line"></span><br><span class="line">    seeds = X</span><br><span class="line">    n_samples,n_features = X.shape</span><br><span class="line">    center_intensity_dict = &#123;&#125;</span><br><span class="line">    nbrs = NearestNeighbors(radius=bandwidth, n_jobs= <span class="number">-1</span>).fit(X)</span><br><span class="line">    <span class="comment">#all_res为所有种子的迭代完的中心以及周围的邻居数</span></span><br><span class="line">    all_res = Parallel(n_jobs=n_jobs)(delayed(_mean_shift_single_seed)</span><br><span class="line">        (seed, X, nbrs, max_iter) <span class="keyword">for</span> seed <span class="keyword">in</span> seeds)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># copy results in a dictionary</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(seeds)):</span><br><span class="line">        <span class="keyword">if</span> all_res[i] <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="comment"># 一个中心点为以周围邻居数为强度</span></span><br><span class="line">            center_intensity_dict[all_res[i][<span class="number">0</span>]] = all_res[i][<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> center_intensity_dict:</span><br><span class="line">        <span class="comment"># nothing near seeds</span></span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">"No point was within bandwidth=%f of any seed."</span></span><br><span class="line">                         <span class="string">" Try a different seeding strategy \</span></span><br><span class="line"><span class="string">                         or increase the bandwidth."</span></span><br><span class="line">                         % bandwidth)</span><br><span class="line">    <span class="comment">#按照强度来排序    </span></span><br><span class="line">    sorted_by_intensity = sorted(center_intensity_dict.items(),</span><br><span class="line">                                 key=<span class="keyword">lambda</span> tup: tup[<span class="number">1</span>], reverse=<span class="keyword">True</span>)</span><br><span class="line">    <span class="comment">#单独把排好序的点分出来</span></span><br><span class="line">    sorted_centers = np.array([tup[<span class="number">0</span>] <span class="keyword">for</span> tup <span class="keyword">in</span> sorted_by_intensity])</span><br><span class="line"></span><br><span class="line">    unique = np.ones(len(sorted_centers), dtype=np.bool)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#在这些点里再来一次找邻居</span></span><br><span class="line">    nbrs = NearestNeighbors(radius=bandwidth,</span><br><span class="line">                            n_jobs=n_jobs).fit(sorted_centers)   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i, center <span class="keyword">in</span> enumerate(sorted_centers):</span><br><span class="line">        <span class="keyword">if</span> unique[i]:</span><br><span class="line">            neighbor_idxs = nbrs.radius_neighbors([center],</span><br><span class="line">                                                  return_distance=<span class="keyword">False</span>)[<span class="number">0</span>]</span><br><span class="line">            unique[neighbor_idxs] = <span class="number">0</span></span><br><span class="line">            unique[i] = <span class="number">1</span>  <span class="comment"># leave the current point as unique</span></span><br><span class="line">    cluster_centers = sorted_centers[unique]    </span><br><span class="line"></span><br><span class="line">    print(cluster_centers.shape)</span><br><span class="line">    print(cluster_centers[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># ASSIGN LABELS: a point belongs to the cluster that it is closest to</span></span><br><span class="line">    nbrs = NearestNeighbors(n_neighbors=<span class="number">1</span>, n_jobs=n_jobs).fit(cluster_centers)</span><br><span class="line"></span><br><span class="line">    labels = np.zeros(n_samples, dtype=np.int)</span><br><span class="line">    distances, idxs = nbrs.kneighbors(X)</span><br><span class="line">    <span class="keyword">if</span> cluster_all:</span><br><span class="line">        labels = idxs.flatten()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        labels.fill(<span class="number">-1</span>)</span><br><span class="line">        <span class="comment">#距离小于bandwidth才能参与聚类</span></span><br><span class="line">        bool_selector = distances.flatten() &lt;= bandwidth</span><br><span class="line">        labels[bool_selector] = idxs.flatten()[bool_selector]</span><br><span class="line">    <span class="keyword">return</span> cluster_centers, labels</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cluster_centers,labels = mean_shift(X,bandwidth = bandwidth)</span><br></pre></td></tr></table></figure>
-<pre><code>(3, 2)
-[ 1.25421279  0.42251172]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算类数</span></span><br><span class="line">labels_unique = np.unique(labels)</span><br><span class="line">n_clusters = len(labels_unique)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'number of estimated clusters : %d'</span> % n_clusters)</span><br></pre></td></tr></table></figure>
-<pre><code>number of estimated clusters : 3
-</code></pre><p><strong>聚类结果</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(<span class="number">1</span>)</span><br><span class="line">plt.clf()</span><br><span class="line"></span><br><span class="line"><span class="comment">#cycle把一个序列无限重复下去</span></span><br><span class="line">colors = cycle(<span class="string">'bgrcmykbgrcmykbgrcmykbgrcmyk'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k, col <span class="keyword">in</span> zip(range(n_clusters), colors):</span><br><span class="line">    my_members = labels == k</span><br><span class="line">    cluster_center = cluster_centers[k]</span><br><span class="line">    plt.plot(X[my_members, <span class="number">0</span>], X[my_members, <span class="number">1</span>], col + <span class="string">'.'</span>)</span><br><span class="line">    plt.plot(cluster_center[<span class="number">0</span>], cluster_center[<span class="number">1</span>], <span class="string">'o'</span>, markerfacecolor=col,</span><br><span class="line">             markeredgecolor=<span class="string">'k'</span>, markersize=<span class="number">14</span>)</span><br><span class="line">plt.title(<span class="string">'Estimated number of clusters: %d'</span> % n_clusters)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/output_14_0.png" alt="png" title="">
-                </div>
-                <div class="image-caption">png</div>
-            </figure>
-<p>该算法在执行算法期间需要执行多个最近邻搜索。<br>该算法保证收敛，但是当质心的变化较小时，算法将停止迭代。</p>
-
     
 
         <a href="/2018/03/30/Mean-shift/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -350,7 +248,7 @@
 <p>Syllabus:<br><a href="http://cs231n.stanford.edu/syllabus.html" target="_blank" rel="noopener">http://cs231n.stanford.edu/syllabus.html</a></p>
 <p>Note翻译:<br><a href="http://www.52ml.net/17723.html" target="_blank" rel="noopener">http://www.52ml.net/17723.html</a></p>
 </blockquote>
-<h1 id="Module-1-2"><a href="#Module-1-2" class="headerlink" title="Module 1.2"></a>Module 1.2</h1><h1 id="Lecture-2-Optimization"><a href="#Lecture-2-Optimization" class="headerlink" title="Lecture 2 | Optimization"></a>Lecture 2 | Optimization</h1><p>Optimization is the process of finding the set of parameters WW that minimize the loss function.</p>
+<h1 id="Module-1-2"><a href="#Module-1-2" class="headerlink" title="Module 1.2"></a>Module 1.2</h1><h1 id="Lecture-2-Optimization"><a href="#Lecture-2-Optimization" class="headerlink" title="Lecture 2 | Optimization"></a>Lecture 2 | Optimization</h1><p>Optimization is the process of finding the set of parameters W that minimize the loss function.</p>
 <h2 id="Visualizing-the-loss-function"><a href="#Visualizing-the-loss-function" class="headerlink" title="Visualizing the loss function"></a>Visualizing the loss function</h2><p>注意到loss function是不可微分的,由于max函数,导致函数中存在一定的不可导点(kinks).<br>However, the subgradient still exists and is commonly used instead.</p>
 <h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h2><p><strong>Strategy #1: A first very bad idea solution: Random search</strong><br><del>随机选择weights,然后看哪个loss低.</del><br><strong>Strategy #2: Random Local Search</strong><br><del>随机选择一个方向,loss下降,才继续往下走.</del><br><strong>Strategy #3: Following the Gradient</strong><br>梯度</p>
 <p>1-D function $$\frac{df(x)}{dx} = \lim_{h\ \to 0} \frac{f(x + h) - f(x)}{h}$$</p>
@@ -358,7 +256,7 @@
     
 
         <a href="/2018/03/22/cs231n_m1_2/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -413,7 +311,7 @@
     
 
         <a href="/2018/03/21/cs231n_m1_1/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -465,7 +363,7 @@
     
 
         <a href="/2018/03/09/myPython_b/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -515,7 +413,7 @@
     
 
         <a href="/2018/02/03/myPython-a/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -572,7 +470,7 @@
     
 
         <a href="/2018/01/26/MLforward/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -631,7 +529,7 @@
     
 
         <a href="/2018/01/10/myPython/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -686,7 +584,7 @@
     
 
         <a href="/2017/12/31/sf012/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -733,7 +631,7 @@
     
 
         <a href="/2017/12/30/sf011/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -784,7 +682,7 @@
     
 
         <a href="/2017/12/30/sf010/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -827,7 +725,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
