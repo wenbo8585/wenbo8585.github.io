@@ -24,14 +24,14 @@
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CS231n学习笔记 Module 1.1">
-<meta property="og:url" content="http://wenbo.fun/2018/03/21/cs231n_m1_1/index.html">
+<meta property="og:url" content="http://wenbo.fun/2018/04/11/cs231n_m1_1/index.html">
 <meta property="og:site_name" content="Hi">
 <meta property="og:description" content="Abstract Assignment Git:https://github.com/CS231n-zju/CS231n 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231n.github.io/ Syll">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="http://cs231n.github.io/assets/pixelspace.jpeg">
 <meta property="og:image" content="http://cs231n.github.io/assets/wb.jpeg">
 <meta property="og:image" content="http://cs231n.github.io/assets/svmvssoftmax.png">
-<meta property="og:updated_time" content="2018-04-01T02:27:04.467Z">
+<meta property="og:updated_time" content="2018-04-12T13:16:17.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CS231n学习笔记 Module 1.1">
 <meta name="twitter:description" content="Abstract Assignment Git:https://github.com/CS231n-zju/CS231n 视频地址：https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo 课程作业：http://cs231n.github.io/ Syll">
@@ -150,8 +150,8 @@
         <h1 class="title">CS231n学习笔记 Module 1.1</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-03-21T09:15:17.000Z" itemprop="datePublished" class="page-time">
-  2018-03-21
+                <time datetime="2018-04-11T09:15:17.000Z" itemprop="datePublished" class="page-time">
+  2018-04-11
 </time>
 
 
@@ -170,7 +170,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Module-1-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">Module 1.1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Image-Classification"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Image Classification</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#The-image-classification-pipeline"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">The image classification pipeline</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Nearest-Neighbor-Classifier"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Nearest Neighbor Classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#k-Nearest-Neighbor-Classifier"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">k - Nearest Neighbor Classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Validation-sets-for-Hyperparameter-tuning-用于超参数调优的验证集"><span class="post-toc-number">2.1.5.</span> <span class="post-toc-text">Validation sets for Hyperparameter tuning (用于超参数调优的验证集)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#N-fold-cross-validation"><span class="post-toc-number">2.1.6.</span> <span class="post-toc-text">N-fold cross-validation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Pros-and-Cons-of-Nearest-Neighbor-classifier"><span class="post-toc-number">2.1.7.</span> <span class="post-toc-text">Pros and Cons of Nearest Neighbor classifier</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Linear-Classification"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Linear Classification</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Parameterized-mapping-from-images-to-label-scores"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Parameterized mapping from images to label scores</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Interpreting-a-linear-classifier"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Interpreting a linear classifier</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Loss-function"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Loss function</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Multiclass-Support-Vector-Machine-loss"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">Multiclass Support Vector Machine loss</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Practical-Considerations"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">Practical Considerations</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Softmax-classifier"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">Softmax classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SVM-vs-Softmax"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text">SVM vs. Softmax</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unknown-words"><span class="post-toc-number">3.</span> <span class="post-toc-text">Unknown words</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Module-1-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">Module 1.1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-1"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Lecture 1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Image-Classification"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Image Classification</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#The-image-classification-pipeline"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">The image classification pipeline</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Nearest-Neighbor-Classifier"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Nearest Neighbor Classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#k-Nearest-Neighbor-Classifier"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">k - Nearest Neighbor Classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Validation-sets-for-Hyperparameter-tuning-用于超参数调优的验证集"><span class="post-toc-number">2.1.5.</span> <span class="post-toc-text">Validation sets for Hyperparameter tuning (用于超参数调优的验证集)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#N-fold-cross-validation"><span class="post-toc-number">2.1.6.</span> <span class="post-toc-text">N-fold cross-validation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Pros-and-Cons-of-Nearest-Neighbor-classifier"><span class="post-toc-number">2.1.7.</span> <span class="post-toc-text">Pros and Cons of Nearest Neighbor classifier</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Linear-Classification"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Linear Classification</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Parameterized-mapping-from-images-to-label-scores"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Parameterized mapping from images to label scores</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Interpreting-a-linear-classifier"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Interpreting a linear classifier</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Loss-function"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Loss function</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Multiclass-Support-Vector-Machine-loss"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">Multiclass Support Vector Machine loss</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Softmax-classifier"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">Softmax classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SVM-vs-Softmax"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">SVM vs. Softmax</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unknown-words"><span class="post-toc-number">3.</span> <span class="post-toc-text">Unknown words</span></a></li></ol>
         </nav>
     </aside>
     
@@ -180,7 +180,7 @@
     <div class="post-card">
         <h1 class="post-card-title">CS231n学习笔记 Module 1.1</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-03-21 17:15:17" datetime="2018-03-21T09:15:17.000Z"  itemprop="datePublished">2018-03-21</time>
+            <time class="post-time" title="2018-04-11 17:15:17" datetime="2018-04-11T09:15:17.000Z"  itemprop="datePublished">2018-04-11</time>
 
             
 
@@ -200,7 +200,8 @@
 <p>Syllabus:<br><a href="http://cs231n.stanford.edu/syllabus.html" target="_blank" rel="noopener">http://cs231n.stanford.edu/syllabus.html</a></p>
 <p>Note翻译:<br><a href="http://www.52ml.net/17723.html" target="_blank" rel="noopener">http://www.52ml.net/17723.html</a></p>
 </blockquote>
-<h1 id="Module-1-1"><a href="#Module-1-1" class="headerlink" title="Module 1.1"></a>Module 1.1</h1><h2 id="Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition"><a href="#Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition" class="headerlink" title="Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition"></a>Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition</h2><p><strong>NOTE</strong></p>
+<h1 id="Module-1-1"><a href="#Module-1-1" class="headerlink" title="Module 1.1"></a>Module 1.1</h1><h2 id="Lecture-1"><a href="#Lecture-1" class="headerlink" title="Lecture 1"></a>Lecture 1</h2><p><strong>Introduction to Convolutional Neural Networks for Visual Recognition</strong></p>
+<p><strong>NOTE</strong></p>
 <ul>
 <li>2012 CNN ImageNet</li>
 </ul>
@@ -237,28 +238,7 @@
 </li>
 </ul>
 <p>这里将5万张train中1千张作为验证集，来寻找最优的k。</p>
-<pre><code class="python"><span class="comment"># assume we have Xtr_rows, Ytr, Xte_rows, Yte as before</span>
-<span class="comment"># recall Xtr_rows is 50,000 x 3072 matrix</span>
-Xval_rows = Xtr_rows[:<span class="number">1000</span>, :] <span class="comment"># take first 1000 for validation</span>
-Yval = Ytr[:<span class="number">1000</span>]
-Xtr_rows = Xtr_rows[<span class="number">1000</span>:, :] <span class="comment"># keep last 49,000 for train</span>
-Ytr = Ytr[<span class="number">1000</span>:]
-
-<span class="comment"># find hyperparameters that work best on the validation set</span>
-validation_accuracies = []
-<span class="keyword">for</span> k <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">50</span>, <span class="number">100</span>]:
-
-  <span class="comment"># use a particular value of k and evaluation on validation data</span>
-  nn = NearestNeighbor()
-  nn.train(Xtr_rows, Ytr)
-  <span class="comment"># here we assume a modified NearestNeighbor class that can take a k as input</span>
-  Yval_predict = nn.predict(Xval_rows, k = k)
-  acc = np.mean(Yval_predict == Yval)
-  <span class="keyword">print</span> <span class="string">'accuracy: %f'</span> % (acc,)
-
-  <span class="comment"># keep track of what works on the validation set</span>
-  validation_accuracies.append((k, acc))
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># assume we have Xtr_rows, Ytr, Xte_rows, Yte as before</span></span><br><span class="line"><span class="comment"># recall Xtr_rows is 50,000 x 3072 matrix</span></span><br><span class="line">Xval_rows = Xtr_rows[:<span class="number">1000</span>, :] <span class="comment"># take first 1000 for validation</span></span><br><span class="line">Yval = Ytr[:<span class="number">1000</span>]</span><br><span class="line">Xtr_rows = Xtr_rows[<span class="number">1000</span>:, :] <span class="comment"># keep last 49,000 for train</span></span><br><span class="line">Ytr = Ytr[<span class="number">1000</span>:]</span><br><span class="line"></span><br><span class="line"><span class="comment"># find hyperparameters that work best on the validation set</span></span><br><span class="line">validation_accuracies = []</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">50</span>, <span class="number">100</span>]:</span><br><span class="line"></span><br><span class="line"><span class="comment"># use a particular value of k and evaluation on validation data</span></span><br><span class="line">  nn = NearestNeighbor()</span><br><span class="line">  nn.train(Xtr_rows, Ytr)</span><br><span class="line">  <span class="comment"># here we assume a modified NearestNeighbor class that can take a k as input</span></span><br><span class="line">  Yval_predict = nn.predict(Xval_rows, k = k)</span><br><span class="line">  acc = np.mean(Yval_predict == Yval)</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'accuracy: %f'</span> % (acc,)</span><br><span class="line"><span class="comment"># keep track of what works on the validation set</span></span><br><span class="line">  validation_accuracies.append((k, acc))</span><br></pre></td></tr></table></figure>
 <h3 id="N-fold-cross-validation"><a href="#N-fold-cross-validation" class="headerlink" title="N-fold cross-validation"></a>N-fold cross-validation</h3><p>5份交叉验证对k值调优的例子。将训练集平均分成5份，循环着取其中4份来训练，份来验证针,对每个k值，得到5个准确率结果，取其平均值。</p>
 <h3 id="Pros-and-Cons-of-Nearest-Neighbor-classifier"><a href="#Pros-and-Cons-of-Nearest-Neighbor-classifier" class="headerlink" title="Pros and Cons of Nearest Neighbor classifier"></a>Pros and Cons of Nearest Neighbor classifier</h3><ul>
 <li>Approximate Nearest Neighbor (ANN) algorithms and libraries exist that can accelerate the nearest neighbor lookup in a dataset (e.g. FLANN)</li>
@@ -314,6 +294,7 @@ validation_accuracies = []
 <p><strong>image data preprocessing</strong></p>
 <p>normalization</p>
 <p>range from [-1,1],zero mean centering</p>
+<hr>
 <h2 id="Loss-function"><a href="#Loss-function" class="headerlink" title="Loss function"></a>Loss function</h2><p>sometimes also referred to as <strong>cos function</strong> or the <strong>objective</strong>(目标函数)</p>
 <h3 id="Multiclass-Support-Vector-Machine-loss"><a href="#Multiclass-Support-Vector-Machine-loss" class="headerlink" title="Multiclass Support Vector Machine loss"></a>Multiclass Support Vector Machine loss</h3><p>The Multiclass SVM loss for the i-th example is then formalized as follows:<br>$$L_i = \sum_{j\neq y_i} max(0, s_j - s_{y_i} + \Delta)$$</p>
 <p><strong>Example</strong>:</p>
@@ -329,7 +310,20 @@ validation_accuracies = []
 </ul>
 <p>不添加正则项, loss 会使 w 更拟合 training data，添加后， 更加拟合未知数据。</p>
 <p>使拟合函数曲线更加趋向于低次表达， 越简单越正确。</p>
-<h3 id="Practical-Considerations"><a href="#Practical-Considerations" class="headerlink" title="Practical Considerations"></a>Practical Considerations</h3><p><strong>Setting Delta</strong></p>
+<p><strong>程序解释</strong></p>
+<p>作业要求用微分分析方法（而不是数值分析法）来计算梯度，svm_loss_naive中允许使用循环</p>
+<p>svm_loss_naive：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">....</span><br><span class="line">num_classes = W.shape[<span class="number">1</span>]</span><br><span class="line">  num_train = X.shape[<span class="number">0</span>]</span><br><span class="line">  loss = <span class="number">0.0</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> xrange(num_train):</span><br><span class="line">    scores = X[i].dot(W)</span><br><span class="line">    correct_class_score = scores[y[i]]</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> xrange(num_classes):</span><br><span class="line">      <span class="keyword">if</span> j == y[i]:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">      margin = scores[j] - correct_class_score + <span class="number">1</span> <span class="comment"># note delta = 1</span></span><br><span class="line">      <span class="keyword">if</span> margin &gt; <span class="number">0</span>:</span><br><span class="line">        loss += margin</span><br><span class="line">        dW[:,j] += X[i].T</span><br><span class="line">        dW[:,y[i]] += -X[i].T</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<p>其中，scores = X[i].dot(W)就是下面计算loss 中的 f 函数。<br>$$L = \frac{1}{N} \sum_i \sum_{j\neq y_i} \left[ \max(0, f(x_i; W)_j - f(x_i; W)_{y_i} + \Delta) \right] + \lambda \sum_k\sum_l W_{k,l}^2$$</p>
+<p>这样得出的scores是X[i]关于权重W（含偏置）的各个分类器的得分，是一个C维向量（假设共有C个分类）。</p>
+<p>最后两行：</p>
+<p>在j不等于y_i的时候，求偏导就是 d scores，为 X[i].T, 最后总式子的累加符号中可以看出j不等于y_i，在j等于y_i的时候,累加中只有减号后才有y_i项，求偏导时前面都是0，减号后项保留，得到结果 -X[i].T 。</p>
+<p>既然W_yi的作用是要使得损失函数 L_i最小，那么就给 W_yi 加上若干个 Xi（这里为负号，但在SGD计算时采用负梯度方向，所以实际效果为相加），使得 Wyi的权重值变大，结果是新一轮迭代时损失函数应该变小。</p>
+<p>svm_loss_vectorized:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">....</span><br><span class="line">num_train = X.shape[<span class="number">0</span>]</span><br><span class="line">  num_classes = W.shape[<span class="number">1</span>]</span><br><span class="line">  scores = X.dot(W)</span><br><span class="line">  correct_class_scores = scores[range(num_train), list(y)].reshape(<span class="number">-1</span>,<span class="number">1</span>) <span class="comment">#(N, 1)</span></span><br><span class="line">  margins = np.maximum(<span class="number">0</span>, scores - correct_class_scores +<span class="number">1</span>)</span><br><span class="line">  margins[range(num_train), list(y)] = <span class="number">0</span></span><br><span class="line">  loss = np.sum(margins) / num_train + <span class="number">0.5</span> * reg * np.sum(W * W)</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<p>参照公式一目了然。</p>
+<p>后面 0.5 有的说通常加入0.5是为了计算regulation loss的梯度时系数变为1。这个应该是看如何定义的。</p>
+<p><strong>Setting Delta</strong></p>
 <p>can safely be set to $Δ=1.0$ in all cases. 它影响的是 w 的大小而不是 loss.the only real tradeoff is how large we allow the weights to grow (through the regularization strength $λ$).</p>
 <h3 id="Softmax-classifier"><a href="#Softmax-classifier" class="headerlink" title="Softmax classifier"></a>Softmax classifier</h3><p>$f(x_i,W) = Wx_i$ unchanged,interpret these scores as the unnormalized log probabilities(未归一化的对数概率) for each class and replace the <em>hinge loss</em> with a <em>cross-entropy loss</em>(交叉熵损失) that has the form:<br>$$L_i = -\log( {e^{f_{y_i}} \over \sum_je^{f_j} }) \ \ \ \ or \ \ \ L_i = -f_{y_i} + \log\sum_je^{f_j}$$</p>
 <p> $f_j$ to mean the j-th element of the vector of class scores $f$.<br> $f_{y_i}$ to mean 把 i 分类为 $y_i$ 的 score. (j can = $y_j$ ? )</p>
@@ -342,6 +336,16 @@ validation_accuracies = []
 <p>$$\frac{e^{f_{y_i}}}{\sum_j e^{f_j}}<br>= \frac{Ce^{f_{y_i}}}{C\sum_j e^{f_j}}<br>= \frac{e^{f_{y_i} + \log C}}{\sum_j e^{f_j + \log C}}$$</p>
 <p>这样指数就 &lt;= 0,分子分母都小于1。</p>
 <p><strong>名词误解</strong>: SVM分类器使用的是折叶损失（hinge loss），有时候又被称为最大边界损失（max-margin loss）。Softmax分类器使用的是交叉熵损失（corss-entropy loss）。Softmax分类器的命名是从softmax函数那里得来的，softmax函数将原始分类评分变成正的归一化数值，所有数值和为1，这样处理后交叉熵损失才能应用。注意从技术上说“softmax损失（softmax loss）”是没有意义的，因为softmax只是一个压缩数值的函数。但是在这个说法常常被用来做简称。</p>
+<p><strong>代码解释</strong></p>
+<p>softmax_loss_naive(W, X, y, reg):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">num_classes = W.shape[<span class="number">1</span>]</span><br><span class="line">num_train = X.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(num_train):</span><br><span class="line">   scores = X[i].dot(W)</span><br><span class="line">   shift_scores = scores - max(scores)</span><br><span class="line">   loss_i = - shift_scores[y[i]] + np.log(sum(np.exp(shift_scores)))</span><br><span class="line">   loss += loss_i</span><br><span class="line">   <span class="keyword">for</span> j <span class="keyword">in</span> range(num_classes):</span><br><span class="line">       softmax_output = np.exp(shift_scores[j])/sum(np.exp(shift_scores))</span><br><span class="line">       <span class="keyword">if</span> j == y[i]:</span><br><span class="line">           dW[:,j] += (<span class="number">-1</span> + softmax_output) *X[i]</span><br><span class="line">       <span class="keyword">else</span>:</span><br><span class="line">           dW[:,j] += softmax_output *X[i]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>shift_scores 就是上面指出的  Numeric stability。</p>
+<p>loss_i 是上面损失函数第二个式子。</p>
+<p>softmax_output：<br>链式法则<br>$$\frac{dloss} {dw} = \frac{dloss}{df_j}.\frac{df_j}{dw}$$<br>后面一项为 X[i]，主要计算前面。<br>$j = y_j$对分子求偏导:<br>$$\frac{\partial loss}{\partial f_j} = (-\log( {e^{f_{y_i}} \over \sum_je^{f_j} }))’={e^{f_{y_i}} \over \sum_je^{f_j} }-1$$</p>
+<p>$j \neq y_j$对分母求偏导:<br>$$\frac{\partial loss}{\partial f_j} = (-\log( {e^{f_{y_i}} \over \sum_je^{f_j} }))’={e^{f_{y_i}} \over \sum_je^{f_j} }$$</p>
+<p>softmax_loss_vectorized(W, X, y, reg):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">scores = X.dot(W)</span><br><span class="line">shift_scores = scores - np.max(scores, axis = <span class="number">1</span>).reshape(<span class="number">-1</span>,<span class="number">1</span>)</span><br><span class="line">softmax_output = np.exp(shift_scores)/np.sum(np.exp(shift_scores), axis = <span class="number">1</span>).reshape(<span class="number">-1</span>,<span class="number">1</span>)</span><br><span class="line">loss = -np.sum(np.log(softmax_output[range(num_train), list(y)]))</span><br><span class="line">loss /= num_train</span><br><span class="line">loss +=  <span class="number">0.5</span>* reg * np.sum(W * W)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>参考loss function前面一个式子。</p>
 <h3 id="SVM-vs-Softmax"><a href="#SVM-vs-Softmax" class="headerlink" title="SVM vs. Softmax"></a>SVM vs. Softmax</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -352,7 +356,7 @@ validation_accuracies = []
 <p>softmax分类器对于分数是永远不会满意的：正确分类总能得到更高的可能性，错误分类总能得到更低的可能性，损失值总是能够更小。<br>但是，SVM只要边界值被满足了就满意了。</p>
 <p>eg.</p>
 <p>SVM对于数字个体的细节是不关心的：如果分数是[10, -100, -100]或者[10, 9, 9]，对于SVM来说没设么不同，只要满足超过边界值等于1，那么损失值就等于0。</p>
-<p>对于softmax分类器，情况则不同。对于[10, 9, 9]来说，计算出的损失值就远远高于[10, -100, -100]的。 </p>
+<p>对于softmax分类器，情况则不同。对于[10, 9, 9]来说，计算出的损失值就远远高于[10, -100, -100]的。</p>
 <p><a href="http://vision.stanford.edu/teaching/cs231n-demos/linear-classify/" target="_blank" rel="noopener">Interactive web demo</a></p>
 <hr>
 <h1 id="Unknown-words"><a href="#Unknown-words" class="headerlink" title="Unknown words"></a>Unknown words</h1><hr>
@@ -421,7 +425,7 @@ validation_accuracies = []
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2018-04-01T02:27:04.467Z" itemprop="dateUpdated">2018-04-01 10:27:04</time>
+    最終更新：<time datetime="2018-04-12T13:16:17.672Z" itemprop="dateUpdated">2018-04-12 21:16:17</time>
 </span><br>
 
 
@@ -456,7 +460,7 @@ validation_accuracies = []
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/04/11/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -466,24 +470,24 @@ validation_accuracies = []
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&source=Abstract
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/04/11/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&source=Abstract
 Assignment Git:https://github.com/CS231n-zju/CS231n
 视频地址：https://www..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/21/cs231n_m1_1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/04/11/cs231n_m1_1/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.1》 — Hi&url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&via=http://wenbo.fun" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.1》 — Hi&url=http://wenbo.fun/2018/04/11/cs231n_m1_1/&via=http://wenbo.fun" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/04/11/cs231n_m1_1/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -503,21 +507,14 @@ Assignment Git:https://github.com/CS231n-zju/CS231n
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/03/22/cs231n_m1_2/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CS231n学习笔记 Module 1.2</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/03/09/myPython_b/" id="post-next" class="post-nav-link">
+      <a href="/2018/03/30/Mean-shift/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Python教程笔记(3/4)</h4>
+        <h4 class="title">Mean-shift clustering algorithm</h4>
       </a>
     </div>
   
@@ -635,7 +632,7 @@ Assignment Git:https://github.com/CS231n-zju/CS231n
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/04/11/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -645,24 +642,24 @@ Assignment Git:https://github.com/CS231n-zju/CS231n
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&source=Abstract
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/04/11/cs231n_m1_1/&title=《CS231n学习笔记 Module 1.1》 — Hi&source=Abstract
 Assignment Git:https://github.com/CS231n-zju/CS231n
 视频地址：https://www..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/03/21/cs231n_m1_1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/04/11/cs231n_m1_1/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.1》 — Hi&url=http://wenbo.fun/2018/03/21/cs231n_m1_1/&via=http://wenbo.fun" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.1》 — Hi&url=http://wenbo.fun/2018/04/11/cs231n_m1_1/&via=http://wenbo.fun" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/03/21/cs231n_m1_1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/04/11/cs231n_m1_1/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -673,7 +670,7 @@ Assignment Git:https://github.com/CS231n-zju/CS231n
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABvElEQVR42u3aS5KDMAwFwNz/0sw2G5MnfwQ11V5RDrEbFipJ5vOJx/U1RvPfv16Dcb/atoGLi7vMvW5HlTu6J7lOVsPFxe3kjiLG6J5kZmX94TwuLu4ruXnAul8ZFxf3/3GTCuUeh4uL+35uUvzM0VfaKLi4uE9x823OXR/p7+Li4k5xr+KoFj9zuwx3x8XFbeFWi5kk+chTk+q+uLi4PdzqZxN5m6MKvTdEG+Pi4h7g5mlN9V95k3RDRoaLi7uJW8iGgm3y4qfaTsXFxe3h/kgp4oPYKEGZeowo0cHFxd3KXWlx5uEv/9jix3ELLi5uC7faxFw/Lt11bIOLi3uau5KI7GqtFgIfLi7uYW41MM2hqy9iSMfFxW3h5mlNEnqWEHl1g4uL+xA3b55Wt6w2XArFDy4ubgs3KUvWA1k+j4uL+yw3L3s2pCzVe3BxcQ9zr+KohqG8rIoOY3BxcVu4+chxeRO22qLFxcXt5FY3XjmarR7QDosfXFzcFu5cYzRPa7alMri4uK/kzrVNq4/6ozmCi4v7Mu5cINsWu3BxcRu5K59SrTdNCi8LFxe3hXu6QKoenOSvCRcX9wD3D59/cbC6U0CjAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABvUlEQVR42u3aS5LCMAwFQO5/6cyWTcKTZLtgqr2iwDGdjUofv17xut7W3ffvv1436/m0ZQsXF3fMvR5XlXu3J/mcnIaLi3uSexcxnvckgWlyPi4u7q9w8/3PO3Fxcf8TNw9tzzhcXNzv5ybFTzVg9YqrZbUaLi7ugJt3Kfd93tLfxcXFbXGv4koanZPG6Id/x8XFPcLNA0r1ZfIzy8NdXFzcI9yklZkXOdWEKQ+OuLi438PNRyCTX5vNEVxc3CPceemSP5UkUlGIxMXFXcq9ezg/rpoSVV/jtouDi4u7jbt7WlG9bFEet+Di4m7jPoetvCiqXtJqtl9xcXE3c6vQXkKTpzIfAh8uLu4R7uQyVrlQKQa16sgWFxd3B7cXhiZPja5o4OLibuY241zxclV1GBPVari4uEe4o9nseNwS/S8uLu5B7qQ9uiDDyvfg4uJu5vZGqtUT8pD3msRIXFzcRdx8VUcmyUWKJHlqvgwuLu6YO7l6le/pDWg/FD+4uLibufmQtVcCLUtlcHFxf5CbFzbV8S0uLu43cyetkAWxCxcX9yB3x1i0GapW1Wq4uLgDbq/imBQ/VSguLu5B7h+KX7loGgss/gAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

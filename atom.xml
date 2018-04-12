@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-04-02T14:59:36.237Z</updated>
+  <updated>2018-04-12T13:16:17.672Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CS231n学习笔记 Module 1.1</title>
+    <link href="http://wenbo.fun/2018/04/11/cs231n_m1_1/"/>
+    <id>http://wenbo.fun/2018/04/11/cs231n_m1_1/</id>
+    <published>2018-04-11T09:15:17.000Z</published>
+    <updated>2018-04-12T13:16:17.672Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Assignment Git:&lt;br&gt;&lt;a href=&quot;https://github.com/CS231n-zju/CS231n&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/CS231n-zju/CS231n&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;视频地址：&lt;br&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;课程作业：&lt;br&gt;&lt;a href=&quot;http://cs231n.github.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cs231n.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Syllabus:&lt;br&gt;&lt;a href=&quot;http://cs231n.stanford.edu/syllabus.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cs231n.stanford.edu/syllabus.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note翻译:&lt;br&gt;&lt;a href=&quot;http://www.52ml.net/17723.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.52ml.net/17723.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;Module-1-1&quot;&gt;&lt;a href=&quot;#Module-1-1&quot; class=&quot;headerlink&quot; title=&quot;Module 1.1&quot;&gt;&lt;/a&gt;Module 1.1&lt;/h1&gt;&lt;h2 id=&quot;Lecture-1&quot;&gt;&lt;a href=&quot;#Lecture-1&quot; class=&quot;headerlink&quot; title=&quot;Lecture 1&quot;&gt;&lt;/a&gt;Lecture 1&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Introduction to Convolutional Neural Networks for Visual Recognition&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2012 CNN ImageNet&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Mean-shift clustering algorithm</title>
@@ -68,34 +97,6 @@
 &lt;h2 id=&quot;Optimization&quot;&gt;&lt;a href=&quot;#Optimization&quot; class=&quot;headerlink&quot; title=&quot;Optimization&quot;&gt;&lt;/a&gt;Optimization&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Strategy #1: A first very bad idea solution: Random search&lt;/strong&gt;&lt;br&gt;&lt;del&gt;随机选择weights,然后看哪个loss低.&lt;/del&gt;&lt;br&gt;&lt;strong&gt;Strategy #2: Random Local Search&lt;/strong&gt;&lt;br&gt;&lt;del&gt;随机选择一个方向,loss下降,才继续往下走.&lt;/del&gt;&lt;br&gt;&lt;strong&gt;Strategy #3: Following the Gradient&lt;/strong&gt;&lt;br&gt;梯度&lt;/p&gt;
 &lt;p&gt;1-D function $$\frac{df(x)}{dx} = \lim_{h\ \to 0} \frac{f(x + h) - f(x)}{h}$$&lt;/p&gt;
 &lt;p&gt;多维偏导数 partial derivatives&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CS231n学习笔记 Module 1.1</title>
-    <link href="http://wenbo.fun/2018/03/21/cs231n_m1_1/"/>
-    <id>http://wenbo.fun/2018/03/21/cs231n_m1_1/</id>
-    <published>2018-03-21T09:15:17.000Z</published>
-    <updated>2018-04-01T02:27:04.467Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;Assignment Git:&lt;br&gt;&lt;a href=&quot;https://github.com/CS231n-zju/CS231n&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/CS231n-zju/CS231n&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;视频地址：&lt;br&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.youtube.com/watch?v=vT1JzLTH4G4&amp;amp;index=2&amp;amp;list=PLe7764SJVnV10-Nr7e0sBlC9J0LRf4sQo&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;课程作业：&lt;br&gt;&lt;a href=&quot;http://cs231n.github.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cs231n.github.io/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Syllabus:&lt;br&gt;&lt;a href=&quot;http://cs231n.stanford.edu/syllabus.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cs231n.stanford.edu/syllabus.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Note翻译:&lt;br&gt;&lt;a href=&quot;http://www.52ml.net/17723.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.52ml.net/17723.html&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;Module-1-1&quot;&gt;&lt;a href=&quot;#Module-1-1&quot; class=&quot;headerlink&quot; title=&quot;Module 1.1&quot;&gt;&lt;/a&gt;Module 1.1&lt;/h1&gt;&lt;h2 id=&quot;Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition&quot;&gt;&lt;a href=&quot;#Lecture-1-Introduction-to-Convolutional-Neural-Networks-for-Visual-Recognition&quot; class=&quot;headerlink&quot; title=&quot;Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition&quot;&gt;&lt;/a&gt;Lecture 1 | Introduction to Convolutional Neural Networks for Visual Recognition&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;2012 CNN ImageNet&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     
