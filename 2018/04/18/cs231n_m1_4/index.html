@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>CS231n学习笔记 Module 1.4 | Hi | My best salutations are to them who knew me imperfect and loved me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#81D8CF">
+    
+    
+    <meta name="keywords" content="笔记">
+    <meta name="description" content="Lecture 4 | Neural Networks Part 1: Setting up the Architecture a single neuron might look as follows: 1234567class Neuron(object):  # ...  def forward(self, inputs):    &quot;&quot;&quot; assume inputs and weights">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS231n学习笔记 Module 1.4">
+<meta property="og:url" content="http://wenbo.fun/2018/04/18/cs231n_m1_4/index.html">
+<meta property="og:site_name" content="Hi">
+<meta property="og:description" content="Lecture 4 | Neural Networks Part 1: Setting up the Architecture a single neuron might look as follows: 1234567class Neuron(object):  # ...  def forward(self, inputs):    &quot;&quot;&quot; assume inputs and weights">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://cs231n.github.io/assets/nn1/neural_net.jpeg">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca01.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca02.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca03.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca04.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca05.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca06.png">
+<meta property="og:image" content="http://cs231n.github.io/assets/nn2/dropout.jpeg">
+<meta property="og:image" content="http://cs231n.github.io/assets/nn3/learningrates.jpeg">
+<meta property="og:image" content="http://cs231n.github.io/assets/nn3/accuracies.jpeg">
+<meta property="og:image" content="http://cs231n.github.io/assets/nn3/nesterov.jpeg">
+<meta property="og:image" content="http://cs231n.github.io/assets/nn3/opt2.gif">
+<meta property="og:updated_time" content="2018-04-23T02:52:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CS231n学习笔记 Module 1.4">
+<meta name="twitter:description" content="Lecture 4 | Neural Networks Part 1: Setting up the Architecture a single neuron might look as follows: 1234567class Neuron(object):  # ...  def forward(self, inputs):    &quot;&quot;&quot; assume inputs and weights">
+<meta name="twitter:image" content="http://cs231n.github.io/assets/nn1/neural_net.jpeg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hi" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!--  <link rel="stylesheet" href="/css/style.css?v=1.7.1"> -->
+    <link rel="stylesheet" href="/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgbrand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Wen bo</h5>
+          <a href="mailto:1871756080@qq.com" title="1871756080@qq.com" class="mail">1871756080@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wenbo8585" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/MVision"  >
+                <i class="icon icon-lg icon-link"></i>
+                MVision
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CS231n学习笔记 Module 1.4</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CS231n学习笔记 Module 1.4</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-04-18T11:00:08.000Z" itemprop="datePublished" class="page-time">
+  2018-04-18
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Part-1-Setting-up-the-Architecture"><span class="post-toc-number">1.</span> <span class="post-toc-text">Part 1: Setting up the Architecture</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Sigmoid"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Sigmoid</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Tanh"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Tanh</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ReLU"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">ReLU</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Neural-Network-architectures"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Neural Network architectures</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Example-feed-forward-computation"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Example feed-forward computation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Representational-power"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">Representational power</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Part-2-Setting-up-the-Data-and-the-Loss"><span class="post-toc-number">2.</span> <span class="post-toc-text">Part 2: Setting up the Data and the Loss</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据预处理"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">数据预处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#去均值"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">去均值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#归一化"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">归一化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Principal-Component-Analysis-PCA"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Principal Component Analysis (PCA)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Whitening-白化"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">Whitening(白化)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Weight-Initialization"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Weight Initialization</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Regularization"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Regularization</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Loss-functions"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Loss functions</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Part-3-Learning-and-Evaluation"><span class="post-toc-number">3.</span> <span class="post-toc-text">Part 3: Learning and Evaluation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#梯度检查"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">梯度检查</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Before-learning"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Before learning</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#学习过程"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">学习过程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Parameter-updates"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">Parameter updates</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hyperparameter-optimization"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">Hyperparameter optimization</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Evaluation"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">Evaluation</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-cs231n_m1_4"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CS231n学习笔记 Module 1.4</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-04-18 19:00:08" datetime="2018-04-18T11:00:08.000Z"  itemprop="datePublished">2018-04-18</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>Lecture 4 | Neural Networks</strong></p>
+<h1 id="Part-1-Setting-up-the-Architecture"><a href="#Part-1-Setting-up-the-Architecture" class="headerlink" title="Part 1: Setting up the Architecture"></a>Part 1: Setting up the Architecture</h1><p> a single neuron might look as follows:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Neuron</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="comment"># ...</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, inputs)</span>:</span></span><br><span class="line">    <span class="string">""" assume inputs and weights are 1-D numpy arrays and bias is a number """</span></span><br><span class="line">    cell_body_sum = np.sum(inputs * self.weights) + self.bias</span><br><span class="line">    firing_rate = <span class="number">1.0</span> / (<span class="number">1.0</span> + math.exp(-cell_body_sum)) <span class="comment"># sigmoid activation function</span></span><br><span class="line">    <span class="keyword">return</span> firing_rate</span><br></pre></td></tr></table></figure>
+<h2 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h2><ul>
+<li><p>(-) 在饱和的时候梯度很小,因为求gradient的时候总是需要用(local gradient) × (upstream gradient),如果local gradient很小那么网络再往前传播的时候很容易没有gradient了,网络也就不能学习.</p>
+</li>
+<li><p>(-) 梯度下降权重更新时出现z字型的下降.?</p>
+</li>
+</ul>
+<h2 id="Tanh"><a href="#Tanh" class="headerlink" title="Tanh"></a>Tanh</h2><a id="more"></a>
+<p>range [-1, 1].</p>
+<p>$\tanh(x) = 2 \sigma(2x) -1$</p>
+<h2 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h2><p>$f(x) = \max(0, x)$</p>
+<ul>
+<li>(+) 更快使得梯度下降收敛</li>
+<li>(+) 容易实现</li>
+<li>(-) learning rate很高的时候会容易杀死很多neurons</li>
+</ul>
+<p><strong>Leaky ReLU</strong></p>
+<p>$f(x) = \mathbb{1}(x &lt; 0) (\alpha x) + \mathbb{1}(x&gt;=0) (x)$</p>
+<p>推荐用ReLu,如果恐惧神经元死亡问题,可以转而用Leaky ReLU来避免这种情况.</p>
+<h2 id="Neural-Network-architectures"><a href="#Neural-Network-architectures" class="headerlink" title="Neural Network architectures"></a>Neural Network architectures</h2><p><strong>Sizing neural networks:</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://cs231n.github.io/assets/nn1/neural_net.jpeg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>The network has 4 + 2 = 6 neurons (not counting the inputs), [3 x 4] + [4 x 2] = 20 weights and 4 + 2 = 6 biases,for a total of <strong>26</strong> learnable parameters.</p>
+<h3 id="Example-feed-forward-computation"><a href="#Example-feed-forward-computation" class="headerlink" title="Example feed-forward computation"></a>Example feed-forward computation</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一个3层神经网络的前向传播:</span></span><br><span class="line">f = <span class="keyword">lambda</span> x: <span class="number">1.0</span>/(<span class="number">1.0</span> + np.exp(-x)) <span class="comment"># 激活函数(用的sigmoid)</span></span><br><span class="line">x = np.random.randn(<span class="number">3</span>, <span class="number">1</span>) <span class="comment"># 含3个数字的随机输入向量(3x1)</span></span><br><span class="line">h1 = f(np.dot(W1, x) + b1) <span class="comment"># 计算第一个隐层的激活数据(4x1)</span></span><br><span class="line">h2 = f(np.dot(W2, h1) + b2) <span class="comment"># 计算第二个隐层的激活数据(4x1)</span></span><br><span class="line">out = np.dot(W3, h2) + b3 <span class="comment"># 神经元输出(1x1)</span></span><br></pre></td></tr></table></figure>
+<h3 id="Representational-power"><a href="#Representational-power" class="headerlink" title="Representational power"></a>Representational power</h3><ul>
+<li>层数<br>  两层全连接神经网络可以近似表达任何一个函数!<br>  全连接网络中3层会比2层表达效果更好,但是4,5……之后的深度对能力的提升作用不大.<br>  在CNN中,深度却是一个非常重要的影响表达能力的因素!</li>
+<li>每层的个数<br>  越多越好!<br>1.越多越能拟合复杂的函数.好处是能拟合复杂的数据,坏处是容易过拟合.可以用其他方法防止过拟合。<br>2.每层个数少的网络每次训练出来的结果经常是都不一样的,但是大一些的网络,每次的结果往往相似(loss差异不大).</li>
+</ul>
+<hr>
+<h1 id="Part-2-Setting-up-the-Data-and-the-Loss"><a href="#Part-2-Setting-up-the-Data-and-the-Loss" class="headerlink" title="Part 2: Setting up the Data and the Loss"></a>Part 2: Setting up the Data and the Loss</h1><h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h3 id="去均值"><a href="#去均值" class="headerlink" title="去均值"></a>去均值</h3><p>$X -= np.mean(X, axis = 0)$</p>
+<h3 id="归一化"><a href="#归一化" class="headerlink" title="归一化"></a>归一化</h3><p>① 先零中心化,再对每一个维度除以标准差.</p>
+<p>$X /= np.std(X, axis = 0)$</p>
+<p>② 对每一个维度归一化,这样min和max分别是-1和1</p>
+<p> 对于图片而言不需要做归一化了,因为他们的数据范围都是在[0,255]之间的.</p>
+<h3 id="Principal-Component-Analysis-PCA"><a href="#Principal-Component-Analysis-PCA" class="headerlink" title="Principal Component Analysis (PCA)"></a>Principal Component Analysis (PCA)</h3><p><strong>协方差矩阵</strong></p>
+<p>首先给出 均值、方差、标准差 基本公式：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca01.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p><em>协方差</em> 是仿照方差的定义, 来度量各个维度偏离其均值的程度：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca02.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>对于多维，例如三维， <em>协方差矩阵</em> 是计算不同维度之间的协方差：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca03.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>协方差矩阵是一个对称和<a href="https://baike.baidu.com/item/%E5%8D%8A%E6%AD%A3%E5%AE%9A%E7%9F%A9%E9%98%B5/2152711?fr=aladdin" target="_blank" rel="noopener">半正定</a>的矩阵，而且对角线是各个维度的方差。</p>
+<p><strong>奇异值分解 SVD</strong></p>
+<ul>
+<li>特征值和特征向量</li>
+</ul>
+<p>$$A\nu = \lambda\nu  $$</p>
+<p>方阵$A$ , 特征向量$\nu$, 对应的特征值 $\lambda$</p>
+<p>特征值分解是将一个矩阵分解成下面的形式：</p>
+<p>$$ A = Q\Sigma Q^{-1} $$</p>
+<p>$Q$是这个矩阵$A$的特征向量组成的矩阵，$\Sigma$是一个对角阵，每一个对角线上的元素就是一个特征值。</p>
+<blockquote>
+<p>注：变换的矩阵必须是方阵</p>
+</blockquote>
+<ul>
+<li>奇异值分解</li>
+</ul>
+<p>奇异值分解是能适用于任意的矩阵：$$A = U\Sigma V^T$$</p>
+<p>A是一个 N x M 的矩阵<br>$U$ 是一个 N x N 的方阵（里面的向量是正交的，$U$里面的向量称为 <em>左奇异向量</em>）<br>$\Sigma$是一个 N x M 的矩阵（除了对角线的元素都是0，对角线上的元素称为 <em>奇异值</em>）<br>$V^T$ 是一个 N x N 的矩阵，里面的向量也是正交的，称为 <em>右奇异向量</em>）:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca04.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>$A^TA$得到一个 M x M 方阵，用这个方阵求特征值.<br>$$(A^TA)\nu_i = \lambda_i\nu_i $$</p>
+<p>$\nu$就是我们上面的右奇异向量<br>$$\sigma_i = \sqrt \lambda_i$$<br>$σ$就是上面的奇异值<br>$$u_i = \frac{1}{\sigma_i} A\nu_i$$<br>$u$就是上面的左奇异向量</p>
+<p>奇异值$σ$跟特征值类似，在矩阵$Σ$中也是从大到小排列，而且$σ$的减少特别的快，在很多情况下，前10%甚至1%的奇异值的和就占了全部的奇异值之和的99%以上了。也就是说，我们也可以用前$r$大的奇异值来近似描述矩阵：</p>
+<p>$$ A_{m\times n} \approx U_{m\times r}\Sigma_{r\times r}V_{r\times n}^T$$</p>
+<p>r是一个远小于m、n的数，这样矩阵的乘法看起来像是下面的样子：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca05.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<ul>
+<li>奇异值与主成分分析（PCA）</li>
+</ul>
+<p>PCA的问题其实是一个基的变换，使得变换后的数据有着最大的方差。以下面这张图为例子：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/pca06.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>这个假设是一个摄像机采集一个物体运动得到的图片，上面的点表示物体运动的位置，假如我们想要用一条直线去拟合这些点，那我们会选择什么方向的线呢？当然是图上标有signal的那条线。如果我们把这些点单纯的投影到x轴或者y轴上，最后在x轴与y轴上得到的方差是相似的（因为这些点的趋势是在45度左右的方向，所以投影到x轴或者y轴上都是类似的），如果我们使用原来的xy坐标系去看这些点，容易看不出来这些点真正的方向是什么。但是如果我们进行坐标系的变化，横轴变成了signal的方向，纵轴变成了noise的方向，则就很容易发现什么方向的方差大，什么方向的方差小了。</p>
+<p>一般来说，方差大的方向是信号的方向，方差小的方向是噪声的方向，我们在数据挖掘中或者数字信号处理中，往往要提高信号与噪声的比例，也就是信噪比。对上图来说，如果我们只保留signal方向的数据，也可以对原数据进行不错的近似了。</p>
+<p>PCA的全部工作简单点说，就是对原始的空间中顺序地找一组相互正交的坐标轴，第一个轴是使得方差最大的，第二个轴是在与第一个轴正交的平面中使得方差最大的，第三个轴是在与第1、2个轴正交的平面中方差最大的，这样假设在N维空间中，我们可以找到N个这样的坐标轴，我们取前r个去近似这个空间，这样就从一个N维的空间压缩到r维的空间了，但是我们选择的r个坐标轴能够使得空间的压缩使得数据的损失最小。</p>
+<p>还是假设我们矩阵每一行表示一个样本，每一列表示一个feature，用矩阵的语言来表示，将一个m x n的矩阵A的进行坐标轴的变化，P就是一个变换的矩阵从一个N维的空间变换到另一个N维的空间，在空间中就会进行一些类似于旋转、拉伸的变化。<br>$$A_{m\times n}P_{n\times n} = \sim A_{m\times n}$$</p>
+<p>SVD得出的奇异向量也是从奇异值由大到小排列的，按PCA的观点来看，就是方差最大的坐标轴就是第一个奇异向量，方差次大的坐标轴就是第二个奇异向量…我们回忆一下之前得到的SVD式子：<br>$$A_{m\times n} \approx U_{m\times r}\Sigma_{r\times r}V_{r\times n}^T$$<br> 在矩阵的两边同时乘上一个矩阵$V$，由于$V$是一个正交的矩阵，所以$V$转置乘以$V$得到单位阵$I$，所以可以化成后面的式子:<br> $$\begin{cases}A_{m\times n}V_{r\times n} \approx U_{m\times r}\Sigma_{r\times r}V_{r\times n}^TV_{r\times n}\\<br> A_{m\times n}V_{r\times n} \approx U_{m\times r}\Sigma_{r\times r}\end{cases}<br> $$<br>将后面的式子与A x P那个m x n的矩阵变换为m x r的矩阵的式子对照看看，在这里，其实$V$就是$P$，这里是将一个m x n 的矩阵压缩到一个m x r的矩阵，也就是对列进行压缩，如果我们想对行进行压缩（在PCA的观点下，对行进行压缩可以理解为，将一些相似的sample合并在一起，或者将一些没有太大价值的sample去掉）怎么办呢？同样我们写出一个通用的行压缩例子：</p>
+<p>$$ U^T_{r\times m}A_{m\times n}= \Sigma_{r\times r}V_{r\times n}^T$$</p>
+<p>可以看出，其实PCA几乎可以说是对SVD的一个包装，如果我们实现了SVD，那也就实现了PCA了。</p>
+<hr>
+<p>先对数据进行零中心化处理，然后计算协方差矩阵.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 假设输入数据矩阵X的尺寸为[N x D]</span></span><br><span class="line">X -= np.mean(X, axis = <span class="number">0</span>) <span class="comment"># 对数据进行零中心化(重要)</span></span><br><span class="line">cov = np.dot(X.T, X) / X.shape[<span class="number">0</span>] <span class="comment"># 得到数据的协方差矩阵</span></span><br></pre></td></tr></table></figure>
+<p>对数据协方差矩阵进行SVD（奇异值分解）运算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U,S,V = np.linalg.svd(cov)</span><br></pre></td></tr></table></figure>
+<p>S中元素是特征值的平方<br>np.linalg.svd的一个良好性质是在它的返回值U中，特征向量是按照特征值的大小排列的。</p>
+<p>为了去除数据相关性：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Xrot = np.dot(X,U) <span class="comment"># 对数据去相关性</span></span><br></pre></td></tr></table></figure>
+<p>将原始的数据集的大小由[N x D]降到了[N x 100]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Xrot_reduced = np.dot(X, U[:,:<span class="number">100</span>]) <span class="comment"># Xrot_reduced 变成 [N x 100]</span></span><br></pre></td></tr></table></figure>
+<h3 id="Whitening-白化"><a href="#Whitening-白化" class="headerlink" title="Whitening(白化)"></a>Whitening(白化)</h3><p>白化是把每一个维度除以它的特征值,使得这个维度归一化.几何解释：<br>if the input data is a multivariable gaussian, then the whitened data will be a gaussian with zero mean and identity covariance matrix.</p>
+<blockquote>
+<p>注意:应该先把数据集划分成training/validation/test,然后计算训练集的均值,每个训练集都要减去这个均值,而不是各自的均值或所有数据的均值.</p>
+</blockquote>
+<h2 id="Weight-Initialization"><a href="#Weight-Initialization" class="headerlink" title="Weight Initialization"></a>Weight Initialization</h2><ol>
+<li>全是0是错误的</li>
+<li><p>Small random numbers</p>
+<pre><code>W = 0.01* np.random.randn(D,H)
+</code></pre></li>
+</ol>
+<blockquote>
+<p>Ps:并不是越小的权值就越好,它可能导致bp中返回很小的梯度,这在深度网络中并不是一件好事.</p>
+</blockquote>
+<ol>
+<li><p>用n的平方根校准数据.</p>
+<pre><code>W = np.random.randn(n) / sqrt(n)
+</code></pre></li>
+</ol>
+<p>经验上,使用ReLU激活函数，并且使用 w = np.random.randn(n) * sqrt(2.0/n)来进行权重初始化</p>
+<ol>
+<li><p>Initializing the biases:  it is more common to simply use 0 bias initialization.</p>
+</li>
+<li><p>批量归一化（Batch Normalization）</p>
+<p> 在全连接层和非线性操作之间添加一个归一化层.</p>
+<p> 批量归一化可以理解为在网络的每一层之前都做预处理，只是这种操作以另一种方式与网络集成在了一起。</p>
+</li>
+</ol>
+<h2 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h2><p>several ways to prevent overfitting:</p>
+<ol>
+<li><p>在输入激励函数的值后面加上L1/L2:       $\lambda_1 \mid w \mid + \lambda_2 w^2$<br> L2倾向于选择使得网络能够应用到全部输入数据而不是其中某一部分的权值(权值更弥散分布).<br> 如果没有明确的特征选择倾向,L2 outperform than L1.</p>
+</li>
+<li><p>最大范式约束(max norm constraint),防止learning rate过高时网络爆炸.    </p>
+</li>
+<li><p><strong>Dropout:</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://cs231n.github.io/assets/nn2/dropout.jpeg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p> 如上图,只激活一部分神经元而不是整个网络.<br> 测试过程并不进行dropout.</p>
+</li>
+</ol>
+<p>实现 use <strong>inverted dropout</strong>：</p>
+<p>train：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">反向随机失活: 推荐实现方式.</span></span><br><span class="line"><span class="string">在训练的时候drop和调整数值范围，测试时不做任何事.</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">p = <span class="number">0.5</span> <span class="comment"># 激活神经元的概率. p值更高 = 随机失活更弱</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_step</span><span class="params">(X)</span>:</span></span><br><span class="line">  <span class="comment"># 3层neural network的前向传播</span></span><br><span class="line">  H1 = np.maximum(<span class="number">0</span>, np.dot(W1, X) + b1)</span><br><span class="line">  U1 = (np.random.rand(*H1.shape) &lt; p) / p <span class="comment"># first dropout mask. Notice /p!</span></span><br><span class="line">  H1 *= U1 <span class="comment"># drop!</span></span><br><span class="line">  .....</span><br><span class="line">```      </span><br><span class="line"></span><br><span class="line">predict:</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(X)</span>:</span></span><br><span class="line">  <span class="comment"># 前向传播时模型集成</span></span><br><span class="line">  H1 = np.maximum(<span class="number">0</span>, np.dot(W1, X) + b1) <span class="comment"># 不用数值范围调整了</span></span><br><span class="line">  .....</span><br></pre></td></tr></table></figure></p>
+<p>The value of $p=0.5$ is a reasonable default, but this can be tuned on validation data.</p>
+<h2 id="Loss-functions"><a href="#Loss-functions" class="headerlink" title="Loss functions"></a>Loss functions</h2><p><strong>分类问题</strong></p>
+<ol>
+<li><p>类别数目巨大,当标签集非常庞大，就需要使用分层Softmax ,用树形结构表达classifier,一条路径就是一个class.</p>
+</li>
+<li><p>每个样本都有一个唯一的正确标签（是固定分类标签之一）。 在这类问题中，一个最常见的损失函数就是SVM.</p>
+</li>
+</ol>
+<p>属性（Attribute）分类:<br>一张图片上可能有多个标签</p>
+<p>①对于每个attribute创建一个独立的二分类的分类器: 1选,0不选<br>②对于每个attribute训练一个独立的逻辑回归分类器: &gt;0.5选,otherwise不选</p>
+<p>回归问题<br>是预测实数的值的问题，比如预测房价，预测图片中某个东西的长度等。对于这种问题，通常是计算预测值和真实值之间的损失。然后用L2平方范式或L1范式度量差异。</p>
+<blockquote>
+<p>当面对一个回归任务，首先考虑是不是必须这样。一般而言，尽量把你的输出变成二分类，然后对它们进行分类，从而变成一个分类问题。</p>
+</blockquote>
+<p>尽量用分类,分类相对于回归更能给出一个结果的分布,而不仅仅是一个精确值</p>
+<p><strong>结构化预测</strong></p>
+<p>指的是预测结果较为复杂,不仅仅是一个label,可能包含树形结构等等.</p>
+<hr>
+<h1 id="Part-3-Learning-and-Evaluation"><a href="#Part-3-Learning-and-Evaluation" class="headerlink" title="Part 3: Learning and Evaluation"></a>Part 3: Learning and Evaluation</h1><h2 id="梯度检查"><a href="#梯度检查" class="headerlink" title="梯度检查"></a>梯度检查</h2><p>(1) Use the centered formula:<br>$$\frac{df(x)}{dx} = \frac{f(x + h) - f(x)}{h} \hspace{0.1in} \text{(bad, do not use)}$$</p>
+<p>(2) 使用相对误差而不是绝对误差:<br>$$\frac{\mid f’_a - f’_n \mid}{\max(\mid f’_a \mid, \mid f’_n \mid)}$$</p>
+<p>在实践中：</p>
+<ul>
+<li><p>相对误差&gt;1e-2：通常就意味着梯度可能出错。</p>
+</li>
+<li><p>1e-2&gt;相对误差&gt;1e-4：要对这个值感到不舒服才行。</p>
+</li>
+<li><p>1e-4&gt;相对误差：这个值的相对误差对于有不可导点的目标函数是OK的。但如果目标函数中没有kink（使用tanh和softmax），那么相对误差值还是太高。</p>
+</li>
+<li><p>1e-7或者更小：好结果，可以高兴一把了。</p>
+</li>
+</ul>
+<p>(3)使用双精度,保持在浮点数的有效范围</p>
+<p>(4)不可导点:有时候f(x+h)和f(x-h)这一步可能越过不可导点.通过跟踪max()函数中的赢家什么时候变化了可以认为越过了不可导点.</p>
+<p>(5)使用少量数据做梯度检查.可以避免越过不可导点并且可以以偏概全,更快效率更高.</p>
+<p>(6)步长并不是越小越好,有时候h过小会导致问题(3),一般1e-4~1e-6很合适.</p>
+<p>(7)在网络预热一段时间,开始梯度下降之后再进行梯度检查.</p>
+<p>(8)预防正则项overwhelm数据.可以先去掉正则项或者直接加强正则项.</p>
+<p>(9)记得关闭随机失活（dropout）和数据扩张（augmentation）。在进行梯度检查时，记得关闭网络中任何不确定的效果的操作，比如随机失活，随机数据扩展等。不然它们会在计算数值梯度的时候导致巨大误差。</p>
+<p>(10)检查少量的维度</p>
+<h2 id="Before-learning"><a href="#Before-learning" class="headerlink" title="Before learning"></a>Before learning</h2><p>(1)检查特定情况的loss.<br>(2)随着正则化项加强,loss应当增加.<br>(3)先过拟合小数据集.</p>
+<h2 id="学习过程"><a href="#学习过程" class="headerlink" title="学习过程"></a>学习过程</h2><ol>
+<li><p>loss</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://cs231n.github.io/assets/nn3/learningrates.jpeg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</li>
+<li><p>train/validate accuracy<br>相差过大说明过拟合,如影随形说明模型参数太少.</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://cs231n.github.io/assets/nn3/accuracies.jpeg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</li>
+<li><p>Ratio of weights:updates<br>一个经验性的结论是这个比例应该在1e-3左右。如果更低，说明学习率可能太小，如果更高，说明学习率可能太高。</p>
+</li>
+<li><p>每层的激活值<br>画出柱状图,例如对于tanh,应该在[-1,1]之间.</p>
+</li>
+<li><p>First-layer Visualizations<br>第一层特征可视化会有帮助</p>
+</li>
+</ol>
+<h2 id="Parameter-updates"><a href="#Parameter-updates" class="headerlink" title="Parameter updates"></a>Parameter updates</h2><ul>
+<li><p>普通更新</p>
+</li>
+<li><p>动量更新<br>  梯度影响速度,速度影响位置.</p>
+</li>
+<li><p>Nesterov动量</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://cs231n.github.io/assets/nn3/nesterov.jpeg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</li>
+<li><p>学习率退火(Annealing the learning rate)</p>
+</li>
+<li><p>二阶方法</p>
+</li>
+<li><p>逐参数适应学习率方法(Per-parameter adaptive learning rate methods)<br>  (1) Adagrad<br>  (2) RMSprop<br>  (3) Adam</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://cs231n.github.io/assets/nn3/opt2.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="Hyperparameter-optimization"><a href="#Hyperparameter-optimization" class="headerlink" title="Hyperparameter optimization"></a>Hyperparameter optimization</h2><p>训练一个神经网络会遇到很多超参数设置。神经网络最常用的设置有：</p>
+<ul>
+<li><p>初始学习率。</p>
+</li>
+<li><p>学习率衰减方式（例如一个衰减常量）。</p>
+</li>
+<li><p>正则化强度（L2惩罚，随机失活强度）。</p>
+</li>
+</ul>
+<ol>
+<li>实现问题<br>worker用来记录checkpoint(validation的表达准确率),一个master用来调控workers.</li>
+<li>用一个验证集而不是交叉验证</li>
+<li><p>超参数范围(不懂)<br> learning_rate = 10 ** uniform(-6, 1)<br>但是有一些参数（比如随机失活）还是在原始尺度上进行搜索（例如：dropout=uniform(0,1)）</p>
+</li>
+<li><p>随机搜索比网格搜索结果更好</p>
+</li>
+<li><p>边界最优值<br>万一最优参数出现在边界上,要小心是不是错过了其他更好的参数,这一般发生在初始范围设定的不太好的前提之下.</p>
+</li>
+<li>从粗糙到细致地搜索</li>
+<li>贝叶斯超参数最优化</li>
+</ol>
+<h2 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h2><p>模型集成</p>
+<p>提升神经网络表达效果的一个可靠方式就是计算好几个独立模型的结果,然后求均值,模型数量越多,准确度越高,当然准确度提升的越慢.</p>
+<ol>
+<li>用最好的一组参数训练不同初始化权重的模型.</li>
+<li>用最好的几组参数训练几个模型.交叉验证之后就不需要再训练模型了.</li>
+<li>就用训练超参数过程中的几个checkpoint对应的模型直接集成.很省事.</li>
+<li>一旦这一次损失值相对于上一次出现指数下降,就记录下来权重,对这几个模型集成.效果总是很好.</li>
+</ol>
+<p>模型集成的劣势是消耗时间,参考hinton的论文,从一个好的集成中抽一个单独的模型出来.</p>
+<hr>
+<blockquote>
+<p>推荐的两个更新方法是SGD+Nesterov动量方法，或者Adam方法。</p>
+</blockquote>
+<hr>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-04-23T02:52:56.000Z" itemprop="dateUpdated">2018-04-23 10:52:56</time>
+</span><br>
+
+
+        
+        <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgxd.jpeg">
+        
+    </div>
+    <footer>
+        <a href="http://wenbo.fun">
+            <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" alt="Wen bo">
+            Wen bo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/04/18/cs231n_m1_4/&title=《CS231n学习笔记 Module 1.4》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/04/18/cs231n_m1_4/&title=《CS231n学习笔记 Module 1.4》 — Hi&source=Lecture 4 | Neural Networks
+Part 1: Setting up the Architecture a single neur..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/04/18/cs231n_m1_4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.4》 — Hi&url=http://wenbo.fun/2018/04/18/cs231n_m1_4/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/04/18/cs231n_m1_4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/04/17/cs231n_m1_3/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CS231n学习笔记 Module 1.3</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "xVQIAhS8Iaa22qibuCeoAjj2-gzGzoHsz",
+            appKey: "GEc59stbeS88ePxaVibVE1Db",
+            avatar: "monsterid",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Wen bo &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/04/18/cs231n_m1_4/&title=《CS231n学习笔记 Module 1.4》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/04/18/cs231n_m1_4/&title=《CS231n学习笔记 Module 1.4》 — Hi&source=Lecture 4 | Neural Networks
+Part 1: Setting up the Architecture a single neur..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/04/18/cs231n_m1_4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Module 1.4》 — Hi&url=http://wenbo.fun/2018/04/18/cs231n_m1_4/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/04/18/cs231n_m1_4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxklEQVR42u3aSW7cQBAEwPn/p8dXAYaozOrFYyH6RIxEMngp1PZ6xef912l//+6vrxMHFxd3mft+PM8veL7r6/8k18nTcHFxb3K/ixjP10lgap//w724uLgfz00C03OWgouL+zu4z3cldFxc3P+FmxQ/s6ZGW1xtq9VwcXEXuPkrz10f6e/i4uKOuO/y7Pqk2cHFxb3DzQPKiQSofS8uLu4dbtLQnA1NW2iy0oGLi3uTm7Pyxay8bVo0UHBxcS9ykxDTLmYlBU8eQHFxce9zkyFoWwjNguMPK1+4uLhXuO0SRv77bNmiKKhwcXEPcxPQykrEbJRS93dxcXEPcGcjz/XSqG6g4OLiHuauDz/a8Woe1IohKy4u7lZu/riV1auDKxq4uLjHuO1tbQnUFj/b9shwcXE3cWdLEvmgZbbMgYuL+2+5KynIhgyrzcJwcXEPcGdN0qQtkrdIioQJFxf3CrcdlOapTxLmkiA4/BhcXNxlbj7SWGmbzga09UwYFxd3K7ctbNqB6LZUBhcX9yO57XJV8gFJCoWLi/vJ3F3D12HswsXFvchtC5VkNDsMVbtqNVxc3AVuG0rydsZscLIhOOLi4s65fwAaJSn4wXmcXwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+    
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="225" height="450"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:1;
+    right: 50px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -60px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/unitychan.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>
