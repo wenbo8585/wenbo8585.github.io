@@ -159,6 +159,75 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-cs231n_m2_1"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-04-27 19:00:08" datetime="2018-04-27T11:00:08.000Z"  itemprop="datePublished">2018-04-27</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/04/27/cs231n_m2_1/">CS231n学习笔记 Module 2.1</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <p><strong>Lecture 5 | Convolutional Neural Networks</strong></p>
+<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><p>It transforms an input 3D volume to an output 3D volume.</p>
+<p>常见的模式</p>
+<blockquote>
+<p>INPUT -&gt; [[CONV -&gt; RELU]*N -&gt; POOL?]*M -&gt; [FC -&gt; RELU]*K -&gt; softmax</p>
+</blockquote>
+<p> POOL? 指的是一个可选的pooling layer<br> N &gt;= 0 (and usually N &lt;= 5)<br> M &gt;= 0<br> K &gt;= 0 (and usually K &lt; 3)</p>
+<h2 id="Conv-layer"><a href="#Conv-layer" class="headerlink" title="Conv layer"></a>Conv layer</h2><ul>
+<li>Convolutional Layer, Pooling Layer, Fully-Connected Layer</li>
+</ul>
+<p>最简单的双层CNN(一个隐含层): [INPUT - CONV - RELU - POOL - FC]</p>
+<p>总的特点:</p>
+<ul>
+<li>每一层都是从3D volume到3D volume的转换.</li>
+<li>CONV/FC有参数学习(w,b), RELU/POOL没有.</li>
+<li>CONV/FC/POOL 有超参数学习(learning rate等等), RELU没有.</li>
+</ul>
+<h3 id="感受野-receptive-field"><a href="#感受野-receptive-field" class="headerlink" title="感受野(receptive field)"></a>感受野(receptive field)</h3><p>每个神经元只与输入数据的一个局部区域连接。该连接的空间大小叫做神经元的感受野（receptive field）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://cs231n.github.io/assets/cnn/depthcol.jpeg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+    
+
+        <a href="/2018/04/27/cs231n_m2_1/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-cs231n_m1_4"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -645,67 +714,12 @@
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-sf012"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-12-31 15:56:44" datetime="2017-12-31T07:56:44.000Z"  itemprop="datePublished">2017-12-31</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/12/31/sf012/">分支限界---批处理作业调度</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="批处理作业调度"><a href="#批处理作业调度" class="headerlink" title="批处理作业调度"></a>批处理作业调度</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
-<p>计算机算法设计与分析(第四版)，王晓东</p>
-</blockquote>
-<ul>
-<li>n 个作业的集合: $$J={J1,J2,…,Jn}$$</li>
-<li>第 i 个作业需要机器 j 的处理时间: $$ t_{ij}$$</li>
-<li>已安排作业集合: $$M⊆{1,2…,n}$$</li>
-<li>所有作业在机器2完成时间和（包括等待时间）: $$f=\sum_{i=1}^n{F_{2i}}$$</li>
-</ul>
-    
-
-        <a href="/2017/12/31/sf012/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
 <nav id="page-nav">
     <div class="inner">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
     </div>
 </nav>
 

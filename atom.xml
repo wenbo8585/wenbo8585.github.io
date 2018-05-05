@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-04-23T02:52:56.000Z</updated>
+  <updated>2018-05-05T15:38:23.803Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CS231n学习笔记 Module 2.1</title>
+    <link href="http://wenbo.fun/2018/04/27/cs231n_m2_1/"/>
+    <id>http://wenbo.fun/2018/04/27/cs231n_m2_1/</id>
+    <published>2018-04-27T11:00:08.000Z</published>
+    <updated>2018-05-05T15:38:23.803Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Lecture 5 | Convolutional Neural Networks&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Architecture&quot;&gt;&lt;a href=&quot;#Architecture&quot; class=&quot;headerlink&quot; title=&quot;Architecture&quot;&gt;&lt;/a&gt;Architecture&lt;/h1&gt;&lt;p&gt;It transforms an input 3D volume to an output 3D volume.&lt;/p&gt;
+&lt;p&gt;常见的模式&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;INPUT -&amp;gt; [[CONV -&amp;gt; RELU]*N -&amp;gt; POOL?]*M -&amp;gt; [FC -&amp;gt; RELU]*K -&amp;gt; softmax&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; POOL? 指的是一个可选的pooling layer&lt;br&gt; N &amp;gt;= 0 (and usually N &amp;lt;= 5)&lt;br&gt; M &amp;gt;= 0&lt;br&gt; K &amp;gt;= 0 (and usually K &amp;lt; 3)&lt;/p&gt;
+&lt;h2 id=&quot;Conv-layer&quot;&gt;&lt;a href=&quot;#Conv-layer&quot; class=&quot;headerlink&quot; title=&quot;Conv layer&quot;&gt;&lt;/a&gt;Conv layer&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Convolutional Layer, Pooling Layer, Fully-Connected Layer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最简单的双层CNN(一个隐含层): [INPUT - CONV - RELU - POOL - FC]&lt;/p&gt;
+&lt;p&gt;总的特点:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每一层都是从3D volume到3D volume的转换.&lt;/li&gt;
+&lt;li&gt;CONV/FC有参数学习(w,b), RELU/POOL没有.&lt;/li&gt;
+&lt;li&gt;CONV/FC/POOL 有超参数学习(learning rate等等), RELU没有.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;感受野-receptive-field&quot;&gt;&lt;a href=&quot;#感受野-receptive-field&quot; class=&quot;headerlink&quot; title=&quot;感受野(receptive field)&quot;&gt;&lt;/a&gt;感受野(receptive field)&lt;/h3&gt;&lt;p&gt;每个神经元只与输入数据的一个局部区域连接。该连接的空间大小叫做神经元的感受野（receptive field）&lt;/p&gt;
+&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://cs231n.github.io/assets/cnn/depthcol.jpeg&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>CS231n学习笔记 Module 1.4</title>
@@ -536,35 +578,6 @@
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;时间复杂度分析&quot;&gt;&lt;a href=&quot;#时间复杂度分析&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度分析&quot;&gt;&lt;/a&gt;时间复杂度分析&lt;/h2&gt;&lt;p&gt;最坏情况:每次划分的基准刚好为中值。&lt;br&gt;        $$T(n)=2*T(n/2)+n$$&lt;/p&gt;
 &lt;p&gt;其平均算法复杂度为:&lt;br&gt;          $$O(nlogn)$$&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>递归与分治---合并排序</title>
-    <link href="http://wenbo.fun/2017/12/22/sf002/"/>
-    <id>http://wenbo.fun/2017/12/22/sf002/</id>
-    <published>2017-12-22T01:55:32.000Z</published>
-    <updated>2018-01-13T08:20:37.488Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;合并排序-归并排序&quot;&gt;&lt;a href=&quot;#合并排序-归并排序&quot; class=&quot;headerlink&quot; title=&quot;合并排序 (归并排序)&quot;&gt;&lt;/a&gt;合并排序 (归并排序)&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;时间复杂度分析&quot;&gt;&lt;a href=&quot;#时间复杂度分析&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度分析&quot;&gt;&lt;/a&gt;时间复杂度分析&lt;/h2&gt;&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/%E7%AE%97%E6%B3%95q8.jpg&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
-            &lt;/figure&gt;
     
     </summary>
     
