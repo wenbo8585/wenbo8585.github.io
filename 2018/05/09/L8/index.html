@@ -13,23 +13,25 @@
     
     
     
-    <title>Archives | Hi | My best salutations are to them who knew me imperfect and loved me</title>
+    <title>CS231n学习笔记 Lecture 8 | Hi | My best salutations are to them who knew me imperfect and loved me</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#81D8CF">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="A little home">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hi">
-<meta property="og:url" content="http://wenbo.fun/archives/page/4/index.html">
+    <meta name="keywords" content="笔记">
+    <meta name="description" content="Lecture 8 | Software TensorFlow 使用Anaconda安装  PytorchPytorch + Caffe2">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS231n学习笔记 Lecture 8">
+<meta property="og:url" content="http://wenbo.fun/2018/05/09/L8/index.html">
 <meta property="og:site_name" content="Hi">
-<meta property="og:description" content="A little home">
+<meta property="og:description" content="Lecture 8 | Software TensorFlow 使用Anaconda安装  PytorchPytorch + Caffe2">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-05-09T10:59:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hi">
-<meta name="twitter:description" content="A little home">
+<meta name="twitter:title" content="CS231n学习笔记 Lecture 8">
+<meta name="twitter:description" content="Lecture 8 | Software TensorFlow 使用Anaconda安装  PytorchPytorch + Caffe2">
     
         <link rel="alternate" type="application/atom+xml" title="Hi" href="/atom.xml">
     
@@ -47,7 +49,7 @@
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu"  >
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -73,7 +75,7 @@
               </a>
             </li>
         
-            <li class="waves-block waves-effect active">
+            <li class="waves-block waves-effect">
               <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
@@ -119,7 +121,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Archives</div>
+        <div class="flex-col header-title ellipsis">CS231n学习笔记 Lecture 8</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -138,11 +140,17 @@
         
     </div>
 </header>
-<header class="content-header archives-header">
+<header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Archives</h1>
+        <h1 class="title">CS231n学习笔记 Lecture 8</h1>
         <h5 class="subtitle">
+            
+                <time datetime="2018-05-09T11:00:08.000Z" itemprop="datePublished" class="page-time">
+  2018-05-09
+</time>
+
+
             
         </h5>
     </div>
@@ -152,166 +160,179 @@
 
 </header>
 
-<div class="container body-wrap fade">
-    
 
+<div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TensorFlow"><span class="post-toc-number">1.</span> <span class="post-toc-text">TensorFlow</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Pytorch"><span class="post-toc-number">2.</span> <span class="post-toc-text">Pytorch</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Pytorch-Caffe2"><span class="post-toc-number">3.</span> <span class="post-toc-text">Pytorch + Caffe2</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-L8"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CS231n学习笔记 Lecture 8</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-05-09 19:00:08" datetime="2018-05-09T11:00:08.000Z"  itemprop="datePublished">2018-05-09</time>
+
             
-            <h3 class="archive-separator">十二月, 2017</h3>
-            <div class="waterfall">
-    
-
-        <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2017-12-08 11:09:34" datetime="2017-12-08T03:09:34.000Z"  itemprop="datePublished">2017-12-08</time>
-
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/人脸识别/">人脸识别</a></li></ul>
 
 
-
-    </div>
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/12/08/face-recognition-dlib/">人脸识别01：dlib获取图片集</a>
-    </h3>
-  
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
 
 
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>Lecture 8 | Software</strong></p>
+<h1 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h1><blockquote>
+<p><a href="https://www.tensorflow.org/install/install_windows#installing_with_anaconda" target="_blank" rel="noopener">使用Anaconda安装</a></p>
+</blockquote>
+<h1 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h1><h1 id="Pytorch-Caffe2"><a href="#Pytorch-Caffe2" class="headerlink" title="Pytorch + Caffe2"></a>Pytorch + Caffe2</h1>
+        </div>
 
-    
-    <div class="post-footer">
+        <blockquote class="post-copyright">
+    <div class="content">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dlib/">Dlib</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/人脸识别/">人脸识别</a></li></ul>
+<span class="post-time">
+    Last updated: <time datetime="2018-05-09T10:59:10.000Z" itemprop="dateUpdated">2018-05-09 18:59:10</time>
+</span><br>
 
+
+        
+        <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgxd.jpeg">
+        
     </div>
+    <footer>
+        <a href="http://wenbo.fun">
+            <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" alt="Wen bo">
+            Wen bo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
     
-  </article>
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/05/09/L8/&title=《CS231n学习笔记 Lecture 8》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/05/09/L8/&title=《CS231n学习笔记 Lecture 8》 — Hi&source=A little home" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/05/09/L8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Lecture 8》 — Hi&url=http://wenbo.fun/2018/05/09/L8/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/05/09/L8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
 </div>
 
-    
-
-        <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2017-12-07 21:42:08" datetime="2017-12-07T13:42:08.000Z"  itemprop="datePublished">2017-12-07</time>
-
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/人脸识别/">人脸识别</a></li></ul>
 
 
-
+        </div>
     </div>
+
     
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/12/07/人脸识别1/">人脸识别：概述</a>
-    </h3>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
-
-
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Environment/">Environment</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/人脸识别/">人脸识别</a></li></ul>
-
-    </div>
-    
-  </article>
-</div>
-
-    
-            </div> 
-            <h3 class="archive-separator">十一月, 2017</h3>
-            <div class="waterfall">
-    
-
-        <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2017-11-24 15:21:04" datetime="2017-11-24T07:21:04.000Z"  itemprop="datePublished">2017-11-24</time>
-
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/环境配置/">环境配置</a></li></ul>
-
-
-
-    </div>
-    
-
-
   
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/11/24/Win10配置opencv3+python3环境/">Windows配置opencv3+python3+tensorflow环境</a>
-    </h3>
+    <div class="waves-block waves-effect next">
+      <a href="/2018/05/08/L7/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CS231n学习笔记 Lecture 7</h4>
+      </a>
+    </div>
   
-
-
-
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Opencv/">Opencv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境配置/">环境配置</a></li></ul>
-
-    </div>
-    
-  </article>
-</div>
-
-    
-            </div> 
-            <h3 class="archive-separator">九月, 2017</h3>
-            <div class="waterfall">
-    
-
-        <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2017-09-22 17:59:54" datetime="2017-09-22T09:59:54.000Z"  itemprop="datePublished">2017-09-22</time>
-
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/环境配置/">环境配置</a></li></ul>
-
-
-
-    </div>
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/09/22/GIT与GITHUB的使用/">GIT与GITHUB的使用</a>
-    </h3>
-  
-
-
-
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIT/">GIT</a></li></ul>
-
-    </div>
-    
-  </article>
-</div>
-
-    
-    </div>
-
-    
-<nav id="page-nav">
-    <div class="inner">
-    <a class="extend prev" rel="prev" href="/archives/page/3/">上一页</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span>
-    </div>
 </nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "xVQIAhS8Iaa22qibuCeoAjj2-gzGzoHsz",
+            appKey: "GEc59stbeS88ePxaVibVE1Db",
+            avatar: "monsterid",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+
 
 </div>
 
@@ -354,7 +375,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/archives/page/4/&title=Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/05/09/L8/&title=《CS231n学习笔记 Lecture 8》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -364,22 +385,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/archives/page/4/&title=Hi&source=A little home" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/05/09/L8/&title=《CS231n学习笔记 Lecture 8》 — Hi&source=A little home" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/archives/page/4/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/05/09/L8/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Hi&url=http://wenbo.fun/archives/page/4/&via=http://wenbo.fun" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Lecture 8》 — Hi&url=http://wenbo.fun/2018/05/09/L8/&via=http://wenbo.fun" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/archives/page/4/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/05/09/L8/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -390,7 +411,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABv0lEQVR42u3ay24CMQADQP7/p6nUK9rFzgtaTU4IQZjlYCVOHo94PH/H1fuv4+ozyZwLBi4u7jT3eTtep25Br99N3r+aExcX9yT3Przyh7n/I+4fIwpQXFzcL+PefytZ6ODi4v4/7nx44eLi/i1usojJo60tSrbs1XBxcSe4bWG64/XGfhcXF7fkPsvRbnXasHvz67i4uEe4eeXRRs++ChUXF/ckN9+izB+1tsc2uLi4n+K21yPahU570HIZi7i4uEe4Y7VpHk9jM7yZHxcXdxt37GikLTXazvMSjYuLe4Q7tqXJP9+WIFFE4uLibubm0+Wnn8kMeUWLi4v7We78AWpOH1tO4eLinuHOnGDOHJ3OLKpwcXF3c9vicuyfmIkwXFzc89z5ixQzsbWgMMXFxd3AbSOsHYv/Alxc3IPcorIslyn5nFFHiouLe5DbBtPYNYsFD4aLi3uE2wbK2BZoVV2Ci4t7kpuH1/wljCTI3kQbLi7uQW4eXvc/P3ZVq9hu4eLifhm3peQPllcwuLi438xNNjbtZYtoaYWLi3uQO1aS5hez2g3VgloEFxd3gjt2sJoHWbtZGitlcHFxF3F/AJUB02oFWcVbAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAB0ElEQVR42u3awYrDMAxF0fz/T3dgVoWk5j7JUVO4XpXWSY+zEHmyjwOP1/94//w+zt+fryUztw25cuW2ua/lOHPXV/FFkl8vliRXrtxBLi9e65l8SevH8fF7uXLlPoxLXlnI6wsplHLlyv0Vbu3VhwcquXLlPo3LwwkvTLVGybasJleu3Aa31jDd+/n2/q5cuXI37UqkxYj8yovXxb/LlSt3hLsOMLU4REIRb7UcJA/JlSt3K5dczENIOjN+EHLlyh3h9svZriNZpAkrV67cGS65HaHUIlB8rVy5cse5/OL+HP7vqIsjV67crdz0FrsKXCtuyZUr92Zup/1BDmyRZQcbrnLlyh3kpg1QUuD6bZGLe8qVK3eQm0agveemgschV67cr3J5mKnNrwUquXLlznDjM1whlIeiuGEqV67c27jp1kj8JMAISptcuXIHuemrDG+LxC3R9WLkypU7yE0bGWmjhLdRijs/cuXK3cpNC0pts4QslZROuXLlTnJrGx48xvBwhRYsV67cQW7tABaf32maoPcmuXLlfolLihcvVcVtG7ly5T6SS0oSwRWDk1y5cge5/NhEPw6lzdZiVpMrV26DWwwh7S0TEpbkypU7zv0DM6+VjNMYc1gAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

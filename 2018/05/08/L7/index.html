@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>CS231n学习笔记 Lecture 7 | Hi | My best salutations are to them who knew me imperfect and loved me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#81D8CF">
+    
+    
+    <meta name="keywords" content="笔记">
+    <meta name="description" content="Lecture 7 | Training Neural Networks OptimizationSGD: local minima &amp;amp; saddle point                                                                                                           SGD + Mo">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS231n学习笔记 Lecture 7">
+<meta property="og:url" content="http://wenbo.fun/2018/05/08/L7/index.html">
+<meta property="og:site_name" content="Hi">
+<meta property="og:description" content="Lecture 7 | Training Neural Networks OptimizationSGD: local minima &amp;amp; saddle point                                                                                                           SGD + Mo">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_1.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_2.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_3.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_4.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_7.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_5.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_6.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_8.png">
+<meta property="og:updated_time" content="2018-05-09T01:29:39.594Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CS231n学习笔记 Lecture 7">
+<meta name="twitter:description" content="Lecture 7 | Training Neural Networks OptimizationSGD: local minima &amp;amp; saddle point                                                                                                           SGD + Mo">
+<meta name="twitter:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hi" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!--  <link rel="stylesheet" href="/css/style.css?v=1.7.1"> -->
+    <link rel="stylesheet" href="/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgbrand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Wen bo</h5>
+          <a href="mailto:1871756080@qq.com" title="1871756080@qq.com" class="mail">1871756080@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wenbo8585" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/MVision"  >
+                <i class="icon icon-lg icon-link"></i>
+                MVision
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CS231n学习笔记 Lecture 7</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CS231n学习笔记 Lecture 7</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-05-08T13:08:08.000Z" itemprop="datePublished" class="page-time">
+  2018-05-08
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Optimization"><span class="post-toc-number">1.</span> <span class="post-toc-text">Optimization</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SGD-Momentum"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">SGD + Momentum</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nesterov-Momentum"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Nesterov Momentum</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AdaGrad-amp-RMSProp"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">AdaGrad &amp; RMSProp</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Adam"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Adam</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Model-Ensembles"><span class="post-toc-number">2.</span> <span class="post-toc-text">Model Ensembles</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Regularization"><span class="post-toc-number">3.</span> <span class="post-toc-text">Regularization</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#add-term-to-loss"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">add term to loss</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dropout"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Dropout</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Data-Augmentation"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Data Augmentation</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#More"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">More</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Transfer-Learning-Quick-Look"><span class="post-toc-number">4.</span> <span class="post-toc-text">Transfer Learning (Quick Look)</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-L7"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CS231n学习笔记 Lecture 7</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-05-08 21:08:08" datetime="2018-05-08T13:08:08.000Z"  itemprop="datePublished">2018-05-08</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>Lecture 7 | Training Neural Networks</strong></p>
+<h1 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h1><p>SGD: local minima &amp; <strong>saddle point</strong><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_1.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2 id="SGD-Momentum"><a href="#SGD-Momentum" class="headerlink" title="SGD + Momentum"></a>SGD + Momentum</h2><a id="more"></a>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_2.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>超参数$\rho$（摩擦系数）用来衰减速度。<br>如图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_3.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="Nesterov-Momentum"><a href="#Nesterov-Momentum" class="headerlink" title="Nesterov Momentum"></a>Nesterov Momentum</h2><p>下半部分是等式变换，好计算。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_4.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>计算顺序变了，look ahead。计算蓝框处的梯度。如图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_7.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="AdaGrad-amp-RMSProp"><a href="#AdaGrad-amp-RMSProp" class="headerlink" title="AdaGrad &amp; RMSProp"></a>AdaGrad &amp; RMSProp</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_5.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>AdaGrad: 累加梯度平方，加速小梯度维度学习速度。 最终会越来越慢。<br>RMSProp: 不累加梯度平方，让梯度平方按照一定比率下降(delay_rate)。</p>
+<h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_6.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>结合Momentum和AdaGrad/RMSProp的优点。</p>
+<h1 id="Model-Ensembles"><a href="#Model-Ensembles" class="headerlink" title="Model Ensembles"></a>Model Ensembles</h1><p>概念：是对其他算法进行组合的一种形式。</p>
+<p>通俗来说： 当做重要决定时，大家可能都会考虑吸取多个专家而不只是一个人的意见。 机器学习处理问题时又何尝不是如此？ 这就是集成方法背后的思想。</p>
+<p>集成方法：</p>
+<ul>
+<li><p>投票选举(bagging: 自举汇聚法 bootstrap aggregating): 是基于数据随机重抽样分类器构造的方法.bagging 方法最流行的版本是: <strong>随机森林</strong>(random forest).</p>
+</li>
+<li><p>再学习(boosting): 是基于所有分类器的加权求和的方法.<strong>AdaBoost</strong></p>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/30083302" target="_blank" rel="noopener">集成方法 ensemble method</a></p>
+</blockquote>
+<p><a href="https://github.com/thrillerist/TensorFlow-Tutorials" target="_blank" rel="noopener">TensorFlow Totorials</a></p>
+<h1 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h1><h2 id="add-term-to-loss"><a href="#add-term-to-loss" class="headerlink" title="add term to loss"></a>add term to loss</h2><p> L2 Regularization</p>
+<h2 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h2><p>随机激活函数置零。</p>
+<p>more time.</p>
+<p> 一般在全连接层使用，卷积层往往是随机把整个特征映射为零。<br><strong>DropConnect</strong></p>
+<p>随机权重矩阵置零。一样效果。</p>
+<h2 id="Data-Augmentation"><a href="#Data-Augmentation" class="headerlink" title="Data Augmentation"></a>Data Augmentation</h2><ul>
+<li>translation(平移)、</li>
+<li>stretching(拉伸)</li>
+<li>shearing(裁剪)</li>
+<li>rotation(旋转)、</li>
+<li>Color Jitter(色彩抖动?)</li>
+<li>lens distortions(扭曲)…</li>
+</ul>
+<h2 id="More"><a href="#More" class="headerlink" title="More"></a>More</h2><ul>
+<li style="list-style: none"><input type="checkbox"> Fractional Max Pooling</li>
+<li style="list-style: none"><input type="checkbox" checked> Stochastic Depth<br>  训练用部分随机层，测试用全部网络。[new idea]</li>
+</ul>
+<h1 id="Transfer-Learning-Quick-Look"><a href="#Transfer-Learning-Quick-Look" class="headerlink" title="Transfer Learning (Quick Look)"></a>Transfer Learning (Quick Look)</h1><p>You don’t need a huge amount of data.</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_8.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-05-09T01:29:39.594Z" itemprop="dateUpdated">2018-05-09 09:29:39</time>
+</span><br>
+
+
+        
+        <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgxd.jpeg">
+        
+    </div>
+    <footer>
+        <a href="http://wenbo.fun">
+            <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" alt="Wen bo">
+            Wen bo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/05/08/L7/&title=《CS231n学习笔记 Lecture 7》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/05/08/L7/&title=《CS231n学习笔记 Lecture 7》 — Hi&source=Lecture 7 | Training Neural Networks
+OptimizationSGD: local minima &amp; sadd..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/05/08/L7/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Lecture 7》 — Hi&url=http://wenbo.fun/2018/05/08/L7/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/05/08/L7/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/05/09/L8/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">CS231n学习笔记 Lecture 8</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/05/02/L6/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CS231n学习笔记 Lecture 6</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "xVQIAhS8Iaa22qibuCeoAjj2-gzGzoHsz",
+            appKey: "GEc59stbeS88ePxaVibVE1Db",
+            avatar: "monsterid",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢亲~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" data-alipay="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Wen bo &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/05/08/L7/&title=《CS231n学习笔记 Lecture 7》 — Hi&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/05/08/L7/&title=《CS231n学习笔记 Lecture 7》 — Hi&source=Lecture 7 | Training Neural Networks
+OptimizationSGD: local minima &amp; sadd..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/05/08/L7/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CS231n学习笔记 Lecture 7》 — Hi&url=http://wenbo.fun/2018/05/08/L7/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/05/08/L7/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABz0lEQVR42u3aQW7DMAwFUd//0u62QCJ3PikqKTBaBYZjPW0IiuR14XU/rt/vPL//+s1rYsmVK7fNrVFWW5Iv8OO9OZJcuXIPclcR4/VzBLp6wr+2fC5Xrtwv5qYH44FSrly5/4v7nMTUwplcuXK/mUsCDVlpZWPwriZXrtwGl28w93ukvitXrtwS924s0jJ5TlziHeXKlXuEmwadtB2SRiRUTpUrV+4wl2xWa59wXFCilStX7hFuraXKS6LpWEZQCpErV+4Yl2/Dj0r+Rd5fpjhy5cod5naGLXhyQ2IRL6nIlSt3mtsZnuBXoxr3j/qNXLlyx7hpIOOljV3NlVbclStXbom792LDi61pWHzTSpErV+4YN01WSKGTh7nNcVeuXLmbuGlaU7uu8FZuPCciV67cAW7tSlMrsHbSI7ly5Z7kbhiQKpVKSUIT3NXkypW7lVtrqNQGs9Ka5/IwcuXKHebe4doVvOILD4+FcuXKbXP54iGsNrYVDF7IlSv3CJcEL/48TXf4XnLlyj3P7Rc6O+Ncwe5y5cr9Mm4/tKVtXVTFkStX7ke5taZsnMQ8F2HlypV7kJtusKucyo8nV67ck9z0KsI34/9CIUyuXLknuD/OdYuyDdmmAgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+    
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="225" height="450"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:1;
+    right: 50px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -60px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/unitychan.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>

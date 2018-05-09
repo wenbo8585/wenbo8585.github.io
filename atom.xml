@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-05-05T15:38:23.803Z</updated>
+  <updated>2018-05-09T10:59:10.000Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -15,6 +15,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CS231n学习笔记 Lecture 8</title>
+    <link href="http://wenbo.fun/2018/05/09/L8/"/>
+    <id>http://wenbo.fun/2018/05/09/L8/</id>
+    <published>2018-05-09T11:00:08.000Z</published>
+    <updated>2018-05-09T10:59:10.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;Lecture 8 | Software&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;TensorFlow&quot;&gt;&lt;a href=&quot;#TensorFlow&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS231n学习笔记 Lecture 7</title>
+    <link href="http://wenbo.fun/2018/05/08/L7/"/>
+    <id>http://wenbo.fun/2018/05/08/L7/</id>
+    <published>2018-05-08T13:08:08.000Z</published>
+    <updated>2018-05-09T01:29:39.594Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Lecture 7 | Training Neural Networks&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Optimization&quot;&gt;&lt;a href=&quot;#Optimization&quot; class=&quot;headerlink&quot; title=&quot;Optimization&quot;&gt;&lt;/a&gt;Optimization&lt;/h1&gt;&lt;p&gt;SGD: local minima &amp;amp; &lt;strong&gt;saddle point&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_1.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;SGD-Momentum&quot;&gt;&lt;a href=&quot;#SGD-Momentum&quot; class=&quot;headerlink&quot; title=&quot;SGD + Momentum&quot;&gt;&lt;/a&gt;SGD + Momentum&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS231n学习笔记 Lecture 6</title>
+    <link href="http://wenbo.fun/2018/05/02/L6/"/>
+    <id>http://wenbo.fun/2018/05/02/L6/</id>
+    <published>2018-05-02T11:00:08.000Z</published>
+    <updated>2018-05-09T01:29:10.553Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Lecture 6 | Training Neural Networks&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Activation-Functions&quot;&gt;&lt;a href=&quot;#Activation-Functions&quot; class=&quot;headerlink&quot; title=&quot;Activation Functions&quot;&gt;&lt;/a&gt;Activation Functions&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Sigmoid&lt;/li&gt;
+&lt;li&gt;Leaky ReLU&lt;/li&gt;
+&lt;li&gt;tanh&lt;/li&gt;
+&lt;li&gt;Maxout&lt;/li&gt;
+&lt;li&gt;ReLU&lt;/li&gt;
+&lt;li&gt;ELU&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$&lt;br&gt;  \begin{cases}&lt;br&gt;  x  \qquad(x \geq 0) \\&lt;br&gt;  \alpha(e^x - 1)  \qquad(x &amp;lt; 0)&lt;br&gt;  \end{cases}&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;point: zero-centered&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>CS231n学习笔记 Module 2.1</title>
@@ -498,86 +577,6 @@
 &lt;/ul&gt;
 &lt;p&gt;对于一个具体问题，要确定它是否具有 &lt;strong&gt;贪心选择性质&lt;/strong&gt;,&lt;font color=&quot;red&quot;&gt;必须证明每一步所作的贪心选择最终导致问题的整体最优解。&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt; 活动安排问题贪的是 &lt;strong&gt;活动最早完成时间&lt;/strong&gt; ，直观上为未安排活动留下更多时间。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>动态规划---最长公共子序列</title>
-    <link href="http://wenbo.fun/2017/12/26/sf005/"/>
-    <id>http://wenbo.fun/2017/12/26/sf005/</id>
-    <published>2017-12-26T11:33:31.000Z</published>
-    <updated>2018-01-13T08:19:45.989Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;最长公共子序列&quot;&gt;&lt;a href=&quot;#最长公共子序列&quot; class=&quot;headerlink&quot; title=&quot;最长公共子序列&quot;&gt;&lt;/a&gt;最长公共子序列&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;最优子结构性质&quot;&gt;&lt;a href=&quot;#最优子结构性质&quot; class=&quot;headerlink&quot; title=&quot;最优子结构性质&quot;&gt;&lt;/a&gt;最优子结构性质&lt;/h2&gt;&lt;p&gt;设序列 X={x1,x2,…,xm} 和 Y={y1,y2,…,yn} 的最长公共子序列为 Z={z1,z2,…,zk} ，则&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;若xm=yn，则zk=xm=yn，且Z k-1是xm-1和yn-1的最长公共子序列。&lt;/li&gt;
-&lt;li&gt;若xm≠yn且zk≠xm，则Z是xm-1和Y的最长公共子序列。&lt;/li&gt;
-&lt;li&gt;若xm≠yn且zk≠yn，则Z是X和yn-1的最长公共子序列。  &lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;两个序列的最长公共子序列包含了这两个序列的前缀的最长公共子序列。因此，最长公共子序列问题具有 &lt;strong&gt;最优子结构性质&lt;/strong&gt;。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>动态规划---矩阵连乘</title>
-    <link href="http://wenbo.fun/2017/12/23/sf004/"/>
-    <id>http://wenbo.fun/2017/12/23/sf004/</id>
-    <published>2017-12-23T14:08:08.000Z</published>
-    <updated>2018-01-13T08:20:08.908Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;矩阵连乘&quot;&gt;&lt;a href=&quot;#矩阵连乘&quot; class=&quot;headerlink&quot; title=&quot;矩阵连乘&quot;&gt;&lt;/a&gt;矩阵连乘&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;动态规划基本要素&quot;&gt;&lt;a href=&quot;#动态规划基本要素&quot; class=&quot;headerlink&quot; title=&quot;动态规划基本要素&quot;&gt;&lt;/a&gt;动态规划基本要素&lt;/h2&gt;&lt;h3 id=&quot;最优子结构&quot;&gt;&lt;a href=&quot;#最优子结构&quot; class=&quot;headerlink&quot; title=&quot;最优子结构&quot;&gt;&lt;/a&gt;最优子结构&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;当一个问题的最优解包括其子问题的最优解时，称此问题具有最优子结构性质。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;计算 A[1:n] 的最优次序，其所包含的矩阵子链 A[1:k] 和 A[k+1:n] 的次序也是最优的。即该问题具有 &lt;strong&gt;最优子结构性质&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;反证法证明：如果有一个计算 A[1:k] 的次序需要的计算量更少，则用此次序替换原来计算 A[1:k] 次序，得到的计算 A[1:n] 的计算量将比按最优次序计算量更少，这与前提矛盾。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>递归与分治---快速排序</title>
-    <link href="http://wenbo.fun/2017/12/22/sf003/"/>
-    <id>http://wenbo.fun/2017/12/22/sf003/</id>
-    <published>2017-12-22T11:33:07.000Z</published>
-    <updated>2018-01-13T08:20:21.991Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;时间复杂度分析&quot;&gt;&lt;a href=&quot;#时间复杂度分析&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度分析&quot;&gt;&lt;/a&gt;时间复杂度分析&lt;/h2&gt;&lt;p&gt;最坏情况:每次划分的基准刚好为中值。&lt;br&gt;        $$T(n)=2*T(n/2)+n$$&lt;/p&gt;
-&lt;p&gt;其平均算法复杂度为:&lt;br&gt;          $$O(nlogn)$$&lt;/p&gt;
     
     </summary>
     
