@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-05-09T10:59:10.000Z</updated>
+  <updated>2018-05-17T07:43:43.249Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -21,18 +21,16 @@
     <link href="http://wenbo.fun/2018/05/09/L8/"/>
     <id>http://wenbo.fun/2018/05/09/L8/</id>
     <published>2018-05-09T11:00:08.000Z</published>
-    <updated>2018-05-09T10:59:10.000Z</updated>
+    <updated>2018-05-17T07:43:43.249Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;Lecture 8 | Software&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;TensorFlow&quot;&gt;&lt;a href=&quot;#TensorFlow&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;p&gt;&lt;strong&gt;Lecture 8 | Software&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;TensorFlow&quot;&gt;&lt;a href=&quot;#TensorFlow&quot; class=&quot;headerlink&quot; title=&quot;TensorFlow&quot;&gt;&lt;/a&gt;TensorFlow&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.tensorflow.org/install/install_windows#installing_with_anaconda&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;使用Anaconda安装&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Barebone-TensorFlow&quot;&gt;&lt;a href=&quot;#Barebone-TensorFlow&quot; class=&quot;headerlink&quot; title=&quot;Barebone TensorFlow&quot;&gt;&lt;/a&gt;Barebone TensorFlow&lt;/h2&gt;&lt;p&gt;一个简单的三层卷积网络:&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Apply Convolution&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv1 = tf.nn.conv2d(x, conv_w1, strides=[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;], padding=&lt;span class=&quot;string&quot;&gt;&#39;SAME&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv2 = tf.nn.conv2d(conv1, conv_w2, strides=[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;], padding=&lt;span class=&quot;string&quot;&gt;&#39;SAME&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# Add bias&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv1 = tf.nn.bias_add(conv1, conv_b1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv2 = tf.nn.bias_add(conv2, conv_b2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# Apply activation function&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv1 = tf.nn.relu(conv1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv2 = tf.nn.relu(conv2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# Apply Full&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv2_flat = flatten(conv2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    scores = tf.matmul(conv2_flat, fc_w) + fc_b&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     

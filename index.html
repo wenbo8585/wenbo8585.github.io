@@ -104,7 +104,7 @@
             <li class="waves-block waves-effect">
               <a href="/MVision"  >
                 <i class="icon icon-lg icon-link"></i>
-                MVision
+                CoCo
               </a>
             </li>
         
@@ -125,7 +125,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -189,11 +189,12 @@
 <h1 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h1><blockquote>
 <p><a href="https://www.tensorflow.org/install/install_windows#installing_with_anaconda" target="_blank" rel="noopener">使用Anaconda安装</a></p>
 </blockquote>
-<h1 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h1><h1 id="Pytorch-Caffe2"><a href="#Pytorch-Caffe2" class="headerlink" title="Pytorch + Caffe2"></a>Pytorch + Caffe2</h1>
+<h2 id="Barebone-TensorFlow"><a href="#Barebone-TensorFlow" class="headerlink" title="Barebone TensorFlow"></a>Barebone TensorFlow</h2><p>一个简单的三层卷积网络:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Apply Convolution</span></span><br><span class="line">    conv1 = tf.nn.conv2d(x, conv_w1, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line">    conv2 = tf.nn.conv2d(conv1, conv_w2, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line">    <span class="comment"># Add bias</span></span><br><span class="line">    conv1 = tf.nn.bias_add(conv1, conv_b1)</span><br><span class="line">    conv2 = tf.nn.bias_add(conv2, conv_b2)</span><br><span class="line">    <span class="comment"># Apply activation function</span></span><br><span class="line">    conv1 = tf.nn.relu(conv1)</span><br><span class="line">    conv2 = tf.nn.relu(conv2)</span><br><span class="line">    <span class="comment"># Apply Full</span></span><br><span class="line">    conv2_flat = flatten(conv2)</span><br><span class="line">    scores = tf.matmul(conv2_flat, fc_w) + fc_b</span><br></pre></td></tr></table></figure>
     
 
         <a href="/2018/05/09/L8/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -246,7 +247,7 @@
     
 
         <a href="/2018/05/08/L7/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -301,7 +302,7 @@
     
 
         <a href="/2018/05/02/L6/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -370,7 +371,7 @@
     
 
         <a href="/2018/04/27/cs231n_m2_1/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -424,7 +425,7 @@
     
 
         <a href="/2018/04/18/cs231n_m1_4/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -471,7 +472,7 @@
     
 
         <a href="/2018/04/17/cs231n_m1_3/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -527,7 +528,7 @@
     
 
         <a href="/2018/04/11/cs231n_m1_1/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -583,7 +584,7 @@
     
 
         <a href="/2018/03/30/Mean-shift/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -639,7 +640,7 @@
     
 
         <a href="/2018/03/22/cs231n_m1_2/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -691,7 +692,7 @@
     
 
         <a href="/2018/03/09/myPython_b/" class="post-more waves-effect waves-button">
-            Continue reading...
+            続きを読む…
         </a>
     </div>
     
@@ -734,7 +735,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
