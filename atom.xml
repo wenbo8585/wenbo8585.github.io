@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hi</title>
+  <title>E.I.</title>
   
-  <subtitle>My best salutations are to them who knew me imperfect and loved me</subtitle>
+  <subtitle>Are you too proud to kiss me?</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-05-17T07:43:43.249Z</updated>
+  <updated>2018-05-29T00:50:14.731Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Matlab for Ubuntu</title>
+    <link href="http://wenbo.fun/2018/05/29/mat4u/"/>
+    <id>http://wenbo.fun/2018/05/29/mat4u/</id>
+    <published>2018-05-29T00:08:21.000Z</published>
+    <updated>2018-05-29T00:50:14.731Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;下载地址: &lt;a href=&quot;https://pan.baidu.com/s/1l1z-sg9Qjs6JHGC7mUYwyw&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MATLAB R2017a Linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;新建一个matlab文件夹，拷贝MATLAB R2017a Linux到Ubuntu. cd到目录下，挂载第一个iso文件到matlab文件夹:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo mount -o loop R2017a_glnxa64_dvd1.iso ~/matlab/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;挂载好直接安装:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo ~/matlab/install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;选第二个：&lt;/p&gt;
+&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgmatlab4u%20%284%29.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="环境配置" scheme="http://wenbo.fun/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>CS231n学习笔记 Lecture 8</title>
     <link href="http://wenbo.fun/2018/05/09/L8/"/>
     <id>http://wenbo.fun/2018/05/09/L8/</id>
     <published>2018-05-09T11:00:08.000Z</published>
-    <updated>2018-05-17T07:43:43.249Z</updated>
+    <updated>2018-05-23T02:32:38.211Z</updated>
     
     <summary type="html">
     
@@ -34,8 +64,12 @@
     
     </summary>
     
+      <category term="笔记" scheme="http://wenbo.fun/categories/%E7%AC%94%E8%AE%B0/"/>
+    
     
       <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
     
   </entry>
   
@@ -44,7 +78,7 @@
     <link href="http://wenbo.fun/2018/05/08/L7/"/>
     <id>http://wenbo.fun/2018/05/08/L7/</id>
     <published>2018-05-08T13:08:08.000Z</published>
-    <updated>2018-05-09T01:29:39.594Z</updated>
+    <updated>2018-05-23T02:32:31.645Z</updated>
     
     <summary type="html">
     
@@ -60,8 +94,12 @@
     
     </summary>
     
+      <category term="笔记" scheme="http://wenbo.fun/categories/%E7%AC%94%E8%AE%B0/"/>
+    
     
       <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
     
   </entry>
   
@@ -70,7 +108,7 @@
     <link href="http://wenbo.fun/2018/05/02/L6/"/>
     <id>http://wenbo.fun/2018/05/02/L6/</id>
     <published>2018-05-02T11:00:08.000Z</published>
-    <updated>2018-05-09T01:29:10.553Z</updated>
+    <updated>2018-05-23T02:32:23.007Z</updated>
     
     <summary type="html">
     
@@ -88,8 +126,12 @@
     
     </summary>
     
+      <category term="笔记" scheme="http://wenbo.fun/categories/%E7%AC%94%E8%AE%B0/"/>
+    
     
       <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
     
   </entry>
   
@@ -98,7 +140,7 @@
     <link href="http://wenbo.fun/2018/04/27/cs231n_m2_1/"/>
     <id>http://wenbo.fun/2018/04/27/cs231n_m2_1/</id>
     <published>2018-04-27T11:00:08.000Z</published>
-    <updated>2018-05-05T15:38:23.803Z</updated>
+    <updated>2018-05-23T02:30:34.257Z</updated>
     
     <summary type="html">
     
@@ -130,8 +172,12 @@
     
     </summary>
     
+      <category term="笔记" scheme="http://wenbo.fun/categories/%E7%AC%94%E8%AE%B0/"/>
+    
     
       <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
     
   </entry>
   
@@ -140,7 +186,7 @@
     <link href="http://wenbo.fun/2018/04/18/cs231n_m1_4/"/>
     <id>http://wenbo.fun/2018/04/18/cs231n_m1_4/</id>
     <published>2018-04-18T11:00:08.000Z</published>
-    <updated>2018-04-23T02:52:56.000Z</updated>
+    <updated>2018-05-23T02:30:22.184Z</updated>
     
     <summary type="html">
     
@@ -157,8 +203,12 @@
     
     </summary>
     
+      <category term="笔记" scheme="http://wenbo.fun/categories/%E7%AC%94%E8%AE%B0/"/>
+    
     
       <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
     
   </entry>
   
@@ -167,7 +217,7 @@
     <link href="http://wenbo.fun/2018/04/17/cs231n_m1_3/"/>
     <id>http://wenbo.fun/2018/04/17/cs231n_m1_3/</id>
     <published>2018-04-17T02:00:08.000Z</published>
-    <updated>2018-04-21T08:17:22.000Z</updated>
+    <updated>2018-05-23T02:30:12.900Z</updated>
     
     <summary type="html">
     
@@ -177,8 +227,12 @@
     
     </summary>
     
+      <category term="笔记" scheme="http://wenbo.fun/categories/%E7%AC%94%E8%AE%B0/"/>
+    
     
       <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
     
   </entry>
   
@@ -187,7 +241,7 @@
     <link href="http://wenbo.fun/2018/04/11/cs231n_m1_1/"/>
     <id>http://wenbo.fun/2018/04/11/cs231n_m1_1/</id>
     <published>2018-04-11T09:15:17.000Z</published>
-    <updated>2018-04-16T09:13:31.298Z</updated>
+    <updated>2018-05-23T02:29:39.396Z</updated>
     
     <summary type="html">
     
@@ -206,8 +260,12 @@
     
     </summary>
     
+      <category term="笔记" scheme="http://wenbo.fun/categories/%E7%AC%94%E8%AE%B0/"/>
+    
     
       <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
     
   </entry>
   
@@ -247,7 +305,7 @@
     <link href="http://wenbo.fun/2018/03/22/cs231n_m1_2/"/>
     <id>http://wenbo.fun/2018/03/22/cs231n_m1_2/</id>
     <published>2018-03-22T09:15:17.000Z</published>
-    <updated>2018-04-02T14:57:33.593Z</updated>
+    <updated>2018-05-23T02:30:04.568Z</updated>
     
     <summary type="html">
     
@@ -266,8 +324,12 @@
     
     </summary>
     
+      <category term="笔记" scheme="http://wenbo.fun/categories/%E7%AC%94%E8%AE%B0/"/>
+    
     
       <category term="笔记" scheme="http://wenbo.fun/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="CNN" scheme="http://wenbo.fun/tags/CNN/"/>
     
   </entry>
   
@@ -544,37 +606,6 @@
                 &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
             &lt;/figure&gt;  
 &lt;p&gt;其基本思想是，设置顶点集合&lt;code&gt;S&lt;/code&gt;并不断地作贪心选择来扩充这个集合。每一次加入&lt;code&gt;S&lt;/code&gt; 的点都是距离&lt;code&gt;S&lt;/code&gt;之外最短的点。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>贪心算法---活动安排问题</title>
-    <link href="http://wenbo.fun/2017/12/28/sf006/"/>
-    <id>http://wenbo.fun/2017/12/28/sf006/</id>
-    <published>2017-12-28T11:46:02.000Z</published>
-    <updated>2018-01-13T08:18:52.894Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;活动安排问题&quot;&gt;&lt;a href=&quot;#活动安排问题&quot; class=&quot;headerlink&quot; title=&quot;活动安排问题&quot;&gt;&lt;/a&gt;活动安排问题&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;贪心选择性质&quot;&gt;&lt;a href=&quot;#贪心选择性质&quot; class=&quot;headerlink&quot; title=&quot;贪心选择性质&quot;&gt;&lt;/a&gt;贪心选择性质&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;所谓贪心选择性质是指所求问题的整体最优解可以通过一系列局部最优的选择.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;动态规划: 每步所做的选择往往依赖于相关子问题的解。只有解除子问题的解才能做出选择。_自底向上_&lt;/li&gt;
-&lt;li&gt;贪心算法: 仅在当前状态下做出最好选择，即局部最优选择。_自顶向下_&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;对于一个具体问题，要确定它是否具有 &lt;strong&gt;贪心选择性质&lt;/strong&gt;,&lt;font color=&quot;red&quot;&gt;必须证明每一步所作的贪心选择最终导致问题的整体最优解。&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt; 活动安排问题贪的是 &lt;strong&gt;活动最早完成时间&lt;/strong&gt; ，直观上为未安排活动留下更多时间。&lt;br&gt;
     
     </summary>
     
