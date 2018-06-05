@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-05-29T00:50:14.731Z</updated>
+  <updated>2018-06-05T07:28:12.997Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何使用GitHub多人協作</title>
+    <link href="http://wenbo.fun/2018/06/03/github_t/"/>
+    <id>http://wenbo.fun/2018/06/03/github_t/</id>
+    <published>2018-06-03T10:08:21.000Z</published>
+    <updated>2018-06-05T07:28:12.997Z</updated>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img7d8d6941143a1b466986bac2ee769f46.jpg&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="环境配置" scheme="http://wenbo.fun/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Git" scheme="http://wenbo.fun/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>Matlab for Ubuntu</title>
@@ -294,9 +320,9 @@
       <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="聚类" scheme="http://wenbo.fun/tags/%E8%81%9A%E7%B1%BB/"/>
-    
       <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="聚类" scheme="http://wenbo.fun/tags/%E8%81%9A%E7%B1%BB/"/>
     
   </entry>
   
@@ -568,44 +594,6 @@
 &lt;p&gt;假设网N的任何一棵最小生成树都不包含(u，v)。设T是连通网上的一棵最小生成树，当将边(u，v)加入到T中时，由生成树的定义，T中必存在一条包含(u，v)的回路。另一方面，由于T是生成树，则在T上必存在另一条边(u’，v’)，其中u’∈U，v’∈V - U，且u和u’之间，v和v’之间均有路径相通。删去边(u’，v’)，便可消除上述回路，同时得到另一棵生成树T’。因为(u，v)的代价不高于(u’，v’)，则T’的代价亦不高于T，T’是包含(u，v)的一棵最小生成树，和假设矛盾。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;时间复杂度&quot;&gt;&lt;a href=&quot;#时间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度&quot;&gt;&lt;/a&gt;时间复杂度&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>贪心算法---单源最短路径</title>
-    <link href="http://wenbo.fun/2017/12/30/sf007/"/>
-    <id>http://wenbo.fun/2017/12/30/sf007/</id>
-    <published>2017-12-30T02:34:34.000Z</published>
-    <updated>2018-01-13T08:18:44.664Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;单源最短路径&quot;&gt;&lt;a href=&quot;#单源最短路径&quot; class=&quot;headerlink&quot; title=&quot;单源最短路径&quot;&gt;&lt;/a&gt;单源最短路径&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;给定一个带权有向图 G=（V,E），其中每条边的权是一个非负实数。另外，还给定V中的一个顶点，称为源。现在要计算从源到其他所有各顶点的最短路径长度。这里的长度就是指路上各边权之和。&lt;/p&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/dijkstra/tx02.jpg&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/dijkstra/tx01.jpg&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
-            &lt;/figure&gt;  
-&lt;p&gt;其基本思想是，设置顶点集合&lt;code&gt;S&lt;/code&gt;并不断地作贪心选择来扩充这个集合。每一次加入&lt;code&gt;S&lt;/code&gt; 的点都是距离&lt;code&gt;S&lt;/code&gt;之外最短的点。&lt;br&gt;
     
     </summary>
     

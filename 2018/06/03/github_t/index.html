@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>如何使用GitHub多人協作 | E.I. | Are you too proud to kiss me?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#81D8CF">
+    
+    
+    <meta name="keywords" content="Git">
+    <meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何使用GitHub多人協作">
+<meta property="og:url" content="http://wenbo.fun/2018/06/03/github_t/index.html">
+<meta property="og:site_name" content="E.I.">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img7d8d6941143a1b466986bac2ee769f46.jpg">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/1/101.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/1/102.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/1/103.png">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgbranching.png">
+<meta property="og:updated_time" content="2018-06-05T07:28:12.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何使用GitHub多人協作">
+<meta name="twitter:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img7d8d6941143a1b466986bac2ee769f46.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="E.I." href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!--  <link rel="stylesheet" href="/css/style.css?v=1.7.1"> -->
+    <link rel="stylesheet" href="/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgbrand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Wen bo</h5>
+          <a href="mailto:1871756080@qq.com" title="1871756080@qq.com" class="mail">1871756080@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wenbo8585" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/MVision"  >
+                <i class="icon icon-lg icon-link"></i>
+                CoCo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">如何使用GitHub多人協作</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">如何使用GitHub多人協作</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-03T10:08:21.000Z" itemprop="datePublished" class="page-time">
+  2018-06-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/环境配置/">环境配置</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#什麼是GitHub"><span class="post-toc-number">1.</span> <span class="post-toc-text">什麼是GitHub</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Github-安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">Github 安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Git</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多人協作-分支"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">多人協作(分支)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多人協作-參與項目"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">多人協作(參與項目)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多人協作-權限管理"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">多人協作(權限管理)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多人協作-邀請協作"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">多人協作(邀請協作)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Github-Desktop"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">Github Desktop</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-github_t"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">如何使用GitHub多人協作</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-03 18:08:21" datetime="2018-06-03T10:08:21.000Z"  itemprop="datePublished">2018-06-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/环境配置/">环境配置</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img7d8d6941143a1b466986bac2ee769f46.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<a id="more"></a>
+<h1 id="什麼是GitHub"><a href="#什麼是GitHub" class="headerlink" title="什麼是GitHub"></a>什麼是GitHub</h1><p>不知道趕緊百度or谷歌</p>
+<h1 id="Github-安装"><a href="#Github-安装" class="headerlink" title="Github 安装"></a>Github 安装</h1><p>首先肯定是註冊賬號不用多說。<br>Github一般使用Git來管理。如果你喜歡圖形界面請直接跳到<code>Github Desktop</code></p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>下載安裝<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git Downloads</a></p>
+<p><strong>配置Git</strong></p>
+<p>右鍵 <code>Git Bash</code>，輸入:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</span><br></pre></td></tr></table></figure>
+<p>后面的your_email@youremail.com改为你在github上注册的邮箱，指定 <code>RSA</code>算法生成密钥，回车三次，密码不用输，生成两个隐藏文件<code>id_rsa</code>和<code>id_rsa.pub</code>，有顯示文件位置。</p>
+<p>接下来就把公钥<code>id_rsa.pub</code>的内容拷贝到 <code>GitHub</code>需要的地方就可以了。如下：<br><!--- more ---><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/1/101.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/1/102.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>點擊<code>New SSH key</code>, Title 隨便寫, ssh 就填<code>id_rsa.pub</code>的內容。</p>
+<p>验证是否成功，在<code>Git Bash</code>中输入<code>ssh -T git@github.com</code>输入<code>yes</code>进行测试：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/1/103.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>如图就是成功。</p>
+<p>若第一次使用，最好设置邮箱和名字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;your name&quot;</span><br><span class="line">git config --global user.email &quot;your_email@youremail.com&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="多人協作-分支"><a href="#多人協作-分支" class="headerlink" title="多人協作(分支)"></a>多人協作(分支)</h2><p>現在有一個github倉庫，裡面有不同人的東西，比如每個人的作業。或同一個任務，不同idea，就可以使用分支區分開，方便管理。</p>
+<p>首先建一個你中意的文件夾，<code>git bash</code> 輸入:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<p>初始化。</p>
+<p><strong>添加遠程庫</strong></p>
+<p>以S-S_zoo為例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:wenbo8585/S-S_zoo.git</span><br></pre></td></tr></table></figure>
+<p>此時，你就有一個遠程庫連接，她的名字為origin,你可以通過<code>git remote</code>來查看當前的遠程連接。</p>
+<p><strong>clone</strong></p>
+<p>执行如下命令將遠程仓库內容克隆到本地生成一個本地克隆庫：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:wenbo8585/S-S_zoo.git</span><br></pre></td></tr></table></figure>
+<p>clone下來默認分支是master，使用<code>git branch -a</code>查看分支，如果是多人協作，你需要另起以個分支branch，如圖:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgbranching.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>創建并切換到分支<code>wb_feature</code>,名字自己取。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b wb_feature</span><br></pre></td></tr></table></figure>
+<p>現在你可以在當前目錄（本地倉庫）自由創作，你的本地仓库由 git 维护的三棵”树”组成。<br>第一个是你的<code>工作目录</code>，它持有实际文件；<br>第二个是 <code>暂存区</code>（Index），它像个缓存区域，临时保存你的改动；<br>最后是 <code>HEAD</code>，它指向你最后一次提交的结果。</p>
+<p>你可以修改文件把它们添加到暂存区，使用下面其中一個命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;filename&gt;</span><br><span class="line">git add *   # *指代目錄下所以文件</span><br></pre></td></tr></table></figure></p>
+<p>此時你的改動添加到了緩存區。但還沒有本地倉庫的實際改動使用如下命令以实际提交實際改動：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;注釋信息&quot;</span><br></pre></td></tr></table></figure>
+<p>注釋信息相當於你每次改動的標籤。现在，你的改动已经提交到了HEAD，本地倉庫已經更新了改動，但是还没到提交到遠程倉庫。</p>
+<p>如果你想提交修改到遠程，你可以選擇兩種方式：</p>
+<ul>
+<li><p>提交feature_x分支：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin feature_x</span><br></pre></td></tr></table></figure>
+<p>  這樣GitHub上就有feature_x分支。</p>
+</li>
+</ul>
+<ul>
+<li><p>合併merge到master<br>  如果不想上傳feature_x分支，只使用master分支，你可以選擇合併。</p>
+<p>  切換回主分支：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git chechout master</span><br></pre></td></tr></table></figure>
+<p>  你可以選擇把新建的分支删掉：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d feature_x</span><br></pre></td></tr></table></figure>
+<p>  merge:</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge feature_x</span><br></pre></td></tr></table></figure>
+<p>  但兩個分支有衝突時（conflicts），比如 feature_x 分支修改了README，这时候就需要你手動合併這些衝突（conflicts）。改完之后，再進行add、commit：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;filename&gt;</span><br><span class="line">git commit -m &quot;注釋&quot;</span><br></pre></td></tr></table></figure>
+<p>  此時再進行<code>git push origin master</code>就可以了。</p>
+</li>
+</ul>
+<p><strong>注：</strong><br>在合并改动之前，你可以使用如下命令预览差异：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;source_branch&gt; &lt;target_branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>另外</strong></p>
+<p>如果GitHub上東西是新的，本地倉庫是舊的，你需要使用<code>git pull</code>命令,將遠程倉庫更新下載合併到當前本地倉庫分支。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin next:master</span><br></pre></td></tr></table></figure>
+<p>取回origin主機的next分支，與本地的master分支合併。git pull 不加參數就是當前分支与远程库master進行同步更新。</p>
+<p>远程分支(next)与當前分支合併，可簡寫為：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin next</span><br></pre></td></tr></table></figure>
+<h2 id="多人協作-參與項目"><a href="#多人協作-參與項目" class="headerlink" title="多人協作(參與項目)"></a>多人協作(參與項目)</h2><p><a href="https://jingyan.baidu.com/article/6f2f55a15810d6b5b83e6c64.html" target="_blank" rel="noopener">百度經驗</a></p>
+<h2 id="多人協作-權限管理"><a href="#多人協作-權限管理" class="headerlink" title="多人協作(權限管理)"></a>多人協作(權限管理)</h2><p>參考：<a href="http://www.cnblogs.com/zhaoyanjun/p/5882784.html" target="_blank" rel="noopener">http://www.cnblogs.com/zhaoyanjun/p/5882784.html</a></p>
+<h2 id="多人協作-邀請協作"><a href="#多人協作-邀請協作" class="headerlink" title="多人協作(邀請協作)"></a>多人協作(邀請協作)</h2><p>參考：<a href="http://www.cnblogs.com/zhaoyanjun/p/5829142.html" target="_blank" rel="noopener">http://www.cnblogs.com/zhaoyanjun/p/5829142.html</a></p>
+<h2 id="Github-Desktop"><a href="#Github-Desktop" class="headerlink" title="Github Desktop"></a>Github Desktop</h2><p>下載安裝<a href="https://desktop.github.com/" target="_blank" rel="noopener">Desktop</a>。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-06-05T07:28:12.997Z" itemprop="dateUpdated">2018-06-05 15:28:12</time>
+</span><br>
+
+
+        
+        <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgxd.jpeg">
+        
+    </div>
+    <footer>
+        <a href="http://wenbo.fun">
+            <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" alt="Wen bo">
+            Wen bo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/06/03/github_t/&title=《如何使用GitHub多人協作》 — E.I.&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/06/03/github_t/&title=《如何使用GitHub多人協作》 — E.I.&source=
+                
+                    
+                    
+                
+..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/06/03/github_t/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《如何使用GitHub多人協作》 — E.I.&url=http://wenbo.fun/2018/06/03/github_t/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/06/03/github_t/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/05/29/mat4u/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Matlab for Ubuntu</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "xVQIAhS8Iaa22qibuCeoAjj2-gzGzoHsz",
+            appKey: "GEc59stbeS88ePxaVibVE1Db",
+            avatar: "monsterid",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢亲~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" data-alipay="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Wen bo &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/06/03/github_t/&title=《如何使用GitHub多人協作》 — E.I.&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/06/03/github_t/&title=《如何使用GitHub多人協作》 — E.I.&source=
+                
+                    
+                    
+                
+..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/06/03/github_t/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《如何使用GitHub多人協作》 — E.I.&url=http://wenbo.fun/2018/06/03/github_t/&via=http://wenbo.fun" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/06/03/github_t/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABvUlEQVR42u3aQW7DMAwEwPz/0y7Qa2GFS8pKUIxOQSLb4xwIaanXqzyu35HOuW5G/Z7NgYuLO+Zey7F3zt+Z6bW4uLgnuevCdHtxoZD1fr39HhcX98u469eolKd1IcPFxf2v3Mpu5YsKGS4u7pKbRhj1cja5Ay4u7qe4aWD6xOcH811cXNyQe4Wj/gJpJFp6Oi4u7hFufXMyCUbXTZR4Ji4u7sPcNOjstUnSpVKwxMHFxT3CfeLAxHwxhIuLe56b1o1JYao3XIOeDy4u7lZu/YjV+kaVwjdporyh4+LibuWm8UQv8uj9Z3HdxcXF3cStLD7qG5VewUoDF1xc3DPcCnHXdqj3p+Di4p7kVi7etdCpF7hbCS4u7hFuWh/mBylG50RwcXGPcOsbkvqRi0osktJxcXE/xa1sfiYBaC+C2XAZLi5uyK00Sh9sh8zXZbi4uA9wr3BM2iq99gwuLu55blpW4s5tIVipz8HFxT3JTYtXZWs0WTY1Y1NcXNwHuJN4NH2NSWiCi4v7bdx5OJIe9hoVMlxc3OPcHm5+OAMXF/ckd775SY9TNIsjLi7uEW4amPYemW6HRnRcXNw+9wex6VLBX6Si1QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+    
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="225" height="450"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:1;
+    right: 50px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -60px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/unitychan.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>
