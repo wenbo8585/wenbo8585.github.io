@@ -240,16 +240,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>下载地址: <a href="https://pan.baidu.com/s/1l1z-sg9Qjs6JHGC7mUYwyw" target="_blank" rel="noopener">MATLAB R2017a Linux</a></p>
-<p>新建一个matlab文件夹，拷贝MATLAB R2017a Linux到Ubuntu. cd到目录下，挂载第一个iso文件到matlab文件夹:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -o loop R2017a_glnxa64_dvd1.iso ~/matlab/</span><br></pre></td></tr></table></figure>
-<p>挂载好直接安装:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ~/matlab/install</span><br></pre></td></tr></table></figure>
-<p>选第二个：</p>
-<figure class="image-bubble">
+        <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgmatlab4u%20%284%29.png" alt="" title="">
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgtimg.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -293,12 +287,14 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p><strong>Lecture 8 | Software</strong></p>
-<h1 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h1><blockquote>
-<p><a href="https://www.tensorflow.org/install/install_windows#installing_with_anaconda" target="_blank" rel="noopener">使用Anaconda安装</a></p>
-</blockquote>
-<h2 id="Barebone-TensorFlow"><a href="#Barebone-TensorFlow" class="headerlink" title="Barebone TensorFlow"></a>Barebone TensorFlow</h2><p>一个简单的三层卷积网络:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Apply Convolution</span></span><br><span class="line">    conv1 = tf.nn.conv2d(x, conv_w1, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line">    conv2 = tf.nn.conv2d(conv1, conv_w2, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line">    <span class="comment"># Add bias</span></span><br><span class="line">    conv1 = tf.nn.bias_add(conv1, conv_b1)</span><br><span class="line">    conv2 = tf.nn.bias_add(conv2, conv_b2)</span><br><span class="line">    <span class="comment"># Apply activation function</span></span><br><span class="line">    conv1 = tf.nn.relu(conv1)</span><br><span class="line">    conv2 = tf.nn.relu(conv2)</span><br><span class="line">    <span class="comment"># Apply Full</span></span><br><span class="line">    conv2_flat = flatten(conv2)</span><br><span class="line">    scores = tf.matmul(conv2_flat, fc_w) + fc_b</span><br></pre></td></tr></table></figure>
+        <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/deep.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p><strong>Lecture 8 | Software</strong></p>
     
 
         <a href="/2018/05/09/L8/" class="post-more waves-effect waves-button">
@@ -345,15 +341,13 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p><strong>Lecture 7 | Training Neural Networks</strong></p>
-<h1 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h1><p>SGD: local minima &amp; <strong>saddle point</strong><br><figure class="image-bubble">
+        <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_1.png" alt="" title="">
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/deep.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure></p>
-<h2 id="SGD-Momentum"><a href="#SGD-Momentum" class="headerlink" title="SGD + Momentum"></a>SGD + Momentum</h2>
+            </figure>
     
 
         <a href="/2018/05/08/L7/" class="post-more waves-effect waves-button">
@@ -400,17 +394,13 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p><strong>Lecture 6 | Training Neural Networks</strong></p>
-<h1 id="Activation-Functions"><a href="#Activation-Functions" class="headerlink" title="Activation Functions"></a>Activation Functions</h1><ul>
-<li>Sigmoid</li>
-<li>Leaky ReLU</li>
-<li>tanh</li>
-<li>Maxout</li>
-<li>ReLU</li>
-<li>ELU</li>
-</ul>
-<p>$$<br>  \begin{cases}<br>  x  \qquad(x \geq 0) \\<br>  \alpha(e^x - 1)  \qquad(x &lt; 0)<br>  \end{cases}<br>$$</p>
-<p>point: zero-centered</p>
+        <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/deep.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
     
 
         <a href="/2018/05/02/L6/" class="post-more waves-effect waves-button">
@@ -457,28 +447,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p><strong>Lecture 5 | Convolutional Neural Networks</strong></p>
-<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><p>It transforms an input 3D volume to an output 3D volume.</p>
-<p>常见的模式</p>
-<blockquote>
-<p>INPUT -&gt; [[CONV -&gt; RELU]*N -&gt; POOL?]*M -&gt; [FC -&gt; RELU]*K -&gt; softmax</p>
-</blockquote>
-<p> POOL? 指的是一个可选的pooling layer<br> N &gt;= 0 (and usually N &lt;= 5)<br> M &gt;= 0<br> K &gt;= 0 (and usually K &lt; 3)</p>
-<h2 id="Conv-layer"><a href="#Conv-layer" class="headerlink" title="Conv layer"></a>Conv layer</h2><ul>
-<li>Convolutional Layer, Pooling Layer, Fully-Connected Layer</li>
-</ul>
-<p>最简单的双层CNN(一个隐含层): [INPUT - CONV - RELU - POOL - FC]</p>
-<p>总的特点:</p>
-<ul>
-<li>每一层都是从3D volume到3D volume的转换.</li>
-<li>CONV/FC有参数学习(w,b), RELU/POOL没有.</li>
-<li>CONV/FC/POOL 有超参数学习(learning rate等等), RELU没有.</li>
-</ul>
-<h3 id="感受野-receptive-field"><a href="#感受野-receptive-field" class="headerlink" title="感受野(receptive field)"></a>感受野(receptive field)</h3><p>每个神经元只与输入数据的一个局部区域连接。该连接的空间大小叫做神经元的感受野（receptive field）</p>
-<figure class="image-bubble">
+        <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://cs231n.github.io/assets/cnn/depthcol.jpeg" alt="" title="">
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/deep.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>

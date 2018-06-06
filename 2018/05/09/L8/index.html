@@ -20,20 +20,21 @@
     
     
     <meta name="keywords" content="笔记,CNN">
-    <meta name="description" content="Lecture 8 | Software TensorFlow 使用Anaconda安装  Barebone TensorFlow一个简单的三层卷积网络: 123456789101112# Apply Convolution    conv1 = tf.nn.conv2d(x, conv_w1, strides=[1,1,1,1], padding=&apos;SAME&apos;)    conv2 = tf.nn">
+    <meta name="description" content="Lecture 8 | Software">
 <meta name="keywords" content="笔记,CNN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CS231n学习笔记 Lecture 8">
 <meta property="og:url" content="http://wenbo.fun/2018/05/09/L8/index.html">
 <meta property="og:site_name" content="E.I.">
-<meta property="og:description" content="Lecture 8 | Software TensorFlow 使用Anaconda安装  Barebone TensorFlow一个简单的三层卷积网络: 123456789101112# Apply Convolution    conv1 = tf.nn.conv2d(x, conv_w1, strides=[1,1,1,1], padding=&apos;SAME&apos;)    conv2 = tf.nn">
+<meta property="og:description" content="Lecture 8 | Software">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/deep.png">
 <meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l8_01.png">
-<meta property="og:updated_time" content="2018-05-23T02:32:38.211Z">
+<meta property="og:updated_time" content="2018-06-05T16:44:40.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CS231n学习笔记 Lecture 8">
-<meta name="twitter:description" content="Lecture 8 | Software TensorFlow 使用Anaconda安装  Barebone TensorFlow一个简单的三层卷积网络: 123456789101112# Apply Convolution    conv1 = tf.nn.conv2d(x, conv_w1, strides=[1,1,1,1], padding=&apos;SAME&apos;)    conv2 = tf.nn">
-<meta name="twitter:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l8_01.png">
+<meta name="twitter:description" content="Lecture 8 | Software">
+<meta name="twitter:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/deep.png">
     
         <link rel="alternate" type="application/atom+xml" title="E.I." href="/atom.xml">
     
@@ -195,13 +196,20 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>Lecture 8 | Software</strong></p>
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/deep.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p><strong>Lecture 8 | Software</strong></p>
+<a id="more"></a>
 <h1 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h1><blockquote>
 <p><a href="https://www.tensorflow.org/install/install_windows#installing_with_anaconda" target="_blank" rel="noopener">使用Anaconda安装</a></p>
 </blockquote>
 <h2 id="Barebone-TensorFlow"><a href="#Barebone-TensorFlow" class="headerlink" title="Barebone TensorFlow"></a>Barebone TensorFlow</h2><p>一个简单的三层卷积网络:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Apply Convolution</span></span><br><span class="line">    conv1 = tf.nn.conv2d(x, conv_w1, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line">    conv2 = tf.nn.conv2d(conv1, conv_w2, strides=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line">    <span class="comment"># Add bias</span></span><br><span class="line">    conv1 = tf.nn.bias_add(conv1, conv_b1)</span><br><span class="line">    conv2 = tf.nn.bias_add(conv2, conv_b2)</span><br><span class="line">    <span class="comment"># Apply activation function</span></span><br><span class="line">    conv1 = tf.nn.relu(conv1)</span><br><span class="line">    conv2 = tf.nn.relu(conv2)</span><br><span class="line">    <span class="comment"># Apply Full</span></span><br><span class="line">    conv2_flat = flatten(conv2)</span><br><span class="line">    scores = tf.matmul(conv2_flat, fc_w) + fc_b</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 <p>init:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.....</span><br><span class="line">channel_1 = <span class="number">32</span></span><br><span class="line">channel_2 = <span class="number">64</span></span><br><span class="line"></span><br><span class="line">conv_w1 = tf.Variable(kaiming_normal((<span class="number">5</span>, <span class="number">5</span>, <span class="number">3</span>, channel_1)))</span><br><span class="line">conv_b1 = tf.Variable(tf.zeros(channel_1,))</span><br><span class="line">conv_w2 = tf.Variable(kaiming_normal(( <span class="number">3</span>, <span class="number">3</span>, channel_1, channel_2)))</span><br><span class="line">conv_b2 = tf.Variable(tf.zeros(channel_2,))</span><br><span class="line">fc_w = tf.Variable(kaiming_normal((channel_2*<span class="number">32</span>*<span class="number">32</span>, <span class="number">10</span>)))</span><br><span class="line">fc_b = tf.Variable(tf.zeros(<span class="number">10</span>,))</span><br><span class="line"></span><br><span class="line">params = [conv_w1, conv_b1, conv_w2, conv_b2, fc_w, fc_b]</span><br></pre></td></tr></table></figure>
 <p><strong>padding</strong><br><img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l8_01.png" alt=""></p>
@@ -227,7 +235,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-05-23T02:32:38.211Z" itemprop="dateUpdated">2018-05-23 10:32:38</time>
+    Last updated: <time datetime="2018-06-05T16:44:40.302Z" itemprop="dateUpdated">2018-06-06 00:44:40</time>
 </span><br>
 
 
@@ -268,11 +276,12 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/05/09/L8/&title=《CS231n学习笔记 Lecture 8》 — E.I.&source=Lecture 8 | Software
-TensorFlow
-使用Anaconda安装
-
-Barebone TensorFlow一个简单的三层卷积网络:..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/05/09/L8/&title=《CS231n学习笔记 Lecture 8》 — E.I.&source=
+                
+                    
+                    
+                
+..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -423,11 +432,12 @@ Barebone TensorFlow一个简单的三层卷积网络:..." data-title=" QQ">
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/05/09/L8/&title=《CS231n学习笔记 Lecture 8》 — E.I.&source=Lecture 8 | Software
-TensorFlow
-使用Anaconda安装
-
-Barebone TensorFlow一个简单的三层卷积网络:..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/05/09/L8/&title=《CS231n学习笔记 Lecture 8》 — E.I.&source=
+                
+                    
+                    
+                
+..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

@@ -47,20 +47,14 @@
     <link href="http://wenbo.fun/2018/05/29/mat4u/"/>
     <id>http://wenbo.fun/2018/05/29/mat4u/</id>
     <published>2018-05-29T00:08:21.000Z</published>
-    <updated>2018-05-29T00:50:14.731Z</updated>
+    <updated>2018-06-05T16:39:26.635Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;下载地址: &lt;a href=&quot;https://pan.baidu.com/s/1l1z-sg9Qjs6JHGC7mUYwyw&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MATLAB R2017a Linux&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;新建一个matlab文件夹，拷贝MATLAB R2017a Linux到Ubuntu. cd到目录下，挂载第一个iso文件到matlab文件夹:&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo mount -o loop R2017a_glnxa64_dvd1.iso ~/matlab/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;挂载好直接安装:&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo ~/matlab/install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;选第二个：&lt;/p&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
+      &lt;figure class=&quot;image-bubble&quot;&gt;
                 &lt;div class=&quot;img-lightbox&quot;&gt;
                     &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgmatlab4u%20%284%29.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgtimg.jpg&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
                 &lt;/div&gt;
                 &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
             &lt;/figure&gt;
@@ -77,16 +71,18 @@
     <link href="http://wenbo.fun/2018/05/09/L8/"/>
     <id>http://wenbo.fun/2018/05/09/L8/</id>
     <published>2018-05-09T11:00:08.000Z</published>
-    <updated>2018-05-23T02:32:38.211Z</updated>
+    <updated>2018-06-05T16:44:40.302Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;Lecture 8 | Software&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;TensorFlow&quot;&gt;&lt;a href=&quot;#TensorFlow&quot; class=&quot;headerlink&quot; title=&quot;TensorFlow&quot;&gt;&lt;/a&gt;TensorFlow&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.tensorflow.org/install/install_windows#installing_with_anaconda&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;使用Anaconda安装&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Barebone-TensorFlow&quot;&gt;&lt;a href=&quot;#Barebone-TensorFlow&quot; class=&quot;headerlink&quot; title=&quot;Barebone TensorFlow&quot;&gt;&lt;/a&gt;Barebone TensorFlow&lt;/h2&gt;&lt;p&gt;一个简单的三层卷积网络:&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Apply Convolution&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv1 = tf.nn.conv2d(x, conv_w1, strides=[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;], padding=&lt;span class=&quot;string&quot;&gt;&#39;SAME&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv2 = tf.nn.conv2d(conv1, conv_w2, strides=[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;], padding=&lt;span class=&quot;string&quot;&gt;&#39;SAME&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# Add bias&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv1 = tf.nn.bias_add(conv1, conv_b1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv2 = tf.nn.bias_add(conv2, conv_b2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# Apply activation function&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv1 = tf.nn.relu(conv1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv2 = tf.nn.relu(conv2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# Apply Full&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    conv2_flat = flatten(conv2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    scores = tf.matmul(conv2_flat, fc_w) + fc_b&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/deep.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;Lecture 8 | Software&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -104,19 +100,17 @@
     <link href="http://wenbo.fun/2018/05/08/L7/"/>
     <id>http://wenbo.fun/2018/05/08/L7/</id>
     <published>2018-05-08T13:08:08.000Z</published>
-    <updated>2018-05-23T02:32:31.645Z</updated>
+    <updated>2018-06-05T16:48:19.440Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;Lecture 7 | Training Neural Networks&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Optimization&quot;&gt;&lt;a href=&quot;#Optimization&quot; class=&quot;headerlink&quot; title=&quot;Optimization&quot;&gt;&lt;/a&gt;Optimization&lt;/h1&gt;&lt;p&gt;SGD: local minima &amp;amp; &lt;strong&gt;saddle point&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;image-bubble&quot;&gt;
+      &lt;figure class=&quot;image-bubble&quot;&gt;
                 &lt;div class=&quot;img-lightbox&quot;&gt;
                     &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/l7_1.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/deep.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
                 &lt;/div&gt;
                 &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
-            &lt;/figure&gt;&lt;/p&gt;
-&lt;h2 id=&quot;SGD-Momentum&quot;&gt;&lt;a href=&quot;#SGD-Momentum&quot; class=&quot;headerlink&quot; title=&quot;SGD + Momentum&quot;&gt;&lt;/a&gt;SGD + Momentum&lt;/h2&gt;
+            &lt;/figure&gt;
     
     </summary>
     
@@ -134,21 +128,17 @@
     <link href="http://wenbo.fun/2018/05/02/L6/"/>
     <id>http://wenbo.fun/2018/05/02/L6/</id>
     <published>2018-05-02T11:00:08.000Z</published>
-    <updated>2018-05-23T02:32:23.007Z</updated>
+    <updated>2018-06-05T16:48:37.168Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;Lecture 6 | Training Neural Networks&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Activation-Functions&quot;&gt;&lt;a href=&quot;#Activation-Functions&quot; class=&quot;headerlink&quot; title=&quot;Activation Functions&quot;&gt;&lt;/a&gt;Activation Functions&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;Sigmoid&lt;/li&gt;
-&lt;li&gt;Leaky ReLU&lt;/li&gt;
-&lt;li&gt;tanh&lt;/li&gt;
-&lt;li&gt;Maxout&lt;/li&gt;
-&lt;li&gt;ReLU&lt;/li&gt;
-&lt;li&gt;ELU&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;$$&lt;br&gt;  \begin{cases}&lt;br&gt;  x  \qquad(x \geq 0) \\&lt;br&gt;  \alpha(e^x - 1)  \qquad(x &amp;lt; 0)&lt;br&gt;  \end{cases}&lt;br&gt;$$&lt;/p&gt;
-&lt;p&gt;point: zero-centered&lt;/p&gt;
+      &lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/deep.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
+            &lt;/figure&gt;
     
     </summary>
     
@@ -166,32 +156,14 @@
     <link href="http://wenbo.fun/2018/04/27/cs231n_m2_1/"/>
     <id>http://wenbo.fun/2018/04/27/cs231n_m2_1/</id>
     <published>2018-04-27T11:00:08.000Z</published>
-    <updated>2018-05-23T02:30:34.257Z</updated>
+    <updated>2018-06-05T16:49:01.516Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;Lecture 5 | Convolutional Neural Networks&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Architecture&quot;&gt;&lt;a href=&quot;#Architecture&quot; class=&quot;headerlink&quot; title=&quot;Architecture&quot;&gt;&lt;/a&gt;Architecture&lt;/h1&gt;&lt;p&gt;It transforms an input 3D volume to an output 3D volume.&lt;/p&gt;
-&lt;p&gt;常见的模式&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;INPUT -&amp;gt; [[CONV -&amp;gt; RELU]*N -&amp;gt; POOL?]*M -&amp;gt; [FC -&amp;gt; RELU]*K -&amp;gt; softmax&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt; POOL? 指的是一个可选的pooling layer&lt;br&gt; N &amp;gt;= 0 (and usually N &amp;lt;= 5)&lt;br&gt; M &amp;gt;= 0&lt;br&gt; K &amp;gt;= 0 (and usually K &amp;lt; 3)&lt;/p&gt;
-&lt;h2 id=&quot;Conv-layer&quot;&gt;&lt;a href=&quot;#Conv-layer&quot; class=&quot;headerlink&quot; title=&quot;Conv layer&quot;&gt;&lt;/a&gt;Conv layer&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Convolutional Layer, Pooling Layer, Fully-Connected Layer&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;最简单的双层CNN(一个隐含层): [INPUT - CONV - RELU - POOL - FC]&lt;/p&gt;
-&lt;p&gt;总的特点:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;每一层都是从3D volume到3D volume的转换.&lt;/li&gt;
-&lt;li&gt;CONV/FC有参数学习(w,b), RELU/POOL没有.&lt;/li&gt;
-&lt;li&gt;CONV/FC/POOL 有超参数学习(learning rate等等), RELU没有.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;感受野-receptive-field&quot;&gt;&lt;a href=&quot;#感受野-receptive-field&quot; class=&quot;headerlink&quot; title=&quot;感受野(receptive field)&quot;&gt;&lt;/a&gt;感受野(receptive field)&lt;/h3&gt;&lt;p&gt;每个神经元只与输入数据的一个局部区域连接。该连接的空间大小叫做神经元的感受野（receptive field）&lt;/p&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
+      &lt;figure class=&quot;image-bubble&quot;&gt;
                 &lt;div class=&quot;img-lightbox&quot;&gt;
                     &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;http://cs231n.github.io/assets/cnn/depthcol.jpeg&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
+                    &lt;img src=&quot;http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/deep.png&quot; alt=&quot;&quot; title=&quot;&quot;&gt;
                 &lt;/div&gt;
                 &lt;div class=&quot;image-caption&quot;&gt;&lt;/div&gt;
             &lt;/figure&gt;
