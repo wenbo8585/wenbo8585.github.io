@@ -13,7 +13,7 @@
     
     
     
-    <title>E.I. | Are you too proud to kiss me?</title>
+    <title>E.I. | 善待別人就是善待妳自己</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#81D8CF">
@@ -144,7 +144,7 @@
         <h1 class="title">E.I.</h1>
         <h5 class="subtitle">
             
-                Are you too proud to kiss me?
+                善待別人就是善待妳自己
             
         </h5>
     </div>
@@ -157,6 +157,62 @@
 <div class="container body-wrap">
 
     <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-Mean-shift"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-03-30 16:49:18" datetime="2018-03-30T08:49:18.000Z"  itemprop="datePublished">2018-03-30</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/03/30/Mean-shift/">Mean-shift clustering algorithm</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <h2 id="Mean-Shift算法"><a href="#Mean-Shift算法" class="headerlink" title="Mean-Shift算法"></a>Mean-Shift算法</h2><p>Mean Shift向量的基本形式定义为: $$M_h = \frac{1}{K} \sum_{x_i \in S_k}(x_i - x)  $$<br>$S_k$是一个半径为h的高维球区域,K表示在这n个样本点$x_i$中,有k个点落入$S_k$区域中.</p>
+<p>Meanshift向量是选取一个点为圆心，以 h 为半径做一个高维球，里面所有点与圆心为起点形成的向量相加的结果就是Meanshift向量</p>
+<p>如图所以。其中黄色箭头就是 $M_h$（meanshift向量）。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/ms00.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+    
+
+        <a href="/2018/03/30/Mean-shift/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/聚类/">聚类</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
     
         <li class="post-list-item fade">
             <article id="post-cs231n_m1_2"
@@ -633,63 +689,6 @@
     
 
         <a href="/2017/12/30/sf009/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-sf008"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-12-30 11:17:39" datetime="2017-12-30T03:17:39.000Z"  itemprop="datePublished">2017-12-30</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/12/30/sf008/">贪心算法---最小生成树</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
-<p>计算机算法设计与分析(第四版)，王晓东</p>
-</blockquote>
-<h2 id="最小生成树性质"><a href="#最小生成树性质" class="headerlink" title="最小生成树性质"></a>最小生成树性质</h2><blockquote>
-<p>假设 N = (V,{ E })是一个连通网，U 是顶点集 V 的一个非空子集。若(u , v)是一条具有最小权值(代价)的边，其中u∈U， v∈V - U，则必存在一棵包含边(u，v)的最小生成树。</p>
-</blockquote>
-<p>反证:</p>
-<blockquote>
-<p>假设网N的任何一棵最小生成树都不包含(u，v)。设T是连通网上的一棵最小生成树，当将边(u，v)加入到T中时，由生成树的定义，T中必存在一条包含(u，v)的回路。另一方面，由于T是生成树，则在T上必存在另一条边(u’，v’)，其中u’∈U，v’∈V - U，且u和u’之间，v和v’之间均有路径相通。删去边(u’，v’)，便可消除上述回路，同时得到另一棵生成树T’。因为(u，v)的代价不高于(u’，v’)，则T’的代价亦不高于T，T’是包含(u，v)的一棵最小生成树，和假设矛盾。</p>
-</blockquote>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2>
-    
-
-        <a href="/2017/12/30/sf008/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
     </div>

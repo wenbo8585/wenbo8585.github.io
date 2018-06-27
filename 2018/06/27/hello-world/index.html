@@ -13,25 +13,24 @@
     
     
     
-    <title>人脸识别：概述 | E.I. | 善待別人就是善待妳自己</title>
+    <title>Hello World | E.I. | 善待別人就是善待妳自己</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#81D8CF">
     
     
-    <meta name="keywords" content="环境配置,人脸识别">
-    <meta name="description" content="主环境  opencv TensorFlow python3 dlib 具体搭建方式— 传送门   流程1. Get_faces 获取图片集获取所要识别的人脸的图片集最快的方法就是使用程序用摄像头拍照，要获取足够多的照片，得坐在电脑面前不停得给自己的脸摆各种姿势，这样可以提高训练后识别自己的成功率，这里先后采取了opencv和dlib自带人脸检测采集，虽然opencv识别比较快，但实际应用中会识别">
-<meta name="keywords" content="环境配置,人脸识别">
+    <meta name="keywords" content="">
+    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="article">
-<meta property="og:title" content="人脸识别：概述">
-<meta property="og:url" content="http://wenbo.fun/2017/12/07/人脸识别1/index.html">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="http://wenbo.fun/2018/06/27/hello-world/index.html">
 <meta property="og:site_name" content="E.I.">
-<meta property="og:description" content="主环境  opencv TensorFlow python3 dlib 具体搭建方式— 传送门   流程1. Get_faces 获取图片集获取所要识别的人脸的图片集最快的方法就是使用程序用摄像头拍照，要获取足够多的照片，得坐在电脑面前不停得给自己的脸摆各种姿势，这样可以提高训练后识别自己的成功率，这里先后采取了opencv和dlib自带人脸检测采集，虽然opencv识别比较快，但实际应用中会识别">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-05-23T02:33:58.052Z">
+<meta property="og:updated_time" content="2018-06-27T03:24:56.420Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="人脸识别：概述">
-<meta name="twitter:description" content="主环境  opencv TensorFlow python3 dlib 具体搭建方式— 传送门   流程1. Get_faces 获取图片集获取所要识别的人脸的图片集最快的方法就是使用程序用摄像头拍照，要获取足够多的照片，得坐在电脑面前不停得给自己的脸摆各种姿势，这样可以提高训练后识别自己的成功率，这里先后采取了opencv和dlib自带人脸检测采集，虽然opencv识别比较快，但实际应用中会识别">
+<meta name="twitter:title" content="Hello World">
+<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
     
         <link rel="alternate" type="application/atom+xml" title="E.I." href="/atom.xml">
     
@@ -121,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">人脸识别：概述</div>
+        <div class="flex-col header-title ellipsis">Hello World</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -143,11 +142,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">人脸识别：概述</h1>
+        <h1 class="title">Hello World</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-12-07T13:42:08.000Z" itemprop="datePublished" class="page-time">
-  2017-12-07
+                <time datetime="2018-06-27T03:24:56.420Z" itemprop="datePublished" class="page-time">
+  2018-06-27
 </time>
 
 
@@ -166,17 +165,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#主环境"><span class="post-toc-number">1.</span> <span class="post-toc-text">主环境</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#流程"><span class="post-toc-number">2.</span> <span class="post-toc-text">流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Get-faces-获取图片集"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. Get_faces 获取图片集</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Set-other-people-获取其他人脸图片集"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. Set_other_people 获取其他人脸图片集</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Train-faces-训练模型"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. Train_faces 训练模型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-Is-my-face-s使用模型进行识别"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4. Is_my_face s使用模型进行识别</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
-<article id="post-人脸识别1"
+<article id="post-hello-world"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">人脸识别：概述</h1>
+        <h1 class="post-card-title">Hello World</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-12-07 21:42:08" datetime="2017-12-07T13:42:08.000Z"  itemprop="datePublished">2017-12-07</time>
+            <time class="post-time" title="2018-06-27 11:24:56" datetime="2018-06-27T03:24:56.420Z"  itemprop="datePublished">2018-06-27</time>
 
             
 
@@ -189,37 +188,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="主环境"><a href="#主环境" class="headerlink" title="主环境"></a>主环境</h1><blockquote>
-<ul>
-<li>opencv</li>
-<li>TensorFlow</li>
-<li>python3</li>
-<li>dlib</li>
-<li>具体搭建方式— <a href="/2017/11/24/Win10配置opencv3+python3环境/index.html">传送门</a></li>
-</ul>
-</blockquote>
-<h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><h2 id="1-Get-faces-获取图片集"><a href="#1-Get-faces-获取图片集" class="headerlink" title="1. Get_faces 获取图片集"></a>1. Get_faces 获取图片集</h2><p>获取所要识别的人脸的图片集最快的方法就是使用程序用摄像头拍照，要获取足够多的照片，得坐在电脑面前不停得给自己的脸摆各种姿势，这样可以提高训练后识别自己的成功率，这里先后采取了opencv和dlib自带人脸检测采集，虽然opencv识别比较快，但实际应用中会识别出一些奇怪的东西当作人脸, 所以程序采用了dlib来识别人脸。</p>
-<blockquote>
-<p><a href="\2017\12\08\face-recognition-dlib\index.html">dlib识别人脸获取图片集</a></p>
-</blockquote>
-<a id="more"></a>
-<h2 id="2-Set-other-people-获取其他人脸图片集"><a href="#2-Set-other-people-获取其他人脸图片集" class="headerlink" title="2. Set_other_people 获取其他人脸图片集"></a>2. Set_other_people 获取其他人脸图片集</h2><p>人脸图片集网上有很多，这里给出其中一个:</p>
-<blockquote>
-<p><a href="http://vis-www.cs.umass.edu/lfw/" target="_blank" rel="noopener">网址</a></p>
-<p><a href="http://vis-www.cs.umass.edu/lfw/lfw.tgz" target="_blank" rel="noopener">下载</a></p>
-</blockquote>
-<p>下载解压到项目目录下的input_img目录下,接下来使用dlib来批量识别图片中的人脸部分，并保存到指定目录other_faces下.</p>
-<blockquote>
-<p><a href="\2017\12\08\set-other-people\index.html">dlib批量识别其他图片集</a></p>
-</blockquote>
-<h2 id="3-Train-faces-训练模型"><a href="#3-Train-faces-训练模型" class="headerlink" title="3. Train_faces 训练模型"></a>3. Train_faces 训练模型</h2><p>通过 CNN 训练数据,训练之后的数据会保存在当前目录下。</p>
-<blockquote>
-<p><a href="\2017\12\08\cnn-train-faces\index.html">CNN 训练数据</a></p>
-</blockquote>
-<h2 id="4-Is-my-face-s使用模型进行识别"><a href="#4-Is-my-face-s使用模型进行识别" class="headerlink" title="4. Is_my_face s使用模型进行识别"></a>4. Is_my_face s使用模型进行识别</h2><p>使用摄像头拍拍摄，在画面中标注出人脸。</p>
-<blockquote>
-<p><a href="\2017\12\10\is-my-face\index.html">进行识别</a></p>
-</blockquote>
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
         </div>
 
@@ -227,7 +204,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-05-23T02:33:58.052Z" itemprop="dateUpdated">2018-05-23 10:33:58</time>
+    Last updated: <time datetime="2018-06-27T03:24:56.420Z" itemprop="dateUpdated">2018-06-27 11:24:56</time>
 </span><br>
 
 
@@ -244,12 +221,14 @@
 </blockquote>
 
         
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
 
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/人脸识别/">人脸识别</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境配置/">环境配置</a></li></ul>
-
 
             
 <div class="page-share-wrap">
@@ -258,7 +237,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2017/12/07/人脸识别1/&title=《人脸识别：概述》 — E.I.&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/06/27/hello-world/&title=《Hello World》 — E.I.&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -268,31 +247,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2017/12/07/人脸识别1/&title=《人脸识别：概述》 — E.I.&source=主环境
-
-opencv
-TensorFlow
-python3
-dlib
-具体搭建方式— 传送门
-
-
-流程1. Get_faces 获取图片集获取所要识别的..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/06/27/hello-world/&title=《Hello World》 — E.I.&source=For future" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2017/12/07/人脸识别1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/06/27/hello-world/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《人脸识别：概述》 — E.I.&url=http://wenbo.fun/2017/12/07/人脸识别1/&via=http://wenbo.fun" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — E.I.&url=http://wenbo.fun/2018/06/27/hello-world/&via=http://wenbo.fun" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2017/12/07/人脸识别1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/06/27/hello-world/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -312,21 +282,14 @@ dlib
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/12/08/face-recognition-dlib/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">人脸识别01：dlib获取图片集</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/11/24/Win10配置opencv3+python3环境/" id="post-next" class="post-nav-link">
+      <a href="/2018/06/03/github_t/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Windows配置opencv3+python3+tensorflow环境</h4>
+        <h4 class="title">如何使用GitHub多人協作</h4>
       </a>
     </div>
   
@@ -375,6 +338,32 @@ dlib
 
 </article>
 
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢亲~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/wechat.jpg" data-alipay="http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
 
 
 </div>
@@ -418,7 +407,7 @@ dlib
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2017/12/07/人脸识别1/&title=《人脸识别：概述》 — E.I.&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wenbo.fun/2018/06/27/hello-world/&title=《Hello World》 — E.I.&pic=http://7xsg2l.com1.z0.glb.clouddn.com/blog/img/cc.jpeg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -428,31 +417,22 @@ dlib
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2017/12/07/人脸识别1/&title=《人脸识别：概述》 — E.I.&source=主环境
-
-opencv
-TensorFlow
-python3
-dlib
-具体搭建方式— 传送门
-
-
-流程1. Get_faces 获取图片集获取所要识别的..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wenbo.fun/2018/06/27/hello-world/&title=《Hello World》 — E.I.&source=For future" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2017/12/07/人脸识别1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wenbo.fun/2018/06/27/hello-world/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《人脸识别：概述》 — E.I.&url=http://wenbo.fun/2017/12/07/人脸识别1/&via=http://wenbo.fun" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — E.I.&url=http://wenbo.fun/2018/06/27/hello-world/&via=http://wenbo.fun" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2017/12/07/人脸识别1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wenbo.fun/2018/06/27/hello-world/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -463,7 +443,7 @@ dlib
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwklEQVR42u3aQW7DMAwEwPz/0ynQaxFhSUqCU4xPQeLK4x4WIqnXK77ev9f6m7+/frqSFUYXLi7umJsvvUYn93y6MzHg4uLe567Dax1D6wcn4ZgYcHFxn8ldh071VXFxcf8TN1o0eDFcXNznc6tL5xG2fo2DtRouLu6AW22Ynvh8sL+Li4tb5L6LV28DlLRNo6fj4uJe4a63LHlJ0yuK8tSKHo+Li7uVOxmNVAuVzdsdXFzci9xqDPUao8lRjyjIcHFxt3LnxU++MaoOXMudXVxc3K3caq+yGnzJRieKQlxc3CvcfGaRB19v69NrneDi4p7g9sqb/JVyejSkwcXFvcidFDbVQezkyBcuLu4dbq+MqcZctfgppy8uLu4B7ujPgsKpN4gdtUJwcXGPHclKGiK9F+4d18DFxX0CNxmiVB9fXfM1+X/g4uK2uPm8JSmQJmPX0b4MFxd3K3d+MKsaPdVhDC4u7n1uNVbyRsmJe3BxcW9yk/DqfZ98zoMSFxf3Pvd0LvaaJh+DDBcX9zHcXY3RfEiDi4v7jdxkgzKKrV5PFxcXdxO3V/wkQ5R8zegQGC4u7hXuidJlfueIjouL2+f+ACXuXJt40EcRAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByUlEQVR42u3aSYrDMBAF0Nz/0ukDBMm/SgNueFoFI+ynLIoa9PnE6/uzkue/e0ZPNi9cXNxl7ne65h+YQ0f0+ZFGBlxc3PvcUcSo7kkO0Hs/Li7u+7nzBGWexPSOhIuL+2ZutbDJn+Di4r6NmxQ/5VcHXzlYq+Hi4i5w8y7lud9H+ru4uLgt7re4kkCWj1XKX8fFxb3CzQPKtuQjTomG7RVcXNzD3N5FivXDJIPYh/8VFxf3MDcfk/SantWLGlFGhouLe4W7MjhJ4kwS5h48uLi4V7iFTa2xazWVmR8VFxf3DnelrVlFVJOhYQjDxcW9wu1dfeiNS3tjm8LkBxcX9wr34RULCVC54YKLi3uRmxQtefPiRDKEi4t7k5uPTlfud+ShMLqigYuLe5HbG4LmH6smUtv6u7i4uMvc3oWJ5EmSTpWHrLi4uIe5D+GjeL0yKX4KaU31/8DFxV3g9hqmexOgfD8uLu4dbr7ytmYyUMnHtM3D4OLiLnPzkUa17OmVOkvXs3Bxcbdyq1evqkPWbakMLi7uK7m9hKaXNuHi4v4vbrWA2Ra7cHFxL3J7CUp+xbMa7DbUari4uAvclYqjGuZ6x8PFxb3I/QOnbblo9zaT2AAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
@@ -471,7 +451,7 @@ dlib
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 </script>

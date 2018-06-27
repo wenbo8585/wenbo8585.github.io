@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>E.I.</title>
   
-  <subtitle>Are you too proud to kiss me?</subtitle>
+  <subtitle>善待別人就是善待妳自己</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-06-05T07:28:12.997Z</updated>
+  <updated>2018-06-27T03:24:56.420Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://wenbo.fun/2018/06/27/hello-world/"/>
+    <id>http://wenbo.fun/2018/06/27/hello-world/</id>
+    <published>2018-06-27T03:24:56.420Z</published>
+    <updated>2018-06-27T03:24:56.420Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>如何使用GitHub多人協作</title>
@@ -536,36 +558,6 @@
 &lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;时间复杂度&quot;&gt;&lt;a href=&quot;#时间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度&quot;&gt;&lt;/a&gt;时间复杂度&lt;/h2&gt;&lt;p&gt;计算可行性约束(符号个数)需要时间:$$O(n)$$&lt;br&gt;最坏情况(n个符号排列)有:$$O(2^n)$$个节点需要计算可行性约束，故回溯算法 &lt;code&gt;Backtrack&lt;/code&gt; 所需计算时间: $$O(n2^n)$$&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>贪心算法---最小生成树</title>
-    <link href="http://wenbo.fun/2017/12/30/sf008/"/>
-    <id>http://wenbo.fun/2017/12/30/sf008/</id>
-    <published>2017-12-30T03:17:39.000Z</published>
-    <updated>2018-01-13T08:18:36.044Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;最小生成树&quot;&gt;&lt;a href=&quot;#最小生成树&quot; class=&quot;headerlink&quot; title=&quot;最小生成树&quot;&gt;&lt;/a&gt;最小生成树&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;最小生成树性质&quot;&gt;&lt;a href=&quot;#最小生成树性质&quot; class=&quot;headerlink&quot; title=&quot;最小生成树性质&quot;&gt;&lt;/a&gt;最小生成树性质&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;假设 N = (V,{ E })是一个连通网，U 是顶点集 V 的一个非空子集。若(u , v)是一条具有最小权值(代价)的边，其中u∈U， v∈V - U，则必存在一棵包含边(u，v)的最小生成树。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;反证:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;假设网N的任何一棵最小生成树都不包含(u，v)。设T是连通网上的一棵最小生成树，当将边(u，v)加入到T中时，由生成树的定义，T中必存在一条包含(u，v)的回路。另一方面，由于T是生成树，则在T上必存在另一条边(u’，v’)，其中u’∈U，v’∈V - U，且u和u’之间，v和v’之间均有路径相通。删去边(u’，v’)，便可消除上述回路，同时得到另一棵生成树T’。因为(u，v)的代价不高于(u’，v’)，则T’的代价亦不高于T，T’是包含(u，v)的一棵最小生成树，和假设矛盾。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;时间复杂度&quot;&gt;&lt;a href=&quot;#时间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度&quot;&gt;&lt;/a&gt;时间复杂度&lt;/h2&gt;
     
     </summary>
     
