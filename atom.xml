@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenbo.fun/"/>
-  <updated>2018-06-27T03:24:56.420Z</updated>
+  <updated>2018-07-10T08:22:35.145Z</updated>
   <id>http://wenbo.fun/</id>
   
   <author>
@@ -17,24 +17,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://wenbo.fun/2018/06/27/hello-world/"/>
-    <id>http://wenbo.fun/2018/06/27/hello-world/</id>
-    <published>2018-06-27T03:24:56.420Z</published>
-    <updated>2018-06-27T03:24:56.420Z</updated>
+    <title>最小二乘法</title>
+    <link href="http://wenbo.fun/2018/07/10/statistics-1/"/>
+    <id>http://wenbo.fun/2018/07/10/statistics-1/</id>
+    <published>2018-07-10T02:28:53.000Z</published>
+    <updated>2018-07-10T08:22:35.145Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
+      &lt;h1 id=&quot;最小二乘法&quot;&gt;&lt;a href=&quot;#最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;最小二乘法&quot;&gt;&lt;/a&gt;最小二乘法&lt;/h1&gt;&lt;p&gt;最小二乘法（又称最小平方法）通过最小化误差的平方和寻找数据的最佳函数匹配。&lt;br&gt;用函数表示为：&lt;br&gt;
+$$ \min_{\vec{b}}{\sum _{{i=1}}^{{n}}(y_{m}-y_{i})^{2}}$$.
+&lt;br&gt;用欧几里得度量表达为：&lt;br&gt;
     
     </summary>
     
+      <category term="概率论与数理统计" scheme="http://wenbo.fun/categories/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
+    
+    
+      <category term="统计学" scheme="http://wenbo.fun/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tracks</title>
+    <link href="http://wenbo.fun/2018/06/27/tracks/"/>
+    <id>http://wenbo.fun/2018/06/27/tracks/</id>
+    <published>2018-06-27T06:13:49.000Z</published>
+    <updated>2018-07-10T08:21:03.753Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;問題與技巧&quot;&gt;&lt;a href=&quot;#問題與技巧&quot; class=&quot;headerlink&quot; title=&quot;問題與技巧&quot;&gt;&lt;/a&gt;問題與技巧&lt;/h1&gt;&lt;h2 id=&quot;Anaconda&quot;&gt;&lt;a href=&quot;#Anaconda&quot; class=&quot;headerlink&quot; title=&quot;Anaconda&quot;&gt;&lt;/a&gt;Anaconda&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;anaconda 环境复制&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;source activate py36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;conda env export --file py36.yml&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="http://wenbo.fun/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="其他" scheme="http://wenbo.fun/tags/%E5%85%B6%E4%BB%96/"/>
     
   </entry>
   
@@ -69,7 +89,7 @@
     <link href="http://wenbo.fun/2018/05/29/mat4u/"/>
     <id>http://wenbo.fun/2018/05/29/mat4u/</id>
     <published>2018-05-29T00:08:21.000Z</published>
-    <updated>2018-06-05T16:39:26.635Z</updated>
+    <updated>2018-06-27T06:32:47.222Z</updated>
     
     <summary type="html">
     
@@ -525,39 +545,6 @@
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;时间复杂度&quot;&gt;&lt;a href=&quot;#时间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度&quot;&gt;&lt;/a&gt;时间复杂度&lt;/h2&gt;&lt;p&gt;计算上界时间:$$O(n)$$&lt;/p&gt;
 &lt;p&gt;最坏情况有:$$O(2^n)$$个右儿子节点需计算上界。所以回溯算法&lt;code&gt;Backtrack&lt;/code&gt;所需时间:$$O(n2^n)$$&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="http://wenbo.fun/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://wenbo.fun/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>回溯法---符号三角形</title>
-    <link href="http://wenbo.fun/2017/12/30/sf009/"/>
-    <id>http://wenbo.fun/2017/12/30/sf009/</id>
-    <published>2017-12-30T05:07:21.000Z</published>
-    <updated>2018-01-13T08:18:24.339Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;回溯法&quot;&gt;&lt;a href=&quot;#回溯法&quot; class=&quot;headerlink&quot; title=&quot;回溯法&quot;&gt;&lt;/a&gt;回溯法&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;问题解空间&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;深度优先遍历&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;深度搜索至任意一个节点，若包括问题解，继续按深度优先策略搜索;如果不包含问题解，则跳过对该结点为根的子树的搜索，逐层向其祖先结点回溯。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;减枝函数&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;符号三角形&quot;&gt;&lt;a href=&quot;#符号三角形&quot; class=&quot;headerlink&quot; title=&quot;符号三角形&quot;&gt;&lt;/a&gt;符号三角形&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;计算机算法设计与分析(第四版)，王晓东&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;时间复杂度&quot;&gt;&lt;a href=&quot;#时间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度&quot;&gt;&lt;/a&gt;时间复杂度&lt;/h2&gt;&lt;p&gt;计算可行性约束(符号个数)需要时间:$$O(n)$$&lt;br&gt;最坏情况(n个符号排列)有:$$O(2^n)$$个节点需要计算可行性约束，故回溯算法 &lt;code&gt;Backtrack&lt;/code&gt; 所需计算时间: $$O(n2^n)$$&lt;/p&gt;
     
     </summary>
     

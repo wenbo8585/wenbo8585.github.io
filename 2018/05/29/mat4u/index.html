@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgmatlab4u%20%283%29.png">
 <meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgmatlab4u%20%281%29.png">
 <meta property="og:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgmatlab4u%20%282%29.png">
-<meta property="og:updated_time" content="2018-06-05T16:39:26.635Z">
+<meta property="og:updated_time" content="2018-06-27T06:32:47.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matlab for Ubuntu">
 <meta name="twitter:image" content="http://7xsg2l.com1.z0.glb.clouddn.com/blog/imgtimg.jpg">
@@ -271,6 +271,13 @@
             </figure>
 <p>修改下R2017a权限就可以了.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.matlab</span><br><span class="line">sudo chmod 777 R2017a</span><br></pre></td></tr></table></figure>
+<p><strong>Linux for Matlab中文注释乱码</strong></p>
+<p>中文注释乱码的原因是windows下的m文件采用的是gbk编码，只要将所有的m文件转成 utf8文件，显示就正常了。（在转成utf8前，别用matlab打开m文件，否则下面步骤完成后注释依旧有乱码，后果很严重。。）</p>
+<ol>
+<li>首先安装enca：sudo apt-get install enca</li>
+<li>进入m文件所在的文件夹，比如我的文件在/home/lx 里面：cd /home/lx</li>
+<li>将所有m文件转成utf8：enca -x utf-8 *</li>
+</ol>
 <hr>
 <p>Enjoy.</p>
 
@@ -280,7 +287,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-06-05T16:39:26.635Z" itemprop="dateUpdated">2018-06-06 00:39:26</time>
+    Last updated: <time datetime="2018-06-27T06:32:47.222Z" itemprop="dateUpdated">2018-06-27 14:32:47</time>
 </span><br>
 
 
